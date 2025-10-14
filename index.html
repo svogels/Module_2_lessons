@@ -2,39 +2,175 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Welcome to Module 2 Lessons</title>
+  <title>Module 2 Lessons - IP, Ethics and Privacy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { font-family: Arial, sans-serif; margin: 2em; background: #f4f4f4; }
-    header, footer { background: #333; color: #fff; padding: 1em 2em; }
-    nav a { color: #fff; margin-right: 1em; text-decoration: none; }
-    main { background: #fff; padding: 2em; border-radius: 8px; }
+    body { 
+      font-family: Arial, sans-serif; 
+      margin: 0; 
+      padding: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2em;
+    }
+    header { 
+      background: rgba(255, 255, 255, 0.95);
+      color: #333; 
+      padding: 2em; 
+      border-radius: 10px;
+      margin-bottom: 2em;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      color: #764ba2;
+    }
+    header p {
+      margin: 0.5em 0 0 0;
+      color: #666;
+      font-size: 1.1em;
+    }
+    main { 
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2em; 
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .lesson-section {
+      margin-bottom: 2em;
+    }
+    .lesson-section h2 {
+      color: #764ba2;
+      border-bottom: 3px solid #667eea;
+      padding-bottom: 0.5em;
+      margin-bottom: 1em;
+    }
+    .lesson-list {
+      list-style: none;
+      padding: 0;
+    }
+    .lesson-list li {
+      background: #f8f9fa;
+      margin: 0.8em 0;
+      padding: 1em;
+      border-left: 4px solid #667eea;
+      border-radius: 5px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .lesson-list li:hover {
+      transform: translateX(5px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .lesson-list a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      display: block;
+    }
+    .lesson-list .lesson-desc {
+      color: #666;
+      font-size: 0.9em;
+      margin-top: 0.3em;
+      font-weight: normal;
+    }
+    .info-box {
+      background: #e8f0ff;
+      border-left: 4px solid #667eea;
+      padding: 1em;
+      margin: 1.5em 0;
+      border-radius: 5px;
+    }
+    .info-box h3 {
+      margin-top: 0;
+      color: #667eea;
+    }
+    footer { 
+      text-align: center;
+      color: white;
+      padding: 2em;
+      margin-top: 2em;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Module 2 Lessons</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Lessons</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
-  <main>
-    <h2>Welcome!</h2>
-    <p>
-      This is the main landing page for your Module 2 lessons repository.  
-      Here you can add descriptions, links to your lessons, or any important information for visitors.
-    </p>
-    <ul>
-      <li>Lesson 1: <a href="lesson1.html">Introduction to Topic</a></li>
-      <li>Lesson 2: <a href="lesson2.html">Deep Dive</a></li>
-      <li>Lesson 3: <a href="lesson3.html">Practical Example</a></li>
-    </ul>
-  </main>
-  <footer>
-    &copy; 2025 Module 2 Lessons. All rights reserved.
-  </footer>
+  <div class="container">
+    <header>
+      <h1>Module 2 Lessons</h1>
+      <p>Intellectual Property, Ethics and Privacy</p>
+    </header>
+
+    <main>
+      <div class="info-box">
+        <h3>📚 About This Module</h3>
+        <p><strong>Duration:</strong> 3 weeks</p>
+        <p><strong>Learning Intention:</strong> Describe the skills and knowledge required to assist with the protection and lawful use of intellectual property (IP) and observing relevant organisational ethics and privacy policies.</p>
+      </div>
+
+      <div class="lesson-section">
+        <h2>📖 Lesson Materials</h2>
+        <ul class="lesson-list">
+          <li>
+            <a href="2-dot-1-0-overview copy.html">
+              2.1.0 Chapter Overview
+              <span class="lesson-desc">Learning intentions, success criteria, and competency task overview</span>
+            </a>
+          </li>
+          <li>
+            <a href="2-dot-1-1-ip-ethics-and-privacy copy.html">
+              2.1.1 IP, Ethics and Privacy
+              <span class="lesson-desc">Introduction to copyright law, intellectual property, and privacy principles</span>
+            </a>
+          </li>
+          <li>
+            <a href="2-dot-1-2-identifying-own-role-ip-copyright-ethics-privacy copy.html">
+              2.1.2 Identifying Own Role
+              <span class="lesson-desc">Understanding your role in IP, copyright, ethics, and privacy contexts</span>
+            </a>
+          </li>
+          <li>
+            <a href="2-dot-1-3-activity-the-youtuber copy.html">
+              2.1.3 Activity: The YouTuber
+              <span class="lesson-desc">Scenario-based activity exploring copyright issues in content creation</span>
+            </a>
+          </li>
+          <li>
+            <a href="2-dot-1-4-risk-management-and-non-compliance copy.html">
+              2.1.4 Risk Management and Non-Compliance
+              <span class="lesson-desc">Understanding risk management processes and compliance requirements</span>
+            </a>
+          </li>
+          <li>
+            <a href="2-dot-1-5-organisational-risk-assessment-and-identification-process copy.html">
+              2.1.5 Organisational Risk Assessment
+              <span class="lesson-desc">Applying risk assessment processes to real-world scenarios</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="lesson-section">
+        <h2>✅ Success Criteria</h2>
+        <ul>
+          <li>Identify principles underpinning organisational IP, ethics and privacy policy procedures</li>
+          <li>Understand and apply principles underpinning organisational IP, ethics and privacy policy procedures</li>
+          <li>Assist with non-compliance incident identification and recommendations</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>📝 Competency Task</h3>
+        <p>Competency Assessment Part F (Privacy Impact Assessment)</p>
+      </div>
+    </main>
+
+    <footer>
+      &copy; 2025 Module 2 Lessons. All rights reserved.
+    </footer>
+  </div>
 </body>
 </html>
