@@ -1,190 +1,472 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>2.1.1 IP, Ethics and Privacy</title>
 <meta name="identifier" content="g012c6cf18c8da2f0d1cd1178ddb359c1"/>
 <meta name="editing_roles" content="teachers"/>
 <meta name="workflow_state" content="active"/>
+<link rel="stylesheet" href="style.css">
+<!-- jsPDF library for PDF generation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+    /* 1.5 line spacing for normal text */
+    p, li, ul, ol {
+        line-height: 1.5;
+    }
+    .download-btn-container {
+        text-align: center;
+        margin: 30px 0;
+        padding: 20px;
+        background: linear-gradient(135deg, #f0f4ff, #e8f0ff);
+        border-radius: 15px;
+    }
+    .summary-textarea {
+        width: 100%;
+        min-height: 80px;
+        padding: 10px;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 1em;
+        font-family: inherit;
+        resize: vertical;
+    }
+</style>
 </head>
 <body>
-<div id="dp-wrapper" class="dp-wrapper dp-flat-sections variation-2"><header class="dp-header dp-flat-sections variation-2">
-<h2 class="dp-heading"><span class="dp-header-pre">Module 2</span> <span class="dp-header-title"><span>IP, Ethics and Privacy</span></span></h2>
+<div class="container">
+<header>
+<h1><span style="display:block; font-size:0.6em; color:#764ba2;">Module 2</span>IP, Ethics and Privacy</h1>
 </header>
-<div class="dp-content-block kl_custom_block_sub_0">
-<h3 class="dp-has-icon"><i class="fas fa-bullhorn" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i> Lesson Instructions</h3>
+
+<div class="download-btn-container">
+<button class="btn" onclick="downloadSummariesAsPDF()" style="font-size: 1.1em; padding: 15px 40px;">
+📥 Download My Summaries as PDF
+</button>
+<p style="margin-top: 10px; color: #666; font-size: 0.9em;">Complete your summaries below, then click here to download them as a PDF document</p>
+</div>
+
+<div class="section">
+<h3>📢 Lesson Instructions</h3>
 <p>Your teacher will guide you through the following resources in preparing for the upcoming activity/task.</p>
 <p>Overview/Summary:</p>
-<p>&nbsp;</p>
-<h3><span style="color: #34495e;"><strong><span style="font-size: 14pt;">What is Copyright Law?</span></strong></span></h3>
-<p>Copyright law creates incentives for people to invest their time, talent and other resources in creating new material – particularly cultural and educational material, which benefits society. In Australia, copyright law is set out in the <i>Copyright Act 1968 </i> (Cth). This is federal legislation, and applies throughout Australia.</p>
-<p>Source: <i>ACC, Introduction to copyright in Australia</i></p>
-<p><span><strong>Using websites and copyright</strong>:</span></p>
+</div>
+
+<div class="section">
+<h2>What is Copyright Law?</h2>
+<p><strong></strong>Copyright law protects creators and encourages innovation.</strong></p>
+<ul>
+<li>Creates incentives for people to invest time, talent, and resources in creating new material</li>
+<li>Particularly benefits cultural and educational content</li>
+<li>In Australia: governed by the <i>Copyright Act 1968</i> (Cth)</li>
+<li>Federal legislation applying throughout all of Australia</li>
+</ul>
+<p><em>Source: ACC, Introduction to copyright in Australia</em></p>
+
+<h3>Using websites and copyright</h3>
 <ul>
 <li>In most cases a website will have the following symbol © 2015 SYDNEY DANCE COMPANY</li>
 <li>This indicates they own the copyright or have permission or a license to use the material on their website</li>
 <li>Some websites have detailed copyright information, which is located at the bottom of the website. These have a hyperlink to another page to the conditions to use the website including: <em>Conditions of Use</em>, <em>Terms of Use, Terms &amp; Conditions, Disclaimer</em></li>
 </ul>
-<p><span><strong>Readings</strong>:</span></p>
+
+<h3>Readings</h3>
 <ol>
-<li><a class="" href="https://drive.google.com/open?id=1z8ucQ7MKU1blhpPB4ZGY-id0co3tWOtU"><span>Introduction to Copyright in Australia</span></a></li>
-<li><a class="dp-rce-highlight" href="https://drive.google.com/open?id=1sb8AgpAMFWH0ubXjafT4pjO939QesQzr"><span>Education - Copyright Basics</span></a></li>
-<li><a class="" href="https://drive.google.com/open?id=1dxYWZ-pvFMxeeuhvjXSlUX062O8zJ9nL"><span>Permission - Do I need it?</span></a></li>
-<li><a href="https://drive.google.com/open?id=1tSGkyotFdMjjNLhtYIz7BnCD5EjqOCkV"><span>Fair Dealing - What can I use without permission?</span></a></li>
-<li><span><a href="https://drive.google.com/open?id=1SXUsVg6X98YZ3SWfGLK6ktBb1RtnzWoe">Infringement offences and penalties</a></span></li>
+<li>
+<a href="https://drive.google.com/open?id=1z8ucQ7MKU1blhpPB4ZGY-id0co3tWOtU">Introduction to Copyright in Australia</a>
+<div style="margin-top: 10px; margin-bottom: 15px;">
+<label style="display: block; margin-bottom: 5px; font-weight: bold; color: #667eea;">📝 Your Summary:</label>
+<textarea class="summary-textarea" data-doc-title="Introduction to Copyright in Australia" data-section="Readings" placeholder="Write your summary of this document here..."></textarea>
+</div>
+</li>
+<li>
+<a href="https://drive.google.com/open?id=1sb8AgpAMFWH0ubXjafT4pjO939QesQzr">Education - Copyright Basics</a>
+<div style="margin-top: 10px; margin-bottom: 15px;">
+<label style="display: block; margin-bottom: 5px; font-weight: bold; color: #667eea;">📝 Your Summary:</label>
+<textarea class="summary-textarea" data-doc-title="Education - Copyright Basics" data-section="Readings" placeholder="Write your summary of this document here..."></textarea>
+</div>
+</li>
+<li>
+<a href="https://drive.google.com/open?id=1dxYWZ-pvFMxeeuhvjXSlUX062O8zJ9nL">Permission - Do I need it?</a>
+<div style="margin-top: 10px; margin-bottom: 15px;">
+<label style="display: block; margin-bottom: 5px; font-weight: bold; color: #667eea;">📝 Your Summary:</label>
+<textarea class="summary-textarea" data-doc-title="Permission - Do I need it?" data-section="Readings" placeholder="Write your summary of this document here..."></textarea>
+</div>
+</li>
+<li>
+<a href="https://drive.google.com/open?id=1tSGkyotFdMjjNLhtYIz7BnCD5EjqOCkV">Fair Dealing - What can I use without permission?</a>
+<div style="margin-top: 10px; margin-bottom: 15px;">
+<label style="display: block; margin-bottom: 5px; font-weight: bold; color: #667eea;">📝 Your Summary:</label>
+<textarea class="summary-textarea" data-doc-title="Fair Dealing - What can I use without permission?" data-section="Readings" placeholder="Write your summary of this document here..."></textarea>
+</div>
+</li>
+<li>
+<a href="https://drive.google.com/open?id=1SXUsVg6X98YZ3SWfGLK6ktBb1RtnzWoe">Infringement offences and penalties</a>
+<div style="margin-top: 10px; margin-bottom: 15px;">
+<label style="display: block; margin-bottom: 5px; font-weight: bold; color: #667eea;">📝 Your Summary:</label>
+<textarea class="summary-textarea" data-doc-title="Infringement offences and penalties" data-section="Readings" placeholder="Write your summary of this document here..."></textarea>
+</div>
+</li>
 </ol>
-<p><span><strong>Articles</strong>:</span></p>
+
+<h3>Articles</h3>
 <ol>
-<li><a href="https://drive.google.com/open?id=1ziYKXfzXSnkGp4fMq7ZcDB4SaU1VJ3WU"><span>Copyright Fair use and how it works with online images</span></a></li>
-<li><span><a href="https://www.artslaw.com.au/legal/raw-law/how-do-you-protect-your-work-on-the-internet/">How do you protect your work on the internet</a></span></li>
-<li><span><a href="https://drive.google.com/open?id=1XITc3V8_H2zb-HhkNZeEfWvH3FlPLZwO">Music Copyright</a></span></li>
-<li><span><a href="https://drive.google.com/open?id=1XITc3V8_H2zb-HhkNZeEfWvH3FlPLZwO"></a></span><span><a href="https://drive.google.com/file/d/1Cc4dPsK_67xHKKgV5fDXPJv4dBOZLb2L/view?usp=sharing">Music Rights Australia Fact Sheet</a></span></li>
+<li>
+<a href="https://drive.google.com/open?id=1ziYKXfzXSnkGp4fMq7ZcDB4SaU1VJ3WU">Copyright Fair use and how it works with online images</a>
+<div style="margin-top: 10px; margin-bottom: 15px;">
+<label style="display: block; margin-bottom: 5px; font-weight: bold; color: #667eea;">📝 Your Summary:</label>
+<textarea class="summary-textarea" data-doc-title="Copyright Fair use and how it works with online images" data-section="Articles" placeholder="Write your summary of this document here..."></textarea>
+</div>
+</li>
+<li>
+<a href="https://www.artslaw.com.au/legal/raw-law/how-do-you-protect-your-work-on-the-internet/">How do you protect your work on the internet</a>
+<div style="margin-top: 10px; margin-bottom: 15px;">
+<label style="display: block; margin-bottom: 5px; font-weight: bold; color: #667eea;">📝 Your Summary:</label>
+<textarea class="summary-textarea" data-doc-title="How do you protect your work on the internet" data-section="Articles" placeholder="Write your summary of this document here..."></textarea>
+</div>
+</li>
+<li>
+<a href="https://drive.google.com/open?id=1XITc3V8_H2zb-HhkNZeEfWvH3FlPLZwO">Music Copyright</a>
+<div style="margin-top: 10px; margin-bottom: 15px;">
+<label style="display: block; margin-bottom: 5px; font-weight: bold; color: #667eea;">📝 Your Summary:</label>
+<textarea class="summary-textarea" data-doc-title="Music Copyright" data-section="Articles" placeholder="Write your summary of this document here..."></textarea>
+</div>
+</li>
+<li>
+<a href="https://drive.google.com/file/d/1Cc4dPsK_67xHKKgV5fDXPJv4dBOZLb2L/view?usp=sharing">Music Rights Australia Fact Sheet</a>
+<div style="margin-top: 10px; margin-bottom: 15px;">
+<label style="display: block; margin-bottom: 5px; font-weight: bold; color: #667eea;">📝 Your Summary:</label>
+<textarea class="summary-textarea" data-doc-title="Music Rights Australia Fact Sheet" data-section="Articles" placeholder="Write your summary of this document here..."></textarea>
+</div>
+</li>
 </ol>
-<h3><span style="color: #34495e;"><strong><span style="font-size: 14pt;">Copyright &amp; Intellectual Property Obligations when downloading from the internet</span></strong></span></h3>
-<p class="p1">Generally, there is copyright protection on any creative piece which includes printed forms, music, graphics and illustrations, photos and videos.</p>
-<p class="p1">There is a common belief by many that the internet is ‘public domain’ and that anything accessed and downloaded from the internet does not have IP rights or copyright protection.</p>
-<p class="p1">This is not true.</p>
-<p class="p1">There is a document that has been published by the Australian Copyright Council called:</p>
-<p class="p1" style="text-align: center;">“Internet: Copying and Downloading”</p>
-<p class="p1">It goes into significant detail on the subject of downloading materials from the internet and what can and cannot be used without infringing on IP rights and copyright.</p>
-<p class="p1">This document is available on the Australian Copyright Council website at:</p>
-<p class="p1" style="text-align: center;">http://www.copyright.org.au/</p>
-<div class="dp-panels-wrapper dp-tabs">
-<div class="dp-panel-group">
-<h3 class="dp-panel-heading">IP and Copyright</h3>
-<div class="dp-panel-content">
-<p><span style="font-size: 14pt;"><strong>What is Intellectual Property (IP)?</strong></span></p>
-<p><span style="font-size: 12pt;">In simple terms, Intellectual Property refers to the ownership of an idea or design by the person (or organisation) that came up with it.</span></p>
-<p><span style="font-size: 12pt;">Intellectual Property can be broken into 4 main types:</span></p>
-<div class="kl_no_expander_controls dp-panels-wrapper dp-expander-default">
-<div class="dp-panel-group">
-<h3 class="dp-panel-heading">Panel Heading</h3>
-<div class="dp-panel-content">
-<div class="dp-panel-group">
-<h3 class="dp-panel-heading">Patents</h3>
-<div class="dp-panel-content">
-<p><span>A patent is a type of intellectual property that gives its owner the legal right to exclude others from making, using, or selling an invention for a limited period of time in exchange for publishing an enabling disclosure of the invention.</span></p>
-<p style="text-align: center;"><span><img src="$IMS-CC-FILEBASE$/Uploaded%20Media/Screen%20Shot%202022-06-29%20at%203.53.44%20pm.png?canvas_download=1" alt="Screen Shot 2022-06-29 at 3.53.44 pm.png" width="600" height="301" data-api-endpoint="https://canvas.parra.catholic.edu.au/api/v1/courses/28148/files/3941896" data-api-returntype="File" loading="lazy"></span></p>
 </div>
+
+<div class="section">
+<h2>Copyright &amp; Intellectual Property Obligations when downloading from the internet</h2>
+<p><strong>Common Misconception:</strong> Many believe the internet is 'public domain' with no copyright protection. <strong>This is NOT true.</strong></p>
+
+<p><strong>Key Points:</strong></p>
+<ul>
+<li>Copyright protection exists on most creative content online:
+<ul>
+<li>Printed forms</li>
+<li>Music</li>
+<li>Graphics and illustrations</li>
+<li>Photos and videos</li>
+</ul>
+</li>
+<li>Just because content is online doesn't mean it's free to use</li>
+<li>You must respect IP rights and copyright when downloading from the internet</li>
+</ul>
+
+<p><strong>Resource:</strong> The Australian Copyright Council has published a detailed guide:</p>
+<p style="text-align: center;"><em>"Internet: Copying and Downloading"</em></p>
+<p>Available at: <a href="http://www.copyright.org.au/" target="_blank">www.copyright.org.au</a></p>
 </div>
+
+<div class="section">
+<div class="tabs">
+<button class="tab-button active" onclick="openTab(event, 'ip-copyright')">IP and Copyright</button>
+<button class="tab-button" onclick="openTab(event, 'ethics')">Ethics</button>
+<button class="tab-button" onclick="openTab(event, 'privacy')">Privacy</button>
 </div>
-</div>
-</div>
-<div class="kl_no_expander_controls dp-panels-wrapper dp-expander-default">
-<div class="dp-panel-group">
-<h3 class="dp-panel-heading">Panel Heading</h3>
-<div class="dp-panel-content">
-<div class="dp-panel-group">
-<h3 class="dp-panel-heading">Trademarks</h3>
-<div class="dp-panel-content">
-<p><span>A trademark is a type of intellectual property consisting of a recognisable sign, design, or expression that identifies products or services from a particular source and distinguishes them from others. The trademark owner can be an individual, business organisation, or any legal entity.</span></p>
-<p style="text-align: center;"><span><img src="$IMS-CC-FILEBASE$/Uploaded%20Media/Screen%20Shot%202022-06-29%20at%203.53.55%20pm.png" alt="Screen Shot 2022-06-29 at 3.53.55 pm.png" width="600" height="308" data-api-endpoint="https://canvas.parra.catholic.edu.au/api/v1/courses/28148/files/3941970" data-api-returntype="File" loading="lazy"></span></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="kl_no_expander_controls dp-panels-wrapper dp-expander-default">
-<div class="dp-panel-group">
-<h3 class="dp-panel-heading">Panel Heading</h3>
-<div class="dp-panel-content">
-<div class="dp-panel-group">
-<h3 class="dp-panel-heading">Copyright</h3>
-<div class="dp-panel-content">
-<p><span>A copyright is a type of intellectual property that gives its owner the exclusive right to copy, distribute, adapt, display, and perform a creative work, usually for a limited time. The creative work may be in a literary, artistic, educational, or musical form.</span></p>
-<p style="text-align: center;"><span><img src="$IMS-CC-FILEBASE$/Uploaded%20Media/Screen%20Shot%202022-06-29%20at%203.54.12%20pm.png" alt="Screen Shot 2022-06-29 at 3.54.12 pm.png" width="600" height="322" data-api-endpoint="https://canvas.parra.catholic.edu.au/api/v1/courses/28148/files/3941982" data-api-returntype="File" loading="lazy"></span></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="kl_no_expander_controls dp-panels-wrapper dp-expander-default">
-<div class="dp-panel-group">
-<h3 class="dp-panel-heading">Panel Heading</h3>
-<div class="dp-panel-content">
-<div class="dp-panel-group">
-<h3 class="dp-panel-heading">Trade Secrets</h3>
-<div class="dp-panel-content">
-<p>Trade secrets are a type of intellectual property that includes formulas, practices, processes, designs, instruments, patterns, or compilations of information that have inherent economic value because they are not generally known or readily ascertainable by others, and which the owner takes reasonable measures to keep secret. Intellectual property law gives the owner of a trade secret the right to restrict others from disclosing it. In some jurisdictions, such secrets are referred to as confidential information.</p>
+
+<div id="ip-copyright" class="tab-content active">
+<h3>What is Intellectual Property (IP)?</h3>
+<p><strong>Definition:</strong> Ownership of an idea or design by the person or organisation that created it.</p>
+
+<p><strong>4 Main Types of Intellectual Property:</strong></p>
+
+<h4>Patents</h4>
+<ul>
+<li>Legal right to exclude others from making, using, or selling an invention</li>
+<li>Limited time period of protection</li>
+<li>Requires publishing details of the invention</li>
+</ul>
+<p style="text-align: center;"><img src="$IMS-CC-FILEBASE$/Uploaded%20Media/Screen%20Shot%202022-06-29%20at%203.53.44%20pm.png?canvas_download=1" alt="Screen Shot 2022-06-29 at 3.53.44 pm.png" width="600" height="301" data-api-endpoint="https://canvas.parra.catholic.edu.au/api/v1/courses/28148/files/3941896" data-api-returntype="File" loading="lazy"></p>
+
+<h4>Trademarks</h4>
+<ul>
+<li>Recognizable sign, design, or expression</li>
+<li>Identifies products or services from a specific source</li>
+<li>Distinguishes them from competitors</li>
+<li>Owner can be an individual, business, or legal entity</li>
+</ul>
+<p style="text-align: center;"><img src="$IMS-CC-FILEBASE$/Uploaded%20Media/Screen%20Shot%202022-06-29%20at%203.53.55%20pm.png" alt="Screen Shot 2022-06-29 at 3.53.55 pm.png" width="600" height="308" data-api-endpoint="https://canvas.parra.catholic.edu.au/api/v1/courses/28148/files/3941970" data-api-returntype="File" loading="lazy"></p>
+
+<h4>Copyright</h4>
+<ul>
+<li>Exclusive right to copy, distribute, adapt, display, and perform creative work</li>
+<li>Usually for a limited time</li>
+<li>Covers literary, artistic, educational, or musical forms</li>
+</ul>
+<p style="text-align: center;"><img src="$IMS-CC-FILEBASE$/Uploaded%20Media/Screen%20Shot%202022-06-29%20at%203.54.12%20pm.png" alt="Screen Shot 2022-06-29 at 3.54.12 pm.png" width="600" height="322" data-api-endpoint="https://canvas.parra.catholic.edu.au/api/v1/courses/28148/files/3941982" data-api-returntype="File" loading="lazy"></p>
+
+<h4>Trade Secrets</h4>
+<ul>
+<li>Includes formulas, practices, processes, designs, or information compilations</li>
+<li>Has economic value because it's not generally known</li>
+<li>Owner must take reasonable measures to keep it secret</li>
+<li>Protects against unauthorized disclosure</li>
+<li>Also called "confidential information" in some jurisdictions</li>
+</ul>
 <p style="text-align: center;"><img src="$IMS-CC-FILEBASE$/Uploaded%20Media/Screen%20Shot%202022-06-29%20at%203.54.28%20pm.png?canvas_download=1" alt="Screen Shot 2022-06-29 at 3.54.28 pm.png" width="600" height="359" data-api-endpoint="https://canvas.parra.catholic.edu.au/api/v1/courses/28148/files/3941984" data-api-returntype="File" loading="lazy"></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<p>The Australian Government agency that administers intellectual property (IP) rights and legislation is IP Australia. More information about IP can be found at the government website below:</p>
-<p><a class="inline_disabled" href="https://www.ipaustralia.gov.au/understanding-ip/getting-started-ip/educational-materials-and-resources" target="_blank">https://www.ipaustralia.gov.au/understanding-ip/getting-started-ip/educational-materials-and-resources</a></p>
-<p>&nbsp;</p>
-<p><strong><span style="font-size: 14pt;">Introduction to Copyright in Australia</span></strong></p>
-<p><span style="font-size: 12pt;">The Copyright Act 1968 (Cth), or more simply The Copyright Act, regulates copyright in Australia in relation to original literary, dramatic, musical and artistic works, and subject matter other than works.</span></p>
-<p><span style="font-size: 12pt;">In 1968, the Australian Copyright Council (ACC), a not-for-profit organisation, was also developed to help promote the understanding of Copyright law and its applications. </span></p>
-<p><span style="font-size: 12pt;">A fact sheet about Copyright Law in Australia can be found here:</span></p>
-<p><span style="font-size: 12pt;"><a class="instructure_file_link instructure_scribd_file inline_disabled" title="Intro to Copyright in Australia.pdf" href="$IMS-CC-FILEBASE$/Uploaded%20Media/Intro%20to%20Copyright%20in%20Australia.pdf?canvas_=1&amp;canvas_qs_wrap=1" target="_blank" data-canvas-previewable="false" data-api-endpoint="https://canvas.parra.catholic.edu.au/api/v1/courses/28148/files/3941919" data-api-returntype="File">Intro to Copyright in Australia.pdf</a>&nbsp;</span></p>
-<p>&nbsp;</p>
-<p><span style="font-size: 12pt;">Further more specific fact sheets can be found on the ACC website below:</span></p>
-<p><span style="font-size: 12pt;"><a href="https://www.copyright.org.au/search?page=1&amp;imprint=info" target="_blank">https://www.copyright.org.au/search?page=1&amp;imprint=info</a></span></p>
-<p>&nbsp;</p>
-<p><span>The responsibility for copyright in Australia belongs to the Department of Infrastructure, Transport, Regional Development and Communications.&nbsp;</span></p>
-<p>&nbsp;</p>
-<p><em><strong>Important thing to note:</strong></em></p>
-<p><em><span style="font-size: 12pt;">This legislation covers Copyright within the Australian borders. When Copyrighted work is used outside of Australia, that work is subject to the Copyright laws of that country. In order to protect the owners of the copyrighted work on an international scale, international treaties were developed to help establish a minimum legal requirement in each country. These include but are not limited to the Berne Convention and the Universal Copyright Convention.</span></em></p>
-</div>
-</div>
-<div class="dp-panel-group">
-<h3 class="dp-panel-heading">Ethics</h3>
-<div class="dp-panel-content">
-<p><span style="font-size: 14pt;"><strong>What is Ethics?</strong></span></p>
-<p><span style="font-size: 12pt;">Ethics is the code of moral principles and values that governs the behaviours of a person or group with respect to what is right or wrong. Ethics set standards as to what is good or bad in conduct and decision making. An ethical issue is present in a situation when the actions of a person or organisation may harm or benefit others.</span></p>
-<p>&nbsp;</p>
-<p><strong><span style="font-size: 14pt;">Ethical Theories and Approaches</span></strong></p>
-<p><span style="font-size: 12pt;">When faced with an Ethical Dilemma in the workplace, there are a few different approaches that can be taken. Read about these in the following presentation:</span></p>
-<p style="text-align: center;">&nbsp;&nbsp;</p>
-<div class="dp-embed-wrapper"><iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQuKAvI6wBTSUBipDmEikEXjIfjbqBkuZuTPAc8llnU5RqP1DjQ1xF8OK2qw-P020mPqVbymgWy_CtK/embed" width="672" height="400" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" loading="lazy"></iframe></div>
-</div>
-</div>
-<div class="dp-panel-group">
-<h3 class="dp-panel-heading">Privacy</h3>
-<div class="dp-panel-content">
-<p><span style="font-size: 14pt;"><strong>What is Privacy?</strong></span></p>
-<p><span style="font-size: 12pt;"><span>Privacy is a fundamental human right that underpins freedom of association, thought and expression, as well as freedom from discrimination.</span></span></p>
-<p>Generally speaking, privacy includes the right:</p>
+
+<p><strong>IP Australia:</strong> The government agency that administers IP rights and legislation.</p>
+<p>📚 <a href="https://www.ipaustralia.gov.au/understanding-ip/getting-started-ip/educational-materials-and-resources" target="_blank">More information and educational resources</a></p>
+
+<h3>Introduction to Copyright in Australia</h3>
 <ul>
-<li>to be free from interference and intrusion</li>
-<li>to associate freely with whom you want</li>
-<li>to be able to control who can see or use information about you</li>
+<li><strong>Copyright Act 1968 (Cth)</strong> regulates copyright in Australia</li>
+<li>Covers: original literary, dramatic, musical and artistic works</li>
+<li>Australian Copyright Council (ACC): not-for-profit organization promoting understanding of copyright law (established 1968)</li>
 </ul>
-<p>And there are different ways to look at privacy, such as:</p>
+
+<p><strong>Key Resources:</strong></p>
 <ul>
-<li>physical privacy (for instance, being frisked at airport security or giving a bodily sample for medical reasons)</li>
-<li>surveillance (where your identity can’t be proved or information isn’t recorded)</li>
-<li>information privacy (how your<span>&nbsp;</span><a href="https://www.oaic.gov.au/privacy/your-privacy-rights/your-personal-information/what-is-personal-information">personal information</a><span>&nbsp;</span>is handled)</li>
+<li>
+📄 <a href="$IMS-CC-FILEBASE$/Uploaded%20Media/Intro%20to%20Copyright%20in%20Australia.pdf?canvas_=1&amp;canvas_qs_wrap=1" target="_blank" data-canvas-previewable="false" data-api-endpoint="https://canvas.parra.catholic.edu.au/api/v1/courses/28148/files/3941919" data-api-returntype="File">Copyright Law Fact Sheet</a>
+<div style="margin-top: 10px; margin-bottom: 15px;">
+<label style="display: block; margin-bottom: 5px; font-weight: bold; color: #667eea;">📝 Your Summary:</label>
+<textarea class="summary-textarea" data-doc-title="Copyright Law Fact Sheet" data-section="Key Resources" placeholder="Write your summary of this document here..."></textarea>
+</div>
+</li>
+<li>🔗 <a href="https://www.copyright.org.au/search?page=1&amp;imprint=info" target="_blank">More ACC fact sheets</a></li>
 </ul>
-<p>Information privacy is about promoting the protection of information that says who we are, what we do and what we believe.</p>
-<p>The Privacy Act 1988 <span>covers how your personal information is handled by Australian Government agencies and any organisation with an annual turnover of more than $3 million, and&nbsp;</span><a href="https://www.oaic.gov.au/privacy/the-privacy-act/rights-and-responsibilities#WhoHasResponsibilitiesUnderPrivacyAct">some other organisations</a><span>.&nbsp;The Privacy Act doesn’t specifically cover surveillance but there are&nbsp;</span><a href="https://www.oaic.gov.au/privacy/your-privacy-rights/surveillance-and-monitoring">situations</a><span>&nbsp;where it may apply.&nbsp;</span></p>
-<p><span>The Australian Government department in charge of regulating the Privacy Act is the Office of the Australian Information Commissioner. Further information about Privacy in Australia can be found at their website below:</span></p>
-<p><a class="inline_disabled" href="https://www.oaic.gov.au/privacy" target="_blank"><span>https://www.oaic.gov.au/privacy</span></a></p>
-<p>&nbsp;</p>
-<p><em><strong>Important thing to note:</strong></em></p>
-<p><em><span>Your right to privacy isn’t absolute. Sometimes other concerns are given priority, such as the safety of you or others, or the interests of justice. But it’s important. That’s why strict rules apply in these situations.</span></em></p>
-<p>&nbsp;</p>
-<p><strong><span style="font-size: 14pt;">Privacy in Organisations</span></strong></p>
-<p>The Australian Privacy Principles (or APPs) are the cornerstone of the privacy protection framework in the<span>&nbsp;</span><a class="inline_disabled" href="https://www.legislation.gov.au/Series/C2004A03712" target="_blank">Privacy Act 1988</a><span>&nbsp;</span>(Privacy Act). They apply to any organisation or agency the Privacy Act<span>&nbsp;</span><a href="https://www.oaic.gov.au/privacy/the-privacy-act/rights-and-responsibilities#WhoHasResponsibilitiesUnderPrivacyAct">covers</a>.</p>
-<p>There are 13<span>&nbsp;</span><a href="https://www.oaic.gov.au/privacy/australian-privacy-principles/australian-privacy-principles-quick-reference">Australian Privacy Principles</a>&nbsp;and they govern standards, rights and obligations around:</p>
+
+<p><strong>Government Department:</strong> Department of Infrastructure, Transport, Regional Development and Communications</p>
+
+<div class="feedback info">
+<p><strong>⚠️ Important thing to note:</strong></p>
 <ul>
-<li>the<span>&nbsp;</span><a href="https://www.oaic.gov.au/privacy/your-privacy-rights/your-personal-information/collection-of-personal-information">collection</a>,<span>&nbsp;</span><a href="https://www.oaic.gov.au/privacy/your-privacy-rights/your-personal-information/use-and-disclosure-of-personal-information">use and disclosure</a><span>&nbsp;</span>of<span>&nbsp;</span><a href="https://www.oaic.gov.au/privacy/your-privacy-rights/your-personal-information/what-is-personal-information">personal information</a></li>
-<li>an organisation or agency’s governance and accountability</li>
-<li>integrity and<span>&nbsp;</span><a href="https://www.oaic.gov.au/privacy/your-privacy-rights/your-personal-information/correct-your-personal-information">correction</a><span>&nbsp;</span>of personal information</li>
-<li>the rights of individuals to<span>&nbsp;</span><a href="https://www.oaic.gov.au/privacy/your-privacy-rights/your-personal-information/access-your-personal-information">access</a><span>&nbsp;</span>their personal information</li>
+<li>Australian copyright law only applies within Australian borders</li>
+<li>Outside Australia: work is subject to that country's copyright laws</li>
+<li>International protection: Treaties like the Berne Convention and Universal Copyright Convention establish minimum legal requirements globally</li>
 </ul>
-<p>The Australian Privacy Principles&nbsp;are principles-based law. This gives an organisation or agency flexibility to tailor their personal information handling practices to their business models and the diverse needs of individuals. They are also technology neutral, which allows them to adapt to changing technologies.</p>
-<p>A breach of an Australian Privacy Principle&nbsp;is an ‘interference with the privacy of an individual’ and can lead to regulatory action and penalties.</p>
 </div>
 </div>
+
+<div id="ethics" class="tab-content">
+<h3>What is Ethics?</h3>
+<p><strong>Definition:</strong> Code of moral principles and values governing behavior.</p>
+
+<p><strong>Key Concepts:</strong></p>
+<ul>
+<li>Sets standards for what is right or wrong</li>
+<li>Guides good or bad conduct and decision making</li>
+<li>Ethical issues arise when actions may harm or benefit others</li>
+</ul>
+
+<h3>Ethical Theories and Approaches</h3>
+<p>When faced with an Ethical Dilemma in the workplace, there are a few different approaches that can be taken. Read about these in the following presentation:</p>
+<div class="video-container"><iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQuKAvI6wBTSUBipDmEikEXjIfjbqBkuZuTPAc8llnU5RqP1DjQ1xF8OK2qw-P020mPqVbymgWy_CtK/embed" width="672" height="400" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" loading="lazy"></iframe></div>
 </div>
+
+<div id="privacy" class="tab-content">
+<h3>What is Privacy?</h3>
+<p><strong>Privacy is a fundamental human right</strong> that underpins freedom of association, thought, expression, and protection from discrimination.</p>
+
+<p><strong>Privacy includes the right to:</strong></p>
+<ul>
+<li>Be free from interference and intrusion</li>
+<li>Associate freely with whom you want</li>
+<li>Control who can see or use information about you</li>
+</ul>
+
+<p><strong>Three types of privacy:</strong></p>
+<ul>
+<li><strong>Physical privacy:</strong> E.g., airport security checks, bodily samples for medical reasons</li>
+<li><strong>Surveillance:</strong> When identity can't be proved or information isn't recorded</li>
+<li><strong>Information privacy:</strong> How your <a href="https://www.oaic.gov.au/privacy/your-privacy-rights/your-personal-information/what-is-personal-information">personal information</a> is handled</li>
+</ul>
+
+<p><strong>What is Information Privacy?</strong></p>
+<ul>
+<li>Protects information about who we are, what we do, and what we believe</li>
+</ul>
+
+<p><strong>Privacy Act 1988:</strong></p>
+<ul>
+<li>Covers personal information handling by:
+<ul>
+<li>Australian Government agencies</li>
+<li>Organisations with annual turnover &gt; $3 million</li>
+<li><a href="https://www.oaic.gov.au/privacy/the-privacy-act/rights-and-responsibilities#WhoHasResponsibilitiesUnderPrivacyAct">Some other organisations</a></li>
+</ul>
+</li>
+<li>Doesn't specifically cover surveillance (but <a href="https://www.oaic.gov.au/privacy/your-privacy-rights/surveillance-and-monitoring">may apply in some situations</a>)</li>
+</ul>
+
+<p><strong>Regulator:</strong> Office of the Australian Information Commissioner (OAIC)</p>
+<p>🔗 <a href="https://www.oaic.gov.au/privacy" target="_blank">Learn more about privacy in Australia</a></p>
+
+<div class="feedback info">
+<p><strong>⚠️ Important thing to note:</strong></p>
+<ul>
+<li>Privacy rights are not absolute</li>
+<li>Sometimes other concerns take priority: safety, interests of justice</li>
+<li>Strict rules apply when privacy is limited</li>
+</ul>
 </div>
-<div class="dp-content-block kl_custom_block_sub_1">
-<p>&nbsp;</p>
+
+<h3>Privacy in Organisations</h3>
+<p><strong>Australian Privacy Principles (APPs):</strong> The cornerstone of privacy protection in the <a href="https://www.legislation.gov.au/Series/C2004A03712" target="_blank">Privacy Act 1988</a></p>
+
+<p><strong>Who must follow APPs?</strong> Any organisation or agency the Privacy Act <a href="https://www.oaic.gov.au/privacy/the-privacy-act/rights-and-responsibilities#WhoHasResponsibilitiesUnderPrivacyAct">covers</a></p>
+
+<p><strong>13 <a href="https://www.oaic.gov.au/privacy/australian-privacy-principles/australian-privacy-principles-quick-reference">Australian Privacy Principles</a> govern:</strong></p>
+<ul>
+<li><a href="https://www.oaic.gov.au/privacy/your-privacy-rights/your-personal-information/collection-of-personal-information">Collection</a>, <a href="https://www.oaic.gov.au/privacy/your-privacy-rights/your-personal-information/use-and-disclosure-of-personal-information">use and disclosure</a> of <a href="https://www.oaic.gov.au/privacy/your-privacy-rights/your-personal-information/what-is-personal-information">personal information</a></li>
+<li>Organisation/agency governance and accountability</li>
+<li>Integrity and <a href="https://www.oaic.gov.au/privacy/your-privacy-rights/your-personal-information/correct-your-personal-information">correction</a> of personal information</li>
+<li>Individual rights to <a href="https://www.oaic.gov.au/privacy/your-privacy-rights/your-personal-information/access-your-personal-information">access</a> their personal information</li>
+</ul>
+
+<p><strong>Why principles-based?</strong></p>
+<ul>
+<li>Flexible: organisations can tailor practices to their business models</li>
+<li>Technology neutral: adapts to changing technologies</li>
+<li>Accommodates diverse needs of individuals</li>
+</ul>
+
+<p><strong>Consequences:</strong> Breaching an APP = "interference with privacy" → regulatory action and penalties</p>
 </div>
-<p>&nbsp;</p>
+
+</div>
+
+<script>
+function openTab(evt, tabName) {
+    var i, tabcontent, tabbuttons;
+    
+    // Hide all tab content
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+    }
+    
+    // Remove active class from all buttons
+    tabbuttons = document.getElementsByClassName("tab-button");
+    for (i = 0; i < tabbuttons.length; i++) {
+        tabbuttons[i].classList.remove("active");
+    }
+    
+    // Show the current tab and add active class to the button
+    document.getElementById(tabName).classList.add("active");
+    evt.currentTarget.classList.add("active");
+}
+
+function downloadSummariesAsPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    
+    // Get current date
+    const today = new Date();
+    const dateString = today.toLocaleDateString('en-AU', { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+    });
+    
+    // PDF Title
+    doc.setFontSize(20);
+    doc.setTextColor(102, 126, 234); // #667eea
+    doc.text('Module 2: IP, Ethics and Privacy', 105, 20, { align: 'center' });
+    
+    doc.setFontSize(14);
+    doc.setTextColor(118, 75, 162); // #764ba2
+    doc.text('Document Summaries', 105, 30, { align: 'center' });
+    
+    doc.setFontSize(10);
+    doc.setTextColor(100, 100, 100);
+    doc.text('Date: ' + dateString, 105, 38, { align: 'center' });
+    
+    // Draw a line
+    doc.setDrawColor(102, 126, 234);
+    doc.setLineWidth(0.5);
+    doc.line(20, 42, 190, 42);
+    
+    let yPosition = 50;
+    let currentSection = '';
+    
+    // Get all summary textareas
+    const summaries = document.querySelectorAll('.summary-textarea');
+    let hasSummaries = false;
+    
+    summaries.forEach((textarea, index) => {
+        const content = textarea.value.trim();
+        if (content) {
+            hasSummaries = true;
+            const docTitle = textarea.getAttribute('data-doc-title');
+            const section = textarea.getAttribute('data-section');
+            
+            // Check if we need a new page
+            if (yPosition > 250) {
+                doc.addPage();
+                yPosition = 20;
+                currentSection = ''; // Reset section to print it again on new page
+            }
+            
+            // Print section header if it's a new section
+            if (section !== currentSection) {
+                if (index > 0) yPosition += 5;
+                doc.setFontSize(14);
+                doc.setTextColor(102, 126, 234);
+                doc.setFont(undefined, 'bold');
+                doc.text(section, 20, yPosition);
+                yPosition += 8;
+                currentSection = section;
+            }
+            
+            // Print document title
+            doc.setFontSize(12);
+            doc.setTextColor(0, 0, 0);
+            doc.setFont(undefined, 'bold');
+            doc.text(docTitle, 20, yPosition);
+            yPosition += 6;
+            
+            // Print summary content
+            doc.setFontSize(10);
+            doc.setFont(undefined, 'normal');
+            doc.setTextColor(50, 50, 50);
+            
+            // Split text to fit width
+            const splitText = doc.splitTextToSize(content, 170);
+            doc.text(splitText, 20, yPosition);
+            yPosition += (splitText.length * 5) + 8;
+        }
+    });
+    
+    if (!hasSummaries) {
+        doc.setFontSize(12);
+        doc.setTextColor(200, 0, 0);
+        doc.text('No summaries found. Please complete at least one summary before downloading.', 105, 60, { 
+            align: 'center',
+            maxWidth: 170 
+        });
+    }
+    
+    // Add footer
+    const pageCount = doc.internal.getNumberOfPages();
+    for (let i = 1; i <= pageCount; i++) {
+        doc.setPage(i);
+        doc.setFontSize(8);
+        doc.setTextColor(150, 150, 150);
+        doc.text('Page ' + i + ' of ' + pageCount, 105, 285, { align: 'center' });
+    }
+    
+    // Save the PDF
+    const filename = 'Module_2_Summaries_' + today.toISOString().split('T')[0] + '.pdf';
+    doc.save(filename);
+    
+    // Show success message
+    if (hasSummaries) {
+        alert('✅ Your summaries have been downloaded as: ' + filename);
+    }
+}
+</script>
+
 </div>
 </body>
 </html>
