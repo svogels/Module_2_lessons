@@ -11,7 +11,141 @@
 <!-- jsPDF library for PDF generation -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <style>
-    /* 1.5 line spacing for normal text */
+    /* 1.5 line spa<li>
+<a href="Fair Dealing - What can I use without permission_.pdf" target="_blank" style="font-weight: bold; font-size: 1.1em;">Fair dealing - what can I use without permission?</a>
+<div style="margin-top: 15px;">
+<button onclick="toggleSummaryBox('summary-fair-dealing')" style="padding: 10px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em; font-weight: bold; transition: all 0.3s ease;">
+📝 Start Summary
+</button>
+</div>
+
+<!-- Expandable Summary Box -->
+<div id="summary-fair-dealing" class="summary-box-expandable" style="display: none; margin-top: 15px; padding: 25px; background: #f8f9fa; border-radius: 12px; border: 2px solid #667eea;">
+    <h4 style="margin-top: 0; color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 10px;">📋 Interactive Reading Activities & Summary</h4>
+    
+    <p style="background: #fff3cd; padding: 12px; border-radius: 6px; margin-bottom: 20px; border-left: 4px solid #ffc107; font-size: 0.95em;">
+        <strong>💡 Instructions:</strong> Complete each activity below based on the PDF reading. Then use your learning to write a complete summary paragraph at the bottom.
+    </p>
+
+    <!-- Q1 - Fill in the Blank -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #007bff;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 10px;">
+            <span style="background: #007bff; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q1</span>
+            <span style="background: #cfe2ff; color: #084298; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Fill in the Blank</span>
+            Complete the sentence:
+        </label>
+        <p style="line-height: 2; font-size: 0.95em; margin-left: 10px;">
+            Fair dealing is an exception in copyright law that allows you to use copyrighted material without permission for specific purposes including 
+            <input type="text" class="question-answer" style="width: 150px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;">,
+            <input type="text" class="question-answer" style="width: 150px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;">,
+            and 
+            <input type="text" class="question-answer" style="width: 150px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;">.
+        </p>
+    </div>
+
+    <!-- Q2 - True/False -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #dc3545;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 10px;">
+            <span style="background: #dc3545; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q2</span>
+            <span style="background: #f8d7da; color: #842029; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">True/False + Explain</span>
+            Fair dealing means you can use any amount of copyrighted material as long as it's for research purposes.
+        </label>
+        <div style="margin: 15px 0 15px 20px;">
+            <label style="display: block; margin: 8px 0; cursor: pointer;">
+                <input type="radio" name="q2-fair-dealing" value="true" style="margin-right: 8px;">
+                <strong>True</strong>
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer;">
+                <input type="radio" name="q2-fair-dealing" value="false" style="margin-right: 8px;">
+                <strong>False</strong>
+            </label>
+        </div>
+        <label style="display: block; margin-top: 12px; font-weight: bold; color: #333; font-size: 0.95em;">Explain your answer:</label>
+        <textarea class="question-answer" rows="3" style="width: 100%; margin-top: 8px; padding: 10px; border: 2px solid #dc3545; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Why did you choose true or false? What are the limits of fair dealing?"></textarea>
+    </div>
+
+    <!-- Q3 - Multiple Choice -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #28a745;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 10px;">
+            <span style="background: #28a745; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q3</span>
+            <span style="background: #d4edda; color: #155724; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Multiple Choice</span>
+            Which factor is NOT considered when determining if a use is fair dealing?
+        </label>
+        <div style="margin-left: 20px;">
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q3-fair-dealing" value="a" style="margin-right: 8px;">
+                A) The purpose and character of the use
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q3-fair-dealing" value="b" style="margin-right: 8px;">
+                B) The amount and substantiality of the portion used
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q3-fair-dealing" value="c" style="margin-right: 8px;">
+                C) The popularity of the copyrighted work
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q3-fair-dealing" value="d" style="margin-right: 8px;">
+                D) The effect on the potential market for the work
+            </label>
+        </div>
+    </div>
+
+    <!-- Q4 - Short Answer List -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #fd7e14;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
+            <span style="background: #fd7e14; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q4</span>
+            <span style="background: #ffe5d0; color: #984c0c; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Short Answer</span>
+            List THREE key requirements that must be met when using copyrighted material under fair dealing:
+        </label>
+        <div style="margin-top: 10px;">
+            <div style="margin-bottom: 10px;">
+                <label style="display: block; margin-bottom: 3px; color: #666; font-size: 0.9em;">1.</label>
+                <input type="text" class="question-answer" style="width: 100%; padding: 8px; border: 2px solid #fd7e14; border-radius: 4px;" placeholder="First requirement">
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label style="display: block; margin-bottom: 3px; color: #666; font-size: 0.9em;">2.</label>
+                <input type="text" class="question-answer" style="width: 100%; padding: 8px; border: 2px solid #fd7e14; border-radius: 4px;" placeholder="Second requirement">
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label style="display: block; margin-bottom: 3px; color: #666; font-size: 0.9em;">3.</label>
+                <input type="text" class="question-answer" style="width: 100%; padding: 8px; border: 2px solid #fd7e14; border-radius: 4px;" placeholder="Third requirement">
+            </div>
+        </div>
+    </div>
+
+    <!-- Q5 - Scenario -->
+    <div style="margin-bottom: 25px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #17a2b8;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
+            <span style="background: #17a2b8; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q5</span>
+            <span style="background: #cff4fc; color: #055160; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Scenario</span>
+            Real-World Application
+        </label>
+        <div style="background: #e7f6f8; padding: 12px; border-radius: 6px; margin: 10px 0; border-left: 3px solid #17a2b8;">
+            <p style="margin: 0; font-style: italic;">
+                You're creating a review video for YouTube about a new movie. You want to include clips from the film to support your commentary and criticism.
+            </p>
+        </div>
+        <label style="display: block; margin-top: 10px; font-weight: bold; color: #333; font-size: 0.95em;">Could this be considered fair dealing? What factors would you need to consider?</label>
+        <textarea class="question-answer" rows="4" style="width: 100%; margin-top: 8px; padding: 10px; border: 2px solid #17a2b8; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Think about: purpose (criticism/review), amount used, effect on market, proper attribution..."></textarea>
+    </div>
+
+    <!-- Final Summary Section -->
+    <div style="margin-top: 30px; padding: 20px; background: #e8f4f8; border-radius: 8px; border: 3px solid #667eea;">
+        <label style="display: block; font-weight: bold; color: #667eea; margin-bottom: 10px; font-size: 1.1em;">
+            ✍️ Now write your summary paragraph using your answers above:
+        </label>
+        <textarea class="summary-textarea" data-doc-title="Fair dealing - what can I use without permission?" data-section="Readings" rows="8" style="width: 100%; padding: 15px; border: 2px solid #667eea; border-radius: 6px; font-size: 1em; resize: vertical;" placeholder="Use your answers to write a comprehensive summary about fair dealing exceptions and when you can use copyrighted material without permission..."></textarea>
+        <p style="margin-top: 10px; color: #666; font-size: 0.9em; font-style: italic;">💡 Tip: Include the purposes, requirements, and limitations of fair dealing.</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <button onclick="toggleSummaryBox('summary-fair-dealing')" style="padding: 10px 25px; background: #6c757d; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em;">
+            ✅ Close Summary Section
+        </button>
+    </div>
+</div>
+</li>r normal text */
     p, li, ul, ol {
         line-height: 1.5;
     }
@@ -288,17 +422,259 @@
 </div>
 </li>
 <li>
-<a href="Education - Copyright Basics.pdf" target="_blank">Education - Copyright Basics</a>
-<div style="margin-top: 10px; margin-bottom: 15px;">
-<label style="display: block; margin-bottom: 5px; font-weight: bold; color: #667eea;">📝 Your Summary:</label>
-<textarea class="summary-textarea" data-doc-title="Education - Copyright Basics" data-section="Readings" placeholder="Write your summary of this document here..."></textarea>
+<a href="Education - Copyright Basics.pdf" target="_blank" style="font-weight: bold; font-size: 1.1em;">Education - Copyright Basics</a>
+<div style="margin-top: 15px;">
+<button onclick="toggleSummaryBox('summary-education-basics')" style="padding: 10px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em; font-weight: bold; transition: all 0.3s ease;">
+📝 Start Summary
+</button>
+</div>
+
+<!-- Expandable Summary Box -->
+<div id="summary-education-basics" class="summary-box-expandable" style="display: none; margin-top: 15px; padding: 25px; background: #f8f9fa; border-radius: 12px; border: 2px solid #667eea;">
+    <h4 style="margin-top: 0; color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 10px;">📋 Interactive Reading Activities & Summary</h4>
+    
+    <p style="background: #fff3cd; padding: 12px; border-radius: 6px; margin-bottom: 20px; border-left: 4px solid #ffc107; font-size: 0.95em;">
+        <strong>💡 Instructions:</strong> Complete each activity below based on the PDF reading. Then use your learning to write a complete summary paragraph at the bottom.
+    </p>
+
+    <!-- Q1 - True/False -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #dc3545;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 10px;">
+            <span style="background: #dc3545; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q1</span>
+            <span style="background: #f8d7da; color: #842029; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">True/False</span>
+            Educational use automatically allows you to copy any material without permission.
+        </label>
+        <div style="margin-left: 20px; margin-top: 10px;">
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q1-edu-basics" value="true" style="margin-right: 8px;">
+                True
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q1-edu-basics" value="false" style="margin-right: 8px;">
+                False
+            </label>
+        </div>
+        <label style="display: block; margin-top: 15px; font-weight: bold; color: #333; font-size: 0.95em;">Explain your answer:</label>
+        <textarea class="question-answer" rows="3" style="width: 100%; margin-top: 8px; padding: 10px; border: 2px solid #dc3545; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="What are the limitations and conditions for educational use?"></textarea>
+    </div>
+
+    <!-- Q2 - Multiple Choice -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #28a745;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 10px;">
+            <span style="background: #28a745; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q2</span>
+            <span style="background: #d4edda; color: #155724; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Multiple Choice</span>
+            Under educational statutory licences, how much of a work can typically be copied?
+        </label>
+        <div style="margin-left: 20px;">
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q2-edu-basics" value="a" style="margin-right: 8px;">
+                A) The entire work without restrictions
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q2-edu-basics" value="b" style="margin-right: 8px;">
+                B) 10% or one chapter (whichever is greater)
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q2-edu-basics" value="c" style="margin-right: 8px;">
+                C) Only the title and author
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q2-edu-basics" value="d" style="margin-right: 8px;">
+                D) One sentence per page
+            </label>
+        </div>
+    </div>
+
+    <!-- Q3 - Short Answer List -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #fd7e14;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
+            <span style="background: #fd7e14; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q3</span>
+            <span style="background: #ffe5d0; color: #984c0c; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Short Answer</span>
+            List THREE purposes that qualify as "fair dealing" in education:
+        </label>
+        <div style="margin-left: 20px; margin-top: 10px;">
+            <div style="margin-bottom: 10px;">
+                <label style="font-size: 0.9em; color: #666;">1.</label>
+                <input type="text" class="question-answer" style="width: calc(100% - 30px); margin-left: 10px; padding: 8px; border: 2px solid #fd7e14; border-radius: 4px;" placeholder="e.g., research, study...">
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label style="font-size: 0.9em; color: #666;">2.</label>
+                <input type="text" class="question-answer" style="width: calc(100% - 30px); margin-left: 10px; padding: 8px; border: 2px solid #fd7e14; border-radius: 4px;" placeholder="e.g., research, study...">
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label style="font-size: 0.9em; color: #666;">3.</label>
+                <input type="text" class="question-answer" style="width: calc(100% - 30px); margin-left: 10px; padding: 8px; border: 2px solid #fd7e14; border-radius: 4px;" placeholder="e.g., research, study...">
+            </div>
+        </div>
+    </div>
+
+    <!-- Q4 - Fill in the Blank -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #007bff;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 10px;">
+            <span style="background: #007bff; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q4</span>
+            <span style="background: #cfe2ff; color: #084298; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Fill in the Blank</span>
+            Complete the sentence:
+        </label>
+        <p style="margin: 10px 0; line-height: 2; font-size: 1em;">
+            Educational institutions in Australia must pay 
+            <input type="text" class="question-answer" style="width: 150px; padding: 5px 10px; border: 2px solid #007bff; border-radius: 4px; font-size: 1em; text-align: center;" placeholder="?">
+            to Copyright Agency for statutory licences.
+        </p>
+    </div>
+
+    <!-- Q5 - Scenario -->
+    <div style="margin-bottom: 25px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #17a2b8;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
+            <span style="background: #17a2b8; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q5</span>
+            <span style="background: #cff4fc; color: #055160; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Scenario</span>
+            Real-World Application
+        </label>
+        <div style="background: #e7f6f8; padding: 12px; border-radius: 6px; margin: 10px 0; border-left: 3px solid #17a2b8;">
+            <p style="margin: 0; font-style: italic;">
+                Your teacher wants to photocopy 3 chapters from a textbook (the book has 12 chapters) to distribute to the class for a research project.
+            </p>
+        </div>
+        <label style="display: block; margin-top: 10px; font-weight: bold; color: #333; font-size: 0.95em;">Is this allowed under educational copyright rules? Why or why not?</label>
+        <textarea class="question-answer" rows="4" style="width: 100%; margin-top: 8px; padding: 10px; border: 2px solid #17a2b8; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Consider the 10% rule and educational statutory licences..."></textarea>
+    </div>
+
+    <!-- Final Summary Section -->
+    <div style="margin-top: 30px; padding: 20px; background: #e8f4f8; border-radius: 8px; border: 3px solid #667eea;">
+        <label style="display: block; font-weight: bold; color: #667eea; margin-bottom: 10px; font-size: 1.1em;">
+            ✍️ Now write your summary paragraph using your answers above:
+        </label>
+        <textarea class="summary-textarea" data-doc-title="Education - Copyright Basics" data-section="Readings" rows="8" style="width: 100%; padding: 15px; border: 2px solid #667eea; border-radius: 6px; font-size: 1em; resize: vertical;" placeholder="Use your answers to write a comprehensive summary about copyright basics in education. Include fair dealing, statutory licences, and the rules for educational copying..."></textarea>
+        <p style="margin-top: 10px; color: #666; font-size: 0.9em; font-style: italic;">💡 Tip: Start with a topic sentence, include the key points from your answers, and finish with a concluding sentence.</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <button onclick="toggleSummaryBox('summary-education-basics')" style="padding: 10px 25px; background: #6c757d; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em;">
+            ✅ Close Summary Section
+        </button>
+    </div>
 </div>
 </li>
 <li>
-<a href="Permission - Do I Need It_.pdf" target="_blank">Permission - Do I need it?</a>
-<div style="margin-top: 10px; margin-bottom: 15px;">
-<label style="display: block; margin-bottom: 5px; font-weight: bold; color: #667eea;">📝 Your Summary:</label>
-<textarea class="summary-textarea" data-doc-title="Permission - Do I need it?" data-section="Readings" placeholder="Write your summary of this document here..."></textarea>
+<a href="Permission - Do I Need It_.pdf" target="_blank" style="font-weight: bold; font-size: 1.1em;">Permission - Do I need it?</a>
+<div style="margin-top: 15px;">
+<button onclick="toggleSummaryBox('summary-permission')" style="padding: 10px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em; font-weight: bold; transition: all 0.3s ease;">
+📝 Start Summary
+</button>
+</div>
+
+<!-- Expandable Summary Box -->
+<div id="summary-permission" class="summary-box-expandable" style="display: none; margin-top: 15px; padding: 25px; background: #f8f9fa; border-radius: 12px; border: 2px solid #667eea;">
+    <h4 style="margin-top: 0; color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 10px;">📋 Interactive Reading Activities & Summary</h4>
+    
+    <p style="background: #fff3cd; padding: 12px; border-radius: 6px; margin-bottom: 20px; border-left: 4px solid #ffc107; font-size: 0.95em;">
+        <strong>💡 Instructions:</strong> Complete each activity below based on the PDF reading. Then use your learning to write a complete summary paragraph at the bottom.
+    </p>
+
+    <!-- Q1 - Multiple Choice -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #28a745;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 10px;">
+            <span style="background: #28a745; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q1</span>
+            <span style="background: #d4edda; color: #155724; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Multiple Choice</span>
+            When do you typically need permission to use copyrighted material?
+        </label>
+        <div style="margin-left: 20px;">
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q1-permission" value="a" style="margin-right: 8px;">
+                A) Only when using the material commercially
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q1-permission" value="b" style="margin-right: 8px;">
+                B) When your use doesn't fall under an exception (like fair dealing)
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q1-permission" value="c" style="margin-right: 8px;">
+                C) Never - everything online is free to use
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q1-permission" value="d" style="margin-right: 8px;">
+                D) Only for videos and music, not text or images
+            </label>
+        </div>
+    </div>
+
+    <!-- Q2 - Matching -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #6f42c1;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 10px;">
+            <span style="background: #6f42c1; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q2</span>
+            <span style="background: #e0cffc; color: #432874; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Matching</span>
+            Match each situation to whether permission is needed:
+        </label>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px;">
+            <div>
+                <p style="font-weight: bold; margin-bottom: 10px; color: #6f42c1;">Situations:</p>
+                <div style="background: #f8f9fa; padding: 8px; border-radius: 4px; margin-bottom: 5px; font-size: 0.9em;">1. Quoting 50 words for a school essay</div>
+                <div style="background: #f8f9fa; padding: 8px; border-radius: 4px; margin-bottom: 5px; font-size: 0.9em;">2. Uploading a full song to YouTube</div>
+                <div style="background: #f8f9fa; padding: 8px; border-radius: 4px; margin-bottom: 5px; font-size: 0.9em;">3. Using a Creative Commons image</div>
+            </div>
+            <div>
+                <p style="font-weight: bold; margin-bottom: 10px; color: #6f42c1;">Your Matches:</p>
+                <div style="margin-bottom: 8px;">
+                    <label style="font-size: 0.9em; display: block; margin-bottom: 3px;">1 = </label>
+                    <input type="text" class="question-answer" style="width: 100%; padding: 5px; border: 2px solid #6f42c1; border-radius: 4px;" placeholder="Enter letter (A-C)">
+                </div>
+                <div style="margin-bottom: 8px;">
+                    <label style="font-size: 0.9em; display: block; margin-bottom: 3px;">2 = </label>
+                    <input type="text" class="question-answer" style="width: 100%; padding: 5px; border: 2px solid #6f42c1; border-radius: 4px;" placeholder="Enter letter (A-C)">
+                </div>
+                <div style="margin-bottom: 8px;">
+                    <label style="font-size: 0.9em; display: block; margin-bottom: 3px;">3 = </label>
+                    <input type="text" class="question-answer" style="width: 100%; padding: 5px; border: 2px solid #6f42c1; border-radius: 4px;" placeholder="Enter letter (A-C)">
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 15px; padding: 12px; background: #f0f0f0; border-radius: 4px;">
+            <p style="font-weight: bold; margin-bottom: 8px; color: #6f42c1;">Options:</p>
+            <p style="margin: 5px 0; font-size: 0.9em;"><strong>A)</strong> No permission needed (covered by fair dealing or exception)</p>
+            <p style="margin: 5px 0; font-size: 0.9em;"><strong>B)</strong> Permission definitely needed</p>
+            <p style="margin: 5px 0; font-size: 0.9em;"><strong>C)</strong> Check the licence terms first</p>
+        </div>
+    </div>
+
+    <!-- Q3 - Short Answer -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #fd7e14;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
+            <span style="background: #fd7e14; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q3</span>
+            <span style="background: #ffe5d0; color: #984c0c; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Short Answer</span>
+            Who should you contact to ask for permission to use copyrighted material?
+        </label>
+        <textarea class="question-answer" rows="3" style="width: 100%; margin-top: 8px; padding: 10px; border: 2px solid #fd7e14; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Think about copyright owners, publishers, licensing organizations..."></textarea>
+    </div>
+
+    <!-- Q4 - Scenario -->
+    <div style="margin-bottom: 25px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #17a2b8;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
+            <span style="background: #17a2b8; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q4</span>
+            <span style="background: #cff4fc; color: #055160; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Scenario</span>
+            Real-World Application
+        </label>
+        <div style="background: #e7f6f8; padding: 12px; border-radius: 6px; margin: 10px 0; border-left: 3px solid #17a2b8;">
+            <p style="margin: 0; font-style: italic;">
+                You find the perfect image for your blog post. There's no copyright notice on the webpage, but you're not sure if you can use it.
+            </p>
+        </div>
+        <label style="display: block; margin-top: 10px; font-weight: bold; color: #333; font-size: 0.95em;">What should you do? What are your options?</label>
+        <textarea class="question-answer" rows="4" style="width: 100%; margin-top: 8px; padding: 10px; border: 2px solid #17a2b8; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Consider: seeking permission, finding alternatives, assuming copyright exists..."></textarea>
+    </div>
+
+    <!-- Final Summary Section -->
+    <div style="margin-top: 30px; padding: 20px; background: #e8f4f8; border-radius: 8px; border: 3px solid #667eea;">
+        <label style="display: block; font-weight: bold; color: #667eea; margin-bottom: 10px; font-size: 1.1em;">
+            ✍️ Now write your summary paragraph using your answers above:
+        </label>
+        <textarea class="summary-textarea" data-doc-title="Permission - Do I need it?" data-section="Readings" rows="8" style="width: 100%; padding: 15px; border: 2px solid #667eea; border-radius: 6px; font-size: 1em; resize: vertical;" placeholder="Use your answers to write a comprehensive summary about when permission is needed to use copyrighted material and how to obtain it..."></textarea>
+        <p style="margin-top: 10px; color: #666; font-size: 0.9em; font-style: italic;">💡 Tip: Start with a topic sentence, include the key points from your answers, and finish with a concluding sentence.</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <button onclick="toggleSummaryBox('summary-permission')" style="padding: 10px 25px; background: #6c757d; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em;">
+            ✅ Close Summary Section
+        </button>
+    </div>
 </div>
 </li>
 <li>
@@ -309,10 +685,136 @@
 </div>
 </li>
 <li>
-<a href="Infringement offences and penalties.pdf" target="_blank">Infringement offences and penalties</a>
-<div style="margin-top: 10px; margin-bottom: 15px;">
-<label style="display: block; margin-bottom: 5px; font-weight: bold; color: #667eea;">📝 Your Summary:</label>
-<textarea class="summary-textarea" data-doc-title="Infringement offences and penalties" data-section="Readings" placeholder="Write your summary of this document here..."></textarea>
+<a href="Infringement offences and penalties.pdf" target="_blank" style="font-weight: bold; font-size: 1.1em;">Infringement offences and penalties</a>
+<div style="margin-top: 15px;">
+<button onclick="toggleSummaryBox('summary-infringement')" style="padding: 10px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em; font-weight: bold; transition: all 0.3s ease;">
+📝 Start Summary
+</button>
+</div>
+
+<!-- Expandable Summary Box -->
+<div id="summary-infringement" class="summary-box-expandable" style="display: none; margin-top: 15px; padding: 25px; background: #f8f9fa; border-radius: 12px; border: 2px solid #667eea;">
+    <h4 style="margin-top: 0; color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 10px;">📋 Interactive Reading Activities & Summary</h4>
+    
+    <p style="background: #fff3cd; padding: 12px; border-radius: 6px; margin-bottom: 20px; border-left: 4px solid #ffc107; font-size: 0.95em;">
+        <strong>💡 Instructions:</strong> Complete each activity below based on the PDF reading. Then use your learning to write a complete summary paragraph at the bottom.
+    </p>
+
+    <!-- Q1 - Multiple Choice -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #28a745;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 10px;">
+            <span style="background: #28a745; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q1</span>
+            <span style="background: #d4edda; color: #155724; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Multiple Choice</span>
+            What is copyright infringement?
+        </label>
+        <div style="margin-left: 20px;">
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q1-infringement" value="a" style="margin-right: 8px;">
+                A) Using copyrighted material in any way
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q1-infringement" value="b" style="margin-right: 8px;">
+                B) Using someone's exclusive rights without permission or a legal exception
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q1-infringement" value="c" style="margin-right: 8px;">
+                C) Only applies to commercial use of content
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q1-infringement" value="d" style="margin-right: 8px;">
+                D) Creating similar but not identical content
+            </label>
+        </div>
+    </div>
+
+    <!-- Q2 - Fill in the Blank -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #007bff;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 10px;">
+            <span style="background: #007bff; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q2</span>
+            <span style="background: #cfe2ff; color: #084298; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Fill in the Blank</span>
+            Complete the sentence:
+        </label>
+        <p style="line-height: 2; font-size: 0.95em; margin-left: 10px;">
+            Copyright infringement penalties can include both 
+            <input type="text" class="question-answer" style="width: 120px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;"> remedies (such as damages and injunctions) and 
+            <input type="text" class="question-answer" style="width: 120px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;"> penalties for serious cases.
+        </p>
+    </div>
+
+    <!-- Q3 - Short Answer List -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #fd7e14;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
+            <span style="background: #fd7e14; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q3</span>
+            <span style="background: #ffe5d0; color: #984c0c; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Short Answer</span>
+            List THREE examples of actions that could be considered copyright infringement:
+        </label>
+        <div style="margin-top: 10px;">
+            <div style="margin-bottom: 10px;">
+                <label style="display: block; margin-bottom: 3px; color: #666; font-size: 0.9em;">1.</label>
+                <input type="text" class="question-answer" style="width: 100%; padding: 8px; border: 2px solid #fd7e14; border-radius: 4px;" placeholder="First example of infringement">
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label style="display: block; margin-bottom: 3px; color: #666; font-size: 0.9em;">2.</label>
+                <input type="text" class="question-answer" style="width: 100%; padding: 8px; border: 2px solid #fd7e14; border-radius: 4px;" placeholder="Second example of infringement">
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label style="display: block; margin-bottom: 3px; color: #666; font-size: 0.9em;">3.</label>
+                <input type="text" class="question-answer" style="width: 100%; padding: 8px; border: 2px solid #fd7e14; border-radius: 4px;" placeholder="Third example of infringement">
+            </div>
+        </div>
+    </div>
+
+    <!-- Q4 - True/False -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #dc3545;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 10px;">
+            <span style="background: #dc3545; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q4</span>
+            <span style="background: #f8d7da; color: #842029; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">True/False + Explain</span>
+            You can only be penalized for copyright infringement if you're making money from the copyrighted material.
+        </label>
+        <div style="margin: 15px 0 15px 20px;">
+            <label style="display: block; margin: 8px 0; cursor: pointer;">
+                <input type="radio" name="q4-infringement" value="true" style="margin-right: 8px;">
+                <strong>True</strong>
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer;">
+                <input type="radio" name="q4-infringement" value="false" style="margin-right: 8px;">
+                <strong>False</strong>
+            </label>
+        </div>
+        <label style="display: block; margin-top: 12px; font-weight: bold; color: #333; font-size: 0.95em;">Explain your answer:</label>
+        <textarea class="question-answer" rows="3" style="width: 100%; margin-top: 8px; padding: 10px; border: 2px solid #dc3545; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Explain whether commercial use is required for infringement..."></textarea>
+    </div>
+
+    <!-- Q5 - Scenario -->
+    <div style="margin-bottom: 25px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #17a2b8;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
+            <span style="background: #17a2b8; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q5</span>
+            <span style="background: #cff4fc; color: #055160; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Scenario</span>
+            Real-World Application
+        </label>
+        <div style="background: #e7f6f8; padding: 12px; border-radius: 6px; margin: 10px 0; border-left: 3px solid #17a2b8;">
+            <p style="margin: 0; font-style: italic;">
+                Your friend downloads the latest Marvel movie from a torrent site and shares it with you on a USB drive. You watch it at home.
+            </p>
+        </div>
+        <label style="display: block; margin-top: 10px; font-weight: bold; color: #333; font-size: 0.95em;">Who could face copyright infringement penalties in this scenario? What are the potential consequences?</label>
+        <textarea class="question-answer" rows="4" style="width: 100%; margin-top: 8px; padding: 10px; border: 2px solid #17a2b8; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Consider: downloading, distributing, receiving, watching. Who's liable? What are the penalties?"></textarea>
+    </div>
+
+    <!-- Final Summary Section -->
+    <div style="margin-top: 30px; padding: 20px; background: #e8f4f8; border-radius: 8px; border: 3px solid #667eea;">
+        <label style="display: block; font-weight: bold; color: #667eea; margin-bottom: 10px; font-size: 1.1em;">
+            ✍️ Now write your summary paragraph using your answers above:
+        </label>
+        <textarea class="summary-textarea" data-doc-title="Infringement offences and penalties" data-section="Readings" rows="8" style="width: 100%; padding: 15px; border: 2px solid #667eea; border-radius: 6px; font-size: 1em; resize: vertical;" placeholder="Use your answers to write a comprehensive summary about copyright infringement, what constitutes infringement, and potential penalties..."></textarea>
+        <p style="margin-top: 10px; color: #666; font-size: 0.9em; font-style: italic;">💡 Tip: Explain what infringement is, provide examples, and describe the legal consequences.</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <button onclick="toggleSummaryBox('summary-infringement')" style="padding: 10px 25px; background: #6c757d; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em;">
+            ✅ Close Summary Section
+        </button>
+    </div>
 </div>
 </li>
 </ol>
@@ -320,24 +822,406 @@
 <h3>Articles</h3>
 <ol>
 <li>
-<a href="Copyright issues about using the internet and downloading.pdf" target="_blank">Copyright Fair use and how it works with online images</a>
-<div style="margin-top: 10px; margin-bottom: 15px;">
-<label style="display: block; margin-bottom: 5px; font-weight: bold; color: #667eea;">📝 Your Summary:</label>
-<textarea class="summary-textarea" data-doc-title="Copyright Fair use and how it works with online images" data-section="Articles" placeholder="Write your summary of this document here..."></textarea>
+<a href="Copyright issues about using the internet and downloading.pdf" target="_blank" style="font-weight: bold; font-size: 1.1em;">Copyright Fair use and how it works with online images</a>
+<div style="margin-top: 15px;">
+<button onclick="toggleSummaryBox('summary-internet-copyright')" style="padding: 10px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em; font-weight: bold; transition: all 0.3s ease;">
+📝 Start Summary
+</button>
+</div>
+
+<!-- Expandable Summary Box -->
+<div id="summary-internet-copyright" class="summary-box-expandable" style="display: none; margin-top: 15px; padding: 25px; background: #f8f9fa; border-radius: 12px; border: 2px solid #667eea;">
+    <h4 style="margin-top: 0; color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 10px;">📋 Interactive Reading Activities & Summary</h4>
+    
+    <p style="background: #fff3cd; padding: 12px; border-radius: 6px; margin-bottom: 20px; border-left: 4px solid #ffc107; font-size: 0.95em;">
+        <strong>💡 Instructions:</strong> Complete each activity below based on the PDF reading. Then use your learning to write a complete summary paragraph at the bottom.
+    </p>
+
+    <!-- Q1 - True/False -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #dc3545;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 10px;">
+            <span style="background: #dc3545; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q1</span>
+            <span style="background: #f8d7da; color: #842029; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">True/False + Explain</span>
+            Content on the internet is in the public domain and free to use without permission.
+        </label>
+        <div style="margin: 15px 0 15px 20px;">
+            <label style="display: block; margin: 8px 0; cursor: pointer;">
+                <input type="radio" name="q1-internet" value="true" style="margin-right: 8px;">
+                <strong>True</strong>
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer;">
+                <input type="radio" name="q1-internet" value="false" style="margin-right: 8px;">
+                <strong>False</strong>
+            </label>
+        </div>
+        <label style="display: block; margin-top: 12px; font-weight: bold; color: #333; font-size: 0.95em;">Explain your answer:</label>
+        <textarea class="question-answer" rows="3" style="width: 100%; margin-top: 8px; padding: 10px; border: 2px solid #dc3545; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Explain the copyright status of online content..."></textarea>
+    </div>
+
+    <!-- Q2 - Multiple Choice -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #28a745;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 10px;">
+            <span style="background: #28a745; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q2</span>
+            <span style="background: #d4edda; color: #155724; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Multiple Choice</span>
+            Which of the following is the SAFEST approach when using images found online?
+        </label>
+        <div style="margin-left: 20px;">
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q2-internet" value="a" style="margin-right: 8px;">
+                A) Download and use any image - if it's online, it's fair game
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q2-internet" value="b" style="margin-right: 8px;">
+                B) Use images from Creative Commons or obtain permission
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q2-internet" value="c" style="margin-right: 8px;">
+                C) Remove the watermark to avoid copyright issues
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q2-internet" value="d" style="margin-right: 8px;">
+                D) Only use images from social media posts
+            </label>
+        </div>
+    </div>
+
+    <!-- Q3 - Short Answer List -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #fd7e14;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
+            <span style="background: #fd7e14; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q3</span>
+            <span style="background: #ffe5d0; color: #984c0c; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Short Answer</span>
+            List THREE safe sources for finding images you can legally use online:
+        </label>
+        <div style="margin-top: 10px;">
+            <div style="margin-bottom: 10px;">
+                <label style="display: block; margin-bottom: 3px; color: #666; font-size: 0.9em;">1.</label>
+                <input type="text" class="question-answer" style="width: 100%; padding: 8px; border: 2px solid #fd7e14; border-radius: 4px;" placeholder="First safe source">
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label style="display: block; margin-bottom: 3px; color: #666; font-size: 0.9em;">2.</label>
+                <input type="text" class="question-answer" style="width: 100%; padding: 8px; border: 2px solid #fd7e14; border-radius: 4px;" placeholder="Second safe source">
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label style="display: block; margin-bottom: 3px; color: #666; font-size: 0.9em;">3.</label>
+                <input type="text" class="question-answer" style="width: 100%; padding: 8px; border: 2px solid #fd7e14; border-radius: 4px;" placeholder="Third safe source">
+            </div>
+        </div>
+    </div>
+
+    <!-- Q4 - Fill in the Blank -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #007bff;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 10px;">
+            <span style="background: #007bff; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q4</span>
+            <span style="background: #cfe2ff; color: #084298; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Fill in the Blank</span>
+            Complete the sentence:
+        </label>
+        <p style="line-height: 2; font-size: 0.95em; margin-left: 10px;">
+            When downloading music or videos from file-sharing sites, both the 
+            <input type="text" class="question-answer" style="width: 120px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;"> and the 
+            <input type="text" class="question-answer" style="width: 120px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;"> of copyrighted files can face legal consequences.
+        </p>
+    </div>
+
+    <!-- Q5 - Scenario -->
+    <div style="margin-bottom: 25px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #17a2b8;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
+            <span style="background: #17a2b8; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q5</span>
+            <span style="background: #cff4fc; color: #055160; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Scenario</span>
+            Real-World Application
+        </label>
+        <div style="background: #e7f6f8; padding: 12px; border-radius: 6px; margin: 10px 0; border-left: 3px solid #17a2b8;">
+            <p style="margin: 0; font-style: italic;">
+                You want to add some professional photos to your website. You find amazing images on Google Images with no visible copyright notice.
+            </p>
+        </div>
+        <label style="display: block; margin-top: 10px; font-weight: bold; color: #333; font-size: 0.95em;">What steps should you take before using these images? What alternatives could you consider?</label>
+        <textarea class="question-answer" rows="4" style="width: 100%; margin-top: 8px; padding: 10px; border: 2px solid #17a2b8; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Consider: reverse image search, checking metadata, seeking permission, using stock photo sites, Creative Commons..."></textarea>
+    </div>
+
+    <!-- Final Summary Section -->
+    <div style="margin-top: 30px; padding: 20px; background: #e8f4f8; border-radius: 8px; border: 3px solid #667eea;">
+        <label style="display: block; font-weight: bold; color: #667eea; margin-bottom: 10px; font-size: 1.1em;">
+            ✍️ Now write your summary paragraph using your answers above:
+        </label>
+        <textarea class="summary-textarea" data-doc-title="Copyright Fair use and how it works with online images" data-section="Articles" rows="8" style="width: 100%; padding: 15px; border: 2px solid #667eea; border-radius: 6px; font-size: 1em; resize: vertical;" placeholder="Use your answers to write a comprehensive summary about copyright issues when downloading from the internet and using online images..."></textarea>
+        <p style="margin-top: 10px; color: #666; font-size: 0.9em; font-style: italic;">💡 Tip: Explain the common misconception about internet content and how to legally use online resources.</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <button onclick="toggleSummaryBox('summary-internet-copyright')" style="padding: 10px 25px; background: #6c757d; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em;">
+            ✅ Close Summary Section
+        </button>
+    </div>
 </div>
 </li>
 <li>
-<a href="https://www.artslaw.com.au/legal/raw-law/how-do-you-protect-your-work-on-the-internet/">How do you protect your work on the internet</a>
-<div style="margin-top: 10px; margin-bottom: 15px;">
-<label style="display: block; margin-bottom: 5px; font-weight: bold; color: #667eea;">📝 Your Summary:</label>
-<textarea class="summary-textarea" data-doc-title="How do you protect your work on the internet" data-section="Articles" placeholder="Write your summary of this document here..."></textarea>
+<a href="https://www.artslaw.com.au/legal/raw-law/how-do-you-protect-your-work-on-the-internet/" target="_blank" style="font-weight: bold; font-size: 1.1em;">How do you protect your work on the internet</a>
+<div style="margin-top: 15px;">
+<button onclick="toggleSummaryBox('summary-protect-work')" style="padding: 10px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em; font-weight: bold; transition: all 0.3s ease;">
+📝 Start Summary
+</button>
+</div>
+
+<!-- Expandable Summary Box -->
+<div id="summary-protect-work" class="summary-box-expandable" style="display: none; margin-top: 15px; padding: 25px; background: #f8f9fa; border-radius: 12px; border: 2px solid #667eea;">
+    <h4 style="margin-top: 0; color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 10px;">📋 Interactive Reading Activities & Summary</h4>
+    
+    <p style="background: #fff3cd; padding: 12px; border-radius: 6px; margin-bottom: 20px; border-left: 4px solid #ffc107; font-size: 0.95em;">
+        <strong>💡 Instructions:</strong> Complete each activity below based on the article. Then use your learning to write a complete summary paragraph at the bottom.
+    </p>
+
+    <!-- Q1 - Multiple Choice -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #28a745;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 10px;">
+            <span style="background: #28a745; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q1</span>
+            <span style="background: #d4edda; color: #155724; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Multiple Choice</span>
+            What is the BEST way to protect your creative work when posting it online?
+        </label>
+        <div style="margin-left: 20px;">
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q1-protect" value="a" style="margin-right: 8px;">
+                A) Never post anything online to avoid theft
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q1-protect" value="b" style="margin-right: 8px;">
+                B) Use watermarks, copyright notices, and metadata
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q1-protect" value="c" style="margin-right: 8px;">
+                C) Only post low-quality versions
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q1-protect" value="d" style="margin-right: 8px;">
+                D) Hide your name so people can't copy it
+            </label>
+        </div>
+    </div>
+
+    <!-- Q2 - Matching -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #6f42c1;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 10px;">
+            <span style="background: #6f42c1; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q2</span>
+            <span style="background: #e0cffc; color: #432874; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Matching</span>
+            Match each protection method to its purpose:
+        </label>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px;">
+            <div>
+                <p style="font-weight: bold; margin-bottom: 10px; color: #6f42c1;">Protection Methods:</p>
+                <div style="background: #f8f9fa; padding: 8px; border-radius: 4px; margin-bottom: 5px; font-size: 0.9em;">1. Copyright notice (©)</div>
+                <div style="background: #f8f9fa; padding: 8px; border-radius: 4px; margin-bottom: 5px; font-size: 0.9em;">2. Watermark</div>
+                <div style="background: #f8f9fa; padding: 8px; border-radius: 4px; margin-bottom: 5px; font-size: 0.9em;">3. Creative Commons licence</div>
+            </div>
+            <div>
+                <p style="font-weight: bold; margin-bottom: 10px; color: #6f42c1;">Your Matches:</p>
+                <div style="margin-bottom: 8px;">
+                    <label style="font-size: 0.9em; display: block; margin-bottom: 3px;">1 = </label>
+                    <input type="text" class="question-answer" style="width: 100%; padding: 5px; border: 2px solid #6f42c1; border-radius: 4px;" placeholder="Enter letter (A-C)">
+                </div>
+                <div style="margin-bottom: 8px;">
+                    <label style="font-size: 0.9em; display: block; margin-bottom: 3px;">2 = </label>
+                    <input type="text" class="question-answer" style="width: 100%; padding: 5px; border: 2px solid #6f42c1; border-radius: 4px;" placeholder="Enter letter (A-C)">
+                </div>
+                <div style="margin-bottom: 8px;">
+                    <label style="font-size: 0.9em; display: block; margin-bottom: 3px;">3 = </label>
+                    <input type="text" class="question-answer" style="width: 100%; padding: 5px; border: 2px solid #6f42c1; border-radius: 4px;" placeholder="Enter letter (A-C)">
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 15px; padding: 12px; background: #f0f0f0; border-radius: 4px;">
+            <p style="font-weight: bold; margin-bottom: 8px; color: #6f42c1;">Purposes:</p>
+            <p style="margin: 5px 0; font-size: 0.9em;"><strong>A)</strong> Visibly identifies ownership on the image/video itself</p>
+            <p style="margin: 5px 0; font-size: 0.9em;"><strong>B)</strong> States ownership rights and warns against infringement</p>
+            <p style="margin: 5px 0; font-size: 0.9em;"><strong>C)</strong> Allows controlled sharing with specific permissions</p>
+        </div>
+    </div>
+
+    <!-- Q3 - Fill in the Blank -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #007bff;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 10px;">
+            <span style="background: #007bff; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q3</span>
+            <span style="background: #cfe2ff; color: #084298; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Fill in the Blank</span>
+            Complete the sentence:
+        </label>
+        <p style="line-height: 2; font-size: 0.95em; margin-left: 10px;">
+            Even if you post your work online, copyright protection is 
+            <input type="text" class="question-answer" style="width: 150px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;"> - it exists from the moment the work is created in a 
+            <input type="text" class="question-answer" style="width: 150px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;"> form.
+        </p>
+    </div>
+
+    <!-- Q4 - Short Answer -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #fd7e14;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
+            <span style="background: #fd7e14; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q4</span>
+            <span style="background: #ffe5d0; color: #984c0c; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Short Answer</span>
+            If you discover someone has used your work without permission online, what actions can you take?
+        </label>
+        <textarea class="question-answer" rows="3" style="width: 100%; margin-top: 8px; padding: 10px; border: 2px solid #fd7e14; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Think about: contacting the person, takedown notices, legal action, platform reporting..."></textarea>
+    </div>
+
+    <!-- Q5 - Scenario -->
+    <div style="margin-bottom: 25px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #17a2b8;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
+            <span style="background: #17a2b8; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q5</span>
+            <span style="background: #cff4fc; color: #055160; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Scenario</span>
+            Real-World Application
+        </label>
+        <div style="background: #e7f6f8; padding: 12px; border-radius: 6px; margin: 10px 0; border-left: 3px solid #17a2b8;">
+            <p style="margin: 0; font-style: italic;">
+                You're a photographer who wants to share your portfolio online but worried about people stealing your images. You also want potential clients to be able to view your work properly.
+            </p>
+        </div>
+        <label style="display: block; margin-top: 10px; font-weight: bold; color: #333; font-size: 0.95em;">What protective measures could you implement that balance protection with showcasing your work?</label>
+        <textarea class="question-answer" rows="4" style="width: 100%; margin-top: 8px; padding: 10px; border: 2px solid #17a2b8; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Consider: watermarks, low-res previews, copyright notices, metadata, terms of use, disable right-click..."></textarea>
+    </div>
+
+    <!-- Final Summary Section -->
+    <div style="margin-top: 30px; padding: 20px; background: #e8f4f8; border-radius: 8px; border: 3px solid #667eea;">
+        <label style="display: block; font-weight: bold; color: #667eea; margin-bottom: 10px; font-size: 1.1em;">
+            ✍️ Now write your summary paragraph using your answers above:
+        </label>
+        <textarea class="summary-textarea" data-doc-title="How do you protect your work on the internet" data-section="Articles" rows="8" style="width: 100%; padding: 15px; border: 2px solid #667eea; border-radius: 6px; font-size: 1em; resize: vertical;" placeholder="Use your answers to write a comprehensive summary about protecting your creative work on the internet..."></textarea>
+        <p style="margin-top: 10px; color: #666; font-size: 0.9em; font-style: italic;">💡 Tip: Include various protection methods, their benefits, and what to do if your work is stolen.</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <button onclick="toggleSummaryBox('summary-protect-work')" style="padding: 10px 25px; background: #6c757d; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em;">
+            ✅ Close Summary Section
+        </button>
+    </div>
 </div>
 </li>
 <li>
-<a href="Intro to Copyright in Australia.pdf" target="_blank">Music Copyright</a>
-<div style="margin-top: 10px; margin-bottom: 15px;">
-<label style="display: block; margin-bottom: 5px; font-weight: bold; color: #667eea;">📝 Your Summary:</label>
-<textarea class="summary-textarea" data-doc-title="Music Copyright" data-section="Articles" placeholder="Write your summary of this document here..."></textarea>
+<a href="Intro to Copyright in Australia.pdf" target="_blank" style="font-weight: bold; font-size: 1.1em;">Music Copyright</a>
+<div style="margin-top: 15px;">
+<button onclick="toggleSummaryBox('summary-music-copyright')" style="padding: 10px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em; font-weight: bold; transition: all 0.3s ease;">
+📝 Start Summary
+</button>
+</div>
+
+<!-- Expandable Summary Box -->
+<div id="summary-music-copyright" class="summary-box-expandable" style="display: none; margin-top: 15px; padding: 25px; background: #f8f9fa; border-radius: 12px; border: 2px solid #667eea;">
+    <h4 style="margin-top: 0; color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 10px;">📋 Interactive Reading Activities & Summary</h4>
+    
+    <p style="background: #fff3cd; padding: 12px; border-radius: 6px; margin-bottom: 20px; border-left: 4px solid #ffc107; font-size: 0.95em;">
+        <strong>💡 Instructions:</strong> Complete each activity below based on the PDF reading. Then use your learning to write a complete summary paragraph at the bottom.
+    </p>
+
+    <!-- Q1 - Fill in the Blank -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #007bff;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 10px;">
+            <span style="background: #007bff; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q1</span>
+            <span style="background: #cfe2ff; color: #084298; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Fill in the Blank</span>
+            Complete the sentence:
+        </label>
+        <p style="line-height: 2; font-size: 0.95em; margin-left: 10px;">
+            A song typically has TWO separate copyrights: the copyright in the 
+            <input type="text" class="question-answer" style="width: 150px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;"> (composition) and the copyright in the 
+            <input type="text" class="question-answer" style="width: 150px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;"> (the recorded version).
+        </p>
+    </div>
+
+    <!-- Q2 - Multiple Choice -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #28a745;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 10px;">
+            <span style="background: #28a745; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q2</span>
+            <span style="background: #d4edda; color: #155724; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Multiple Choice</span>
+            Who typically owns the copyright in a sound recording?
+        </label>
+        <div style="margin-left: 20px;">
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q2-music" value="a" style="margin-right: 8px;">
+                A) The songwriter who wrote the lyrics
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q2-music" value="b" style="margin-right: 8px;">
+                B) The record label or producer who made the recording
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q2-music" value="c" style="margin-right: 8px;">
+                C) The performing artist who sang the song
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q2-music" value="d" style="margin-right: 8px;">
+                D) Anyone who listens to it
+            </label>
+        </div>
+    </div>
+
+    <!-- Q3 - True/False -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #dc3545;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 10px;">
+            <span style="background: #dc3545; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q3</span>
+            <span style="background: #f8d7da; color: #842029; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">True/False + Explain</span>
+            You can legally use any music in your YouTube videos as long as you credit the artist.
+        </label>
+        <div style="margin: 15px 0 15px 20px;">
+            <label style="display: block; margin: 8px 0; cursor: pointer;">
+                <input type="radio" name="q3-music" value="true" style="margin-right: 8px;">
+                <strong>True</strong>
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer;">
+                <input type="radio" name="q3-music" value="false" style="margin-right: 8px;">
+                <strong>False</strong>
+            </label>
+        </div>
+        <label style="display: block; margin-top: 12px; font-weight: bold; color: #333; font-size: 0.95em;">Explain your answer:</label>
+        <textarea class="question-answer" rows="3" style="width: 100%; margin-top: 8px; padding: 10px; border: 2px solid #dc3545; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Explain why crediting alone isn't enough for legal use..."></textarea>
+    </div>
+
+    <!-- Q4 - Short Answer List -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #fd7e14;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
+            <span style="background: #fd7e14; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q4</span>
+            <span style="background: #ffe5d0; color: #984c0c; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Short Answer</span>
+            List THREE common scenarios where you need a music licence:
+        </label>
+        <div style="margin-top: 10px;">
+            <div style="margin-bottom: 10px;">
+                <label style="display: block; margin-bottom: 3px; color: #666; font-size: 0.9em;">1.</label>
+                <input type="text" class="question-answer" style="width: 100%; padding: 8px; border: 2px solid #fd7e14; border-radius: 4px;" placeholder="First scenario requiring a licence">
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label style="display: block; margin-bottom: 3px; color: #666; font-size: 0.9em;">2.</label>
+                <input type="text" class="question-answer" style="width: 100%; padding: 8px; border: 2px solid #fd7e14; border-radius: 4px;" placeholder="Second scenario requiring a licence">
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label style="display: block; margin-bottom: 3px; color: #666; font-size: 0.9em;">3.</label>
+                <input type="text" class="question-answer" style="width: 100%; padding: 8px; border: 2px solid #fd7e14; border-radius: 4px;" placeholder="Third scenario requiring a licence">
+            </div>
+        </div>
+    </div>
+
+    <!-- Q5 - Scenario -->
+    <div style="margin-bottom: 25px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #17a2b8;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
+            <span style="background: #17a2b8; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q5</span>
+            <span style="background: #cff4fc; color: #055160; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Scenario</span>
+            Real-World Application
+        </label>
+        <div style="background: #e7f6f8; padding: 12px; border-radius: 6px; margin: 10px 0; border-left: 3px solid #17a2b8;">
+            <p style="margin: 0; font-style: italic;">
+                Your local band wants to record a cover version of a popular song by Taylor Swift and sell it on iTunes. You'll be creating your own recording, not using her original.
+            </p>
+        </div>
+        <label style="display: block; margin-top: 10px; font-weight: bold; color: #333; font-size: 0.95em;">What permissions or licences would you need? Who would you need to contact?</label>
+        <textarea class="question-answer" rows="4" style="width: 100%; margin-top: 8px; padding: 10px; border: 2px solid #17a2b8; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Consider: mechanical licence, composition rights, who owns the song, music publishing organizations..."></textarea>
+    </div>
+
+    <!-- Final Summary Section -->
+    <div style="margin-top: 30px; padding: 20px; background: #e8f4f8; border-radius: 8px; border: 3px solid #667eea;">
+        <label style="display: block; font-weight: bold; color: #667eea; margin-bottom: 10px; font-size: 1.1em;">
+            ✍️ Now write your summary paragraph using your answers above:
+        </label>
+        <textarea class="summary-textarea" data-doc-title="Music Copyright" data-section="Articles" rows="8" style="width: 100%; padding: 15px; border: 2px solid #667eea; border-radius: 6px; font-size: 1em; resize: vertical;" placeholder="Use your answers to write a comprehensive summary about music copyright, the dual copyright system, and when licences are needed..."></textarea>
+        <p style="margin-top: 10px; color: #666; font-size: 0.9em; font-style: italic;">💡 Tip: Explain the difference between composition and recording rights, and when permission is needed.</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <button onclick="toggleSummaryBox('summary-music-copyright')" style="padding: 10px 25px; background: #6c757d; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em;">
+            ✅ Close Summary Section
+        </button>
+    </div>
 </div>
 </li>
 <li>
