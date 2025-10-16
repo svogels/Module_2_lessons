@@ -93,82 +93,182 @@
 
 <!-- Expandable Summary Box -->
 <div id="summary-intro-copyright" class="summary-box-expandable" style="display: none; margin-top: 15px; padding: 25px; background: #f8f9fa; border-radius: 12px; border: 2px solid #667eea;">
-    <h4 style="margin-top: 0; color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 10px;">📋 Comprehension Questions & Summary</h4>
+    <h4 style="margin-top: 0; color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 10px;">📋 Interactive Reading Activities & Summary</h4>
     
     <p style="background: #fff3cd; padding: 12px; border-radius: 6px; margin-bottom: 20px; border-left: 4px solid #ffc107; font-size: 0.95em;">
-        <strong>💡 Instructions:</strong> Answer each question below based on the PDF reading. Then use your answers to write a complete summary paragraph at the bottom.
+        <strong>💡 Instructions:</strong> Complete each activity below based on the PDF reading. Use different question types to help you understand and remember the key concepts. Then use your learning to write a complete summary paragraph at the bottom.
     </p>
 
-    <!-- Question 1 -->
-    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #667eea;">
-        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
-            <span style="background: #667eea; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q1</span>
-            What types of creative works does copyright law protect in Australia?
+    <!-- Question 1 - Multiple Choice -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #28a745;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 10px;">
+            <span style="background: #28a745; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q1</span>
+            <span style="background: #d4edda; color: #155724; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Multiple Choice</span>
+            Copyright protection in Australia is:
         </label>
-        <textarea class="question-answer" rows="3" style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Type your answer here..."></textarea>
+        <div style="margin-left: 20px;">
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q1-copyright" value="a" style="margin-right: 8px;">
+                A) Only available if you register your work with the government
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q1-copyright" value="b" style="margin-right: 8px;">
+                B) Automatic as soon as you create an original work
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q1-copyright" value="c" style="margin-right: 8px;">
+                C) Only applies to works published in books
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q1-copyright" value="d" style="margin-right: 8px;">
+                D) Only needed for commercial works
+            </label>
+        </div>
     </div>
 
-    <!-- Question 2 -->
-    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #667eea;">
-        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
-            <span style="background: #667eea; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q2</span>
-            Do you need to register your work to have copyright protection in Australia?
+    <!-- Question 2 - Fill in the Blank -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #007bff;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 10px;">
+            <span style="background: #007bff; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q2</span>
+            <span style="background: #cfe2ff; color: #084298; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Fill in the Blank</span>
+            Complete the sentence:
         </label>
-        <textarea class="question-answer" rows="3" style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Type your answer here..."></textarea>
+        <p style="margin: 10px 0; line-height: 2; font-size: 1em;">
+            In Australia, copyright generally lasts for the life of the creator plus 
+            <input type="text" class="question-answer" style="width: 80px; padding: 5px 10px; border: 2px solid #007bff; border-radius: 4px; font-size: 1em; text-align: center;" placeholder="?">
+            years after their death.
+        </p>
     </div>
 
-    <!-- Question 3 -->
-    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #667eea;">
-        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
-            <span style="background: #667eea; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q3</span>
-            How long does copyright protection typically last in Australia?
+    <!-- Question 3 - Matching Activity -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #6f42c1;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 10px;">
+            <span style="background: #6f42c1; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q3</span>
+            <span style="background: #e0cffc; color: #432874; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Matching</span>
+            Match each copyright term to its correct definition:
         </label>
-        <textarea class="question-answer" rows="3" style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Type your answer here..."></textarea>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px;">
+            <div>
+                <p style="font-weight: bold; margin-bottom: 10px; color: #6f42c1;">Terms:</p>
+                <div style="background: #f8f9fa; padding: 8px; border-radius: 4px; margin-bottom: 5px;">1. Fair Dealing</div>
+                <div style="background: #f8f9fa; padding: 8px; border-radius: 4px; margin-bottom: 5px;">2. Infringement</div>
+                <div style="background: #f8f9fa; padding: 8px; border-radius: 4px; margin-bottom: 5px;">3. Creative Commons</div>
+                <div style="background: #f8f9fa; padding: 8px; border-radius: 4px; margin-bottom: 5px;">4. Public Domain</div>
+            </div>
+            <div>
+                <p style="font-weight: bold; margin-bottom: 10px; color: #6f42c1;">Your Matches:</p>
+                <div style="margin-bottom: 8px;">
+                    <label style="font-size: 0.9em; display: block; margin-bottom: 3px;">1. Fair Dealing = </label>
+                    <input type="text" class="question-answer" style="width: 100%; padding: 5px; border: 2px solid #6f42c1; border-radius: 4px;" placeholder="Enter letter (A-D)">
+                </div>
+                <div style="margin-bottom: 8px;">
+                    <label style="font-size: 0.9em; display: block; margin-bottom: 3px;">2. Infringement = </label>
+                    <input type="text" class="question-answer" style="width: 100%; padding: 5px; border: 2px solid #6f42c1; border-radius: 4px;" placeholder="Enter letter (A-D)">
+                </div>
+                <div style="margin-bottom: 8px;">
+                    <label style="font-size: 0.9em; display: block; margin-bottom: 3px;">3. Creative Commons = </label>
+                    <input type="text" class="question-answer" style="width: 100%; padding: 5px; border: 2px solid #6f42c1; border-radius: 4px;" placeholder="Enter letter (A-D)">
+                </div>
+                <div style="margin-bottom: 8px;">
+                    <label style="font-size: 0.9em; display: block; margin-bottom: 3px;">4. Public Domain = </label>
+                    <input type="text" class="question-answer" style="width: 100%; padding: 5px; border: 2px solid #6f42c1; border-radius: 4px;" placeholder="Enter letter (A-D)">
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 15px; padding: 12px; background: #f0f0f0; border-radius: 4px;">
+            <p style="font-weight: bold; margin-bottom: 8px; color: #6f42c1;">Definitions:</p>
+            <p style="margin: 5px 0; font-size: 0.9em;"><strong>A)</strong> Using copyrighted work without permission in limited circumstances (e.g., study, research)</p>
+            <p style="margin: 5px 0; font-size: 0.9em;"><strong>B)</strong> Alternative licensing that allows creators to share work with specific permissions</p>
+            <p style="margin: 5px 0; font-size: 0.9em;"><strong>C)</strong> Using someone's copyrighted work without permission</p>
+            <p style="margin: 5px 0; font-size: 0.9em;"><strong>D)</strong> Works no longer protected by copyright, free for anyone to use</p>
+        </div>
     </div>
 
-    <!-- Question 4 -->
-    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #667eea;">
-        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
-            <span style="background: #667eea; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q4</span>
-            What exclusive rights does a copyright owner have over their work?
+    <!-- Question 4 - Multiple Choice -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #28a745;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 10px;">
+            <span style="background: #28a745; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q4</span>
+            <span style="background: #d4edda; color: #155724; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Multiple Choice</span>
+            Which of the following is NOT a right held by copyright owners?
         </label>
-        <textarea class="question-answer" rows="3" style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Type your answer here..."></textarea>
+        <div style="margin-left: 20px;">
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q4-copyright" value="a" style="margin-right: 8px;">
+                A) The right to reproduce their work
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q4-copyright" value="b" style="margin-right: 8px;">
+                B) The right to prevent others from criticizing their work
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q4-copyright" value="c" style="margin-right: 8px;">
+                C) The right to publish and distribute their work
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q4-copyright" value="d" style="margin-right: 8px;">
+                D) The right to create adaptations of their work
+            </label>
+        </div>
     </div>
 
-    <!-- Question 5 -->
-    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #667eea;">
+    <!-- Question 5 - Short Answer -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #fd7e14;">
         <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
-            <span style="background: #667eea; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q5</span>
-            What is 'fair dealing' and when can you use copyrighted material without permission?
+            <span style="background: #fd7e14; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q5</span>
+            <span style="background: #ffe5d0; color: #984c0c; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Short Answer</span>
+            List THREE types of creative works that are protected by copyright in Australia:
         </label>
-        <textarea class="question-answer" rows="3" style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Type your answer here..."></textarea>
+        <div style="margin-left: 20px; margin-top: 10px;">
+            <div style="margin-bottom: 10px;">
+                <label style="font-size: 0.9em; color: #666;">1.</label>
+                <input type="text" class="question-answer" style="width: calc(100% - 30px); margin-left: 10px; padding: 8px; border: 2px solid #fd7e14; border-radius: 4px;" placeholder="e.g., literary works, music, etc.">
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label style="font-size: 0.9em; color: #666;">2.</label>
+                <input type="text" class="question-answer" style="width: calc(100% - 30px); margin-left: 10px; padding: 8px; border: 2px solid #fd7e14; border-radius: 4px;" placeholder="e.g., literary works, music, etc.">
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label style="font-size: 0.9em; color: #666;">3.</label>
+                <input type="text" class="question-answer" style="width: calc(100% - 30px); margin-left: 10px; padding: 8px; border: 2px solid #fd7e14; border-radius: 4px;" placeholder="e.g., literary works, music, etc.">
+            </div>
+        </div>
     </div>
 
-    <!-- Question 6 -->
-    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #667eea;">
-        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
-            <span style="background: #667eea; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q6</span>
-            What are the potential consequences of using someone's copyrighted work without permission?
+    <!-- Question 6 - True/False with Explanation -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #dc3545;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 10px;">
+            <span style="background: #dc3545; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q6</span>
+            <span style="background: #f8d7da; color: #842029; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">True/False</span>
+            If something is posted on the internet, it's free for anyone to use without permission.
         </label>
-        <textarea class="question-answer" rows="3" style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Type your answer here..."></textarea>
+        <div style="margin-left: 20px; margin-top: 10px;">
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q6-internet" value="true" style="margin-right: 8px;">
+                True
+            </label>
+            <label style="display: block; margin: 8px 0; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                <input type="radio" name="q6-internet" value="false" style="margin-right: 8px;">
+                False
+            </label>
+        </div>
+        <label style="display: block; margin-top: 15px; font-weight: bold; color: #333; font-size: 0.95em;">Explain your answer:</label>
+        <textarea class="question-answer" rows="3" style="width: 100%; margin-top: 8px; padding: 10px; border: 2px solid #dc3545; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Why did you choose true or false? What does copyright law say about this?"></textarea>
     </div>
 
-    <!-- Question 7 -->
-    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #667eea;">
+    <!-- Question 7 - Scenario Application -->
+    <div style="margin-bottom: 25px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #17a2b8;">
         <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
-            <span style="background: #667eea; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q7</span>
-            How does copyright apply to content found on the internet?
+            <span style="background: #17a2b8; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q7</span>
+            <span style="background: #cff4fc; color: #055160; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 0.85em;">Scenario</span>
+            Real-World Application
         </label>
-        <textarea class="question-answer" rows="3" style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Type your answer here..."></textarea>
-    </div>
-
-    <!-- Question 8 -->
-    <div style="margin-bottom: 25px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #667eea;">
-        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
-            <span style="background: #667eea; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q8</span>
-            What is Creative Commons and how does it differ from traditional copyright?
-        </label>
-        <textarea class="question-answer" rows="3" style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Type your answer here..."></textarea>
+        <div style="background: #e7f6f8; padding: 12px; border-radius: 6px; margin: 10px 0; border-left: 3px solid #17a2b8;">
+            <p style="margin: 0; font-style: italic;">
+                You're creating a school presentation about climate change. You want to include a graph from a scientific website and a song from a popular artist as background music.
+            </p>
+        </div>
+        <label style="display: block; margin-top: 10px; font-weight: bold; color: #333; font-size: 0.95em;">What do you need to consider regarding copyright? What would be your safest approach?</label>
+        <textarea class="question-answer" rows="4" style="width: 100%; margin-top: 8px; padding: 10px; border: 2px solid #17a2b8; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Consider: fair dealing for education, seeking permission, Creative Commons alternatives, etc."></textarea>
     </div>
 
     <!-- Final Summary Section -->
