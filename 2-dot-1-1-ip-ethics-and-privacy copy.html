@@ -79,12 +79,112 @@
 </ul>
 
 <h3>Readings</h3>
+<p style="background: #e8f4f8; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #667eea;">
+    <strong>📖 How to use these readings:</strong> Click on each PDF link to read the document. Then click "📝 Start Summary" to answer questions and write your summary.
+</p>
 <ol>
 <li>
-<a href="Introduction to Copyright.pdf" target="_blank">Introduction to Copyright in Australia</a>
-<div style="margin-top: 10px; margin-bottom: 15px;">
-<label style="display: block; margin-bottom: 5px; font-weight: bold; color: #667eea;">📝 Your Summary:</label>
-<textarea class="summary-textarea" data-doc-title="Introduction to Copyright in Australia" data-section="Readings" placeholder="Write your summary of this document here..."></textarea>
+<a href="Introduction to Copyright.pdf" target="_blank" style="font-weight: bold; font-size: 1.1em;">Introduction to Copyright in Australia</a>
+<div style="margin-top: 15px;">
+<button onclick="toggleSummaryBox('summary-intro-copyright')" style="padding: 10px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em; font-weight: bold; transition: all 0.3s ease;">
+📝 Start Summary
+</button>
+</div>
+
+<!-- Expandable Summary Box -->
+<div id="summary-intro-copyright" class="summary-box-expandable" style="display: none; margin-top: 15px; padding: 25px; background: #f8f9fa; border-radius: 12px; border: 2px solid #667eea;">
+    <h4 style="margin-top: 0; color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 10px;">📋 Comprehension Questions & Summary</h4>
+    
+    <p style="background: #fff3cd; padding: 12px; border-radius: 6px; margin-bottom: 20px; border-left: 4px solid #ffc107; font-size: 0.95em;">
+        <strong>💡 Instructions:</strong> Answer each question below based on the PDF reading. Then use your answers to write a complete summary paragraph at the bottom.
+    </p>
+
+    <!-- Question 1 -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #667eea;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
+            <span style="background: #667eea; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q1</span>
+            What types of creative works does copyright law protect in Australia?
+        </label>
+        <textarea class="question-answer" rows="3" style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Type your answer here..."></textarea>
+    </div>
+
+    <!-- Question 2 -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #667eea;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
+            <span style="background: #667eea; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q2</span>
+            Do you need to register your work to have copyright protection in Australia?
+        </label>
+        <textarea class="question-answer" rows="3" style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Type your answer here..."></textarea>
+    </div>
+
+    <!-- Question 3 -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #667eea;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
+            <span style="background: #667eea; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q3</span>
+            How long does copyright protection typically last in Australia?
+        </label>
+        <textarea class="question-answer" rows="3" style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Type your answer here..."></textarea>
+    </div>
+
+    <!-- Question 4 -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #667eea;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
+            <span style="background: #667eea; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q4</span>
+            What exclusive rights does a copyright owner have over their work?
+        </label>
+        <textarea class="question-answer" rows="3" style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Type your answer here..."></textarea>
+    </div>
+
+    <!-- Question 5 -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #667eea;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
+            <span style="background: #667eea; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q5</span>
+            What is 'fair dealing' and when can you use copyrighted material without permission?
+        </label>
+        <textarea class="question-answer" rows="3" style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Type your answer here..."></textarea>
+    </div>
+
+    <!-- Question 6 -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #667eea;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
+            <span style="background: #667eea; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q6</span>
+            What are the potential consequences of using someone's copyrighted work without permission?
+        </label>
+        <textarea class="question-answer" rows="3" style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Type your answer here..."></textarea>
+    </div>
+
+    <!-- Question 7 -->
+    <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #667eea;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
+            <span style="background: #667eea; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q7</span>
+            How does copyright apply to content found on the internet?
+        </label>
+        <textarea class="question-answer" rows="3" style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Type your answer here..."></textarea>
+    </div>
+
+    <!-- Question 8 -->
+    <div style="margin-bottom: 25px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #667eea;">
+        <label style="display: block; font-weight: bold; color: #333; margin-bottom: 8px;">
+            <span style="background: #667eea; color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">Q8</span>
+            What is Creative Commons and how does it differ from traditional copyright?
+        </label>
+        <textarea class="question-answer" rows="3" style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Type your answer here..."></textarea>
+    </div>
+
+    <!-- Final Summary Section -->
+    <div style="margin-top: 30px; padding: 20px; background: #e8f4f8; border-radius: 8px; border: 3px solid #667eea;">
+        <label style="display: block; font-weight: bold; color: #667eea; margin-bottom: 10px; font-size: 1.1em;">
+            ✍️ Now write your summary paragraph using your answers above:
+        </label>
+        <textarea class="summary-textarea" data-doc-title="Introduction to Copyright in Australia" data-section="Readings" rows="8" style="width: 100%; padding: 15px; border: 2px solid #667eea; border-radius: 6px; font-size: 1em; resize: vertical;" placeholder="Use your answers to the questions above to write a comprehensive summary paragraph about copyright law in Australia. Try to connect the ideas together in complete sentences..."></textarea>
+        <p style="margin-top: 10px; color: #666; font-size: 0.9em; font-style: italic;">💡 Tip: Start with a topic sentence, include the key points from your answers, and finish with a concluding sentence.</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <button onclick="toggleSummaryBox('summary-intro-copyright')" style="padding: 10px 25px; background: #6c757d; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em;">
+            ✅ Close Summary Section
+        </button>
+    </div>
 </div>
 </li>
 <li>
@@ -484,6 +584,25 @@ function downloadSummariesAsPDF() {
 <div style="text-align: center; margin: 30px 0;">
 <a href="index.html" class="back-button" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 8px; font-size: 1.1em; transition: all 0.3s ease;">← Back to Index</a>
 </div>
+
+<script>
+// Toggle expandable summary boxes
+function toggleSummaryBox(boxId) {
+    const box = document.getElementById(boxId);
+    if (box.style.display === 'none' || box.style.display === '') {
+        box.style.display = 'block';
+        // Smooth scroll to the box
+        setTimeout(() => {
+            box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+    } else {
+        box.style.display = 'none';
+    }
+}
+</script>
+
+</body>
+</html>
 
 </div>
 </body>
