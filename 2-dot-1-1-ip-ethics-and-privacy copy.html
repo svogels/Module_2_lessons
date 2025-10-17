@@ -155,6 +155,9 @@
     </div>
 
     <div style="text-align: center; margin-top: 20px;">
+        <button onclick="downloadReadingAnswers('Fair Dealing - What Can I Use Without Permission', 'summary-fair-dealing')" style="padding: 10px 25px; background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em; margin-right: 10px; font-weight: bold;">
+            📥 Download My Answers (PDF)
+        </button>
         <button onclick="toggleSummaryBox('summary-fair-dealing')" style="padding: 10px 25px; background: #6c757d; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em;">
             ✅ Close Summary Section
         </button>
@@ -455,6 +458,9 @@
     </div>
 
     <div style="text-align: center; margin-top: 20px;">
+        <button onclick="downloadReadingAnswers('Introduction to Copyright in Australia', 'summary-intro-copyright')" style="padding: 10px 25px; background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em; margin-right: 10px; font-weight: bold;">
+            📥 Download My Answers (PDF)
+        </button>
         <button onclick="toggleSummaryBox('summary-intro-copyright')" style="padding: 10px 25px; background: #6c757d; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em;">
             ✅ Close Summary Section
         </button>
@@ -603,6 +609,9 @@
     </div>
 
     <div style="text-align: center; margin-top: 20px;">
+        <button onclick="downloadReadingAnswers('Education - Copyright Basics', 'summary-education-basics')" style="padding: 10px 25px; background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em; margin-right: 10px; font-weight: bold;">
+            📥 Download My Answers (PDF)
+        </button>
         <button onclick="toggleSummaryBox('summary-education-basics')" style="padding: 10px 25px; background: #6c757d; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em;">
             ✅ Close Summary Section
         </button>
@@ -736,6 +745,9 @@
     </div>
 
     <div style="text-align: center; margin-top: 20px;">
+        <button onclick="downloadReadingAnswers('Permission - Do I Need It', 'summary-permission')" style="padding: 10px 25px; background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em; margin-right: 10px; font-weight: bold;">
+            📥 Download My Answers (PDF)
+        </button>
         <button onclick="toggleSummaryBox('summary-permission')" style="padding: 10px 25px; background: #6c757d; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em;">
             ✅ Close Summary Section
         </button>
@@ -891,6 +903,9 @@
     </div>
 
     <div style="text-align: center; margin-top: 20px;">
+        <button onclick="downloadReadingAnswers('Infringement Offences and Penalties', 'summary-infringement')" style="padding: 10px 25px; background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em; margin-right: 10px; font-weight: bold;">
+            📥 Download My Answers (PDF)
+        </button>
         <button onclick="toggleSummaryBox('summary-infringement')" style="padding: 10px 25px; background: #6c757d; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em;">
             ✅ Close Summary Section
         </button>
@@ -1043,6 +1058,9 @@
     </div>
 
     <div style="text-align: center; margin-top: 20px;">
+        <button onclick="downloadReadingAnswers('Copyright and Internet Downloading', 'summary-internet-copyright')" style="padding: 10px 25px; background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em; margin-right: 10px; font-weight: bold;">
+            📥 Download My Answers (PDF)
+        </button>
         <button onclick="toggleSummaryBox('summary-internet-copyright')" style="padding: 10px 25px; background: #6c757d; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em;">
             ✅ Close Summary Section
         </button>
@@ -1195,6 +1213,9 @@
     </div>
 
     <div style="text-align: center; margin-top: 20px;">
+        <button onclick="downloadReadingAnswers('How to Protect Your Work on the Internet', 'summary-protect-work')" style="padding: 10px 25px; background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em; margin-right: 10px; font-weight: bold;">
+            📥 Download My Answers (PDF)
+        </button>
         <button onclick="toggleSummaryBox('summary-protect-work')" style="padding: 10px 25px; background: #6c757d; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em;">
             ✅ Close Summary Section
         </button>
@@ -1343,6 +1364,9 @@
     </div>
 
     <div style="text-align: center; margin-top: 20px;">
+        <button onclick="downloadReadingAnswers('Music Copyright', 'summary-music-copyright')" style="padding: 10px 25px; background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em; margin-right: 10px; font-weight: bold;">
+            📥 Download My Answers (PDF)
+        </button>
         <button onclick="toggleSummaryBox('summary-music-copyright')" style="padding: 10px 25px; background: #6c757d; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em;">
             ✅ Close Summary Section
         </button>
@@ -1859,6 +1883,168 @@ function retryQuestion(questionId, questionType) {
             });
         }
     }
+}
+
+function downloadReadingAnswers(readingTitle, summaryBoxId) {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    
+    // Get current date
+    const today = new Date();
+    const dateString = today.toLocaleDateString('en-AU', { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+    });
+    
+    // PDF Title
+    doc.setFontSize(18);
+    doc.setTextColor(102, 126, 234);
+    doc.text('Module 2: IP, Ethics and Privacy', 105, 15, { align: 'center' });
+    
+    doc.setFontSize(14);
+    doc.setTextColor(118, 75, 162);
+    doc.text(readingTitle, 105, 24, { align: 'center' });
+    
+    doc.setFontSize(9);
+    doc.setTextColor(100, 100, 100);
+    doc.text('Date: ' + dateString, 105, 31, { align: 'center' });
+    
+    // Draw a line
+    doc.setDrawColor(102, 126, 234);
+    doc.setLineWidth(0.5);
+    doc.line(20, 34, 190, 34);
+    
+    let yPosition = 42;
+    const pageHeight = doc.internal.pageSize.height;
+    const margin = 20;
+    const lineHeight = 6;
+    const maxWidth = 170;
+    
+    // Get the summary box container
+    const summaryBox = document.getElementById(summaryBoxId);
+    if (!summaryBox) {
+        alert('Could not find reading content. Please try again.');
+        return;
+    }
+    
+    // Function to add new page if needed
+    function checkPageBreak(additionalSpace = 15) {
+        if (yPosition + additionalSpace > pageHeight - margin) {
+            doc.addPage();
+            yPosition = margin;
+            return true;
+        }
+        return false;
+    }
+    
+    // Function to wrap text
+    function addWrappedText(text, x, y, maxWidth, lineHeight) {
+        const lines = doc.splitTextToSize(text, maxWidth);
+        lines.forEach((line, index) => {
+            checkPageBreak(lineHeight);
+            doc.text(line, x, y + (index * lineHeight));
+            yPosition = y + ((index + 1) * lineHeight);
+        });
+        return yPosition;
+    }
+    
+    // Collect all questions and answers
+    const questions = summaryBox.querySelectorAll('[style*="margin-bottom: 20px"]');
+    let questionNumber = 0;
+    
+    questions.forEach((questionDiv) => {
+        // Check if this is a question div (has Q label)
+        const qLabel = questionDiv.querySelector('[style*="background: #"]');
+        if (!qLabel || !qLabel.textContent.includes('Q')) return;
+        
+        questionNumber++;
+        checkPageBreak(20);
+        
+        // Get question type and text
+        const questionText = questionDiv.querySelector('label').textContent.trim();
+        const cleanQuestion = questionText.replace(/Q\d+/g, '').replace(/Multiple Choice|True\/False|Fill in the Blank|Matching|Short Answer|Scenario/g, '').trim();
+        
+        // Add question header
+        doc.setFontSize(11);
+        doc.setTextColor(102, 126, 234);
+        yPosition = addWrappedText(`Question ${questionNumber}: ${cleanQuestion}`, margin, yPosition, maxWidth, lineHeight);
+        yPosition += 2;
+        
+        // Get answer based on question type
+        doc.setFontSize(10);
+        doc.setTextColor(60, 60, 60);
+        
+        // Check for radio buttons (MC or T/F)
+        const radioButtons = questionDiv.querySelectorAll('input[type="radio"]');
+        if (radioButtons.length > 0) {
+            const checkedRadio = questionDiv.querySelector('input[type="radio"]:checked');
+            if (checkedRadio) {
+                const label = checkedRadio.parentElement.textContent.trim();
+                yPosition = addWrappedText(`Answer: ${label}`, margin + 5, yPosition, maxWidth - 5, lineHeight);
+            } else {
+                doc.setTextColor(150, 150, 150);
+                yPosition = addWrappedText('Answer: Not answered', margin + 5, yPosition, maxWidth - 5, lineHeight);
+                doc.setTextColor(60, 60, 60);
+            }
+        }
+        
+        // Check for text inputs (Fill in blank or Matching)
+        const textInputs = questionDiv.querySelectorAll('input[type="text"]');
+        if (textInputs.length > 0) {
+            textInputs.forEach((input, index) => {
+                const value = input.value.trim();
+                if (value) {
+                    yPosition = addWrappedText(`Answer ${index + 1}: ${value}`, margin + 5, yPosition, maxWidth - 5, lineHeight);
+                } else {
+                    doc.setTextColor(150, 150, 150);
+                    yPosition = addWrappedText(`Answer ${index + 1}: Not answered`, margin + 5, yPosition, maxWidth - 5, lineHeight);
+                    doc.setTextColor(60, 60, 60);
+                }
+            });
+        }
+        
+        // Check for textarea (explanation)
+        const textarea = questionDiv.querySelector('textarea');
+        if (textarea && textarea.value.trim()) {
+            doc.setTextColor(80, 80, 80);
+            yPosition += 2;
+            yPosition = addWrappedText(`Explanation: ${textarea.value.trim()}`, margin + 5, yPosition, maxWidth - 5, lineHeight);
+        }
+        
+        yPosition += 4; // Space between questions
+    });
+    
+    // Add summary section
+    const summaryTextarea = summaryBox.querySelector('.summary-textarea');
+    if (summaryTextarea && summaryTextarea.value.trim()) {
+        checkPageBreak(25);
+        yPosition += 5;
+        
+        doc.setFontSize(12);
+        doc.setTextColor(102, 126, 234);
+        doc.text('Summary', margin, yPosition);
+        yPosition += 7;
+        
+        doc.setFontSize(10);
+        doc.setTextColor(40, 40, 40);
+        yPosition = addWrappedText(summaryTextarea.value.trim(), margin, yPosition, maxWidth, lineHeight);
+    }
+    
+    // Add footer
+    doc.setFontSize(8);
+    doc.setTextColor(150, 150, 150);
+    const pageCount = doc.internal.getNumberOfPages();
+    for (let i = 1; i <= pageCount; i++) {
+        doc.setPage(i);
+        doc.text(`Page ${i} of ${pageCount}`, 105, pageHeight - 10, { align: 'center' });
+    }
+    
+    // Generate filename
+    const filename = `${readingTitle.replace(/[^a-z0-9]/gi, '_')}_Answers_${today.getFullYear()}_${(today.getMonth()+1).toString().padStart(2,'0')}_${today.getDate().toString().padStart(2,'0')}.pdf`;
+    
+    // Save the PDF
+    doc.save(filename);
 }
 </script>
 
