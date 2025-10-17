@@ -2046,6 +2046,32 @@ function downloadReadingAnswers(readingTitle, summaryBoxId) {
     // Save the PDF
     doc.save(filename);
 }
+
+// Auto-resize textareas as users type
+function autoResizeTextarea(textarea) {
+    textarea.style.height = 'auto';
+    textarea.style.height = textarea.scrollHeight + 'px';
+}
+
+// Apply auto-resize to all textareas on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const textareas = document.querySelectorAll('textarea');
+    
+    textareas.forEach(textarea => {
+        // Set initial height based on content
+        autoResizeTextarea(textarea);
+        
+        // Add event listeners for typing
+        textarea.addEventListener('input', function() {
+            autoResizeTextarea(this);
+        });
+        
+        // Also resize on paste
+        textarea.addEventListener('paste', function() {
+            setTimeout(() => autoResizeTextarea(this), 0);
+        });
+    });
+});
 </script>
 
 </body>
