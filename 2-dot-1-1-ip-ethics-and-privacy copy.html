@@ -36,11 +36,16 @@
         </label>
         <p style="line-height: 2; font-size: 0.95em; margin-left: 10px;">
             Fair dealing is an exception in copyright law that allows you to use copyrighted material without permission for specific purposes including 
-            <input type="text" class="question-answer" style="width: 150px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;">,
-            <input type="text" class="question-answer" style="width: 150px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;">,
+            <input type="text" id="q1-fair-dealing-blank1" class="question-answer" style="width: 150px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;">,
+            <input type="text" id="q1-fair-dealing-blank2" class="question-answer" style="width: 150px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;">,
             and 
-            <input type="text" class="question-answer" style="width: 150px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;">.
+            <input type="text" id="q1-fair-dealing-blank3" class="question-answer" style="width: 150px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;">.
         </p>
+        <div style="margin-top: 15px; text-align: center;">
+            <button id="q1-fair-dealing-submit" onclick="checkFillInBlank('q1-fair-dealing', [['research', 'study'], ['criticism', 'review'], ['news', 'reporting']])" style="padding: 8px 20px; background: #007bff; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-right: 10px;">✓ Submit Answer</button>
+            <button id="q1-fair-dealing-retry" onclick="retryQuestion('q1-fair-dealing', 'text')" style="display: none; padding: 8px 20px; background: #ffc107; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">↻ Try Again</button>
+        </div>
+        <div id="q1-fair-dealing-feedback"></div>
     </div>
 
     <!-- Q2 - True/False -->
@@ -60,6 +65,11 @@
                 <strong>False</strong>
             </label>
         </div>
+        <div style="margin-top: 15px; text-align: center;">
+            <button id="q2-fair-dealing-submit" onclick="checkTrueFalse('q2-fair-dealing', 'false')" style="padding: 8px 20px; background: #dc3545; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-right: 10px;">✓ Submit Answer</button>
+            <button id="q2-fair-dealing-retry" onclick="retryQuestion('q2-fair-dealing', 'radio')" style="display: none; padding: 8px 20px; background: #ffc107; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">↻ Try Again</button>
+        </div>
+        <div id="q2-fair-dealing-feedback"></div>
         <label style="display: block; margin-top: 12px; font-weight: bold; color: #333; font-size: 0.95em;">Explain your answer:</label>
         <textarea class="question-answer" rows="3" style="width: 100%; margin-top: 8px; padding: 10px; border: 2px solid #dc3545; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Why did you choose true or false? What are the limits of fair dealing?"></textarea>
     </div>
@@ -89,6 +99,11 @@
                 D) The effect on the potential market for the work
             </label>
         </div>
+        <div style="margin-top: 15px; text-align: center;">
+            <button id="q3-fair-dealing-submit" onclick="checkMultipleChoice('q3-fair-dealing', 'c')" style="padding: 8px 20px; background: #28a745; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-right: 10px;">✓ Submit Answer</button>
+            <button id="q3-fair-dealing-retry" onclick="retryQuestion('q3-fair-dealing', 'radio')" style="display: none; padding: 8px 20px; background: #ffc107; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">↻ Try Again</button>
+        </div>
+        <div id="q3-fair-dealing-feedback"></div>
     </div>
 
     <!-- Q4 - Short Answer List -->
@@ -358,6 +373,11 @@
                 D) The right to create adaptations of their work
             </label>
         </div>
+        <div style="margin-top: 15px; text-align: center;">
+            <button id="q4-copyright-submit" onclick="checkMultipleChoice('q4-copyright', 'b')" style="padding: 8px 20px; background: #28a745; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-right: 10px;">✓ Submit Answer</button>
+            <button id="q4-copyright-retry" onclick="retryQuestion('q4-copyright', 'radio')" style="display: none; padding: 8px 20px; background: #ffc107; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">↻ Try Again</button>
+        </div>
+        <div id="q4-copyright-feedback"></div>
     </div>
 
     <!-- Question 5 - Short Answer -->
@@ -400,6 +420,11 @@
                 False
             </label>
         </div>
+        <div style="margin-top: 15px; text-align: center;">
+            <button id="q6-internet-submit" onclick="checkTrueFalse('q6-internet', 'false')" style="padding: 8px 20px; background: #dc3545; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-right: 10px;">✓ Submit Answer</button>
+            <button id="q6-internet-retry" onclick="retryQuestion('q6-internet', 'radio')" style="display: none; padding: 8px 20px; background: #ffc107; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">↻ Try Again</button>
+        </div>
+        <div id="q6-internet-feedback"></div>
         <label style="display: block; margin-top: 15px; font-weight: bold; color: #333; font-size: 0.95em;">Explain your answer:</label>
         <textarea class="question-answer" rows="3" style="width: 100%; margin-top: 8px; padding: 10px; border: 2px solid #dc3545; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Why did you choose true or false? What does copyright law say about this?"></textarea>
     </div>
@@ -469,6 +494,11 @@
                 False
             </label>
         </div>
+        <div style="margin-top: 15px; text-align: center;">
+            <button id="q1-edu-basics-submit" onclick="checkTrueFalse('q1-edu-basics', 'false')" style="padding: 8px 20px; background: #dc3545; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-right: 10px;">✓ Submit Answer</button>
+            <button id="q1-edu-basics-retry" onclick="retryQuestion('q1-edu-basics', 'radio')" style="display: none; padding: 8px 20px; background: #ffc107; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">↻ Try Again</button>
+        </div>
+        <div id="q1-edu-basics-feedback"></div>
         <label style="display: block; margin-top: 15px; font-weight: bold; color: #333; font-size: 0.95em;">Explain your answer:</label>
         <textarea class="question-answer" rows="3" style="width: 100%; margin-top: 8px; padding: 10px; border: 2px solid #dc3545; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="What are the limitations and conditions for educational use?"></textarea>
     </div>
@@ -498,6 +528,11 @@
                 D) One sentence per page
             </label>
         </div>
+        <div style="margin-top: 15px; text-align: center;">
+            <button id="q2-edu-basics-submit" onclick="checkMultipleChoice('q2-edu-basics', 'b')" style="padding: 8px 20px; background: #28a745; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-right: 10px;">✓ Submit Answer</button>
+            <button id="q2-edu-basics-retry" onclick="retryQuestion('q2-edu-basics', 'radio')" style="display: none; padding: 8px 20px; background: #ffc107; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">↻ Try Again</button>
+        </div>
+        <div id="q2-edu-basics-feedback"></div>
     </div>
 
     <!-- Q3 - Short Answer List -->
@@ -532,9 +567,14 @@
         </label>
         <p style="margin: 10px 0; line-height: 2; font-size: 1em;">
             Educational institutions in Australia must pay 
-            <input type="text" class="question-answer" style="width: 150px; padding: 5px 10px; border: 2px solid #007bff; border-radius: 4px; font-size: 1em; text-align: center;" placeholder="?">
+            <input type="text" id="q4-edu-basics-blank1" class="question-answer" style="width: 150px; padding: 5px 10px; border: 2px solid #007bff; border-radius: 4px; font-size: 1em; text-align: center;" placeholder="?">
             to Copyright Agency for statutory licences.
         </p>
+        <div style="margin-top: 15px; text-align: center;">
+            <button id="q4-edu-basics-submit" onclick="checkFillInBlank('q4-edu-basics', [['copyright agency', 'the copyright agency']])" style="padding: 8px 20px; background: #007bff; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-right: 10px;">✓ Submit Answer</button>
+            <button id="q4-edu-basics-retry" onclick="retryQuestion('q4-edu-basics', 'text')" style="display: none; padding: 8px 20px; background: #ffc107; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">↻ Try Again</button>
+        </div>
+        <div id="q4-edu-basics-feedback"></div>
     </div>
 
     <!-- Q5 - Scenario -->
@@ -610,6 +650,11 @@
                 D) Only for videos and music, not text or images
             </label>
         </div>
+        <div style="margin-top: 15px; text-align: center;">
+            <button id="q1-permission-submit" onclick="checkMultipleChoice('q1-permission', 'b')" style="padding: 8px 20px; background: #28a745; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-right: 10px;">✓ Submit Answer</button>
+            <button id="q1-permission-retry" onclick="retryQuestion('q1-permission', 'radio')" style="display: none; padding: 8px 20px; background: #ffc107; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">↻ Try Again</button>
+        </div>
+        <div id="q1-permission-feedback"></div>
     </div>
 
     <!-- Q2 - Matching -->
@@ -630,15 +675,15 @@
                 <p style="font-weight: bold; margin-bottom: 10px; color: #6f42c1;">Your Matches:</p>
                 <div style="margin-bottom: 8px;">
                     <label style="font-size: 0.9em; display: block; margin-bottom: 3px;">A = </label>
-                    <input type="text" class="question-answer" style="width: 100%; padding: 5px; border: 2px solid #6f42c1; border-radius: 4px;" placeholder="Enter number (1-3)">
+                    <input type="text" id="q2-permission-blank1" class="question-answer" style="width: 100%; padding: 5px; border: 2px solid #6f42c1; border-radius: 4px;" placeholder="Enter number (1-3)">
                 </div>
                 <div style="margin-bottom: 8px;">
                     <label style="font-size: 0.9em; display: block; margin-bottom: 3px;">B = </label>
-                    <input type="text" class="question-answer" style="width: 100%; padding: 5px; border: 2px solid #6f42c1; border-radius: 4px;" placeholder="Enter number (1-3)">
+                    <input type="text" id="q2-permission-blank2" class="question-answer" style="width: 100%; padding: 5px; border: 2px solid #6f42c1; border-radius: 4px;" placeholder="Enter number (1-3)">
                 </div>
                 <div style="margin-bottom: 8px;">
                     <label style="font-size: 0.9em; display: block; margin-bottom: 3px;">C = </label>
-                    <input type="text" class="question-answer" style="width: 100%; padding: 5px; border: 2px solid #6f42c1; border-radius: 4px;" placeholder="Enter number (1-3)">
+                    <input type="text" id="q2-permission-blank3" class="question-answer" style="width: 100%; padding: 5px; border: 2px solid #6f42c1; border-radius: 4px;" placeholder="Enter number (1-3)">
                 </div>
             </div>
         </div>
@@ -648,6 +693,11 @@
             <p style="margin: 5px 0; font-size: 0.9em;"><strong>2)</strong> Permission definitely needed</p>
             <p style="margin: 5px 0; font-size: 0.9em;"><strong>3)</strong> Check the licence terms first</p>
         </div>
+        <div style="margin-top: 15px; text-align: center;">
+            <button id="q2-permission-submit" onclick="checkMatching('q2-permission', ['1', '2', '3'])" style="padding: 8px 20px; background: #6f42c1; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-right: 10px;">✓ Submit Answer</button>
+            <button id="q2-permission-retry" onclick="retryQuestion('q2-permission', 'text')" style="display: none; padding: 8px 20px; background: #ffc107; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">↻ Try Again</button>
+        </div>
+        <div id="q2-permission-feedback"></div>
     </div>
 
     <!-- Q3 - Short Answer -->
@@ -740,6 +790,11 @@
                 D) Creating similar but not identical content
             </label>
         </div>
+        <div style="margin-top: 15px; text-align: center;">
+            <button id="q1-infringement-submit" onclick="checkMultipleChoice('q1-infringement', 'b')" style="padding: 8px 20px; background: #28a745; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-right: 10px;">✓ Submit Answer</button>
+            <button id="q1-infringement-retry" onclick="retryQuestion('q1-infringement', 'radio')" style="display: none; padding: 8px 20px; background: #ffc107; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">↻ Try Again</button>
+        </div>
+        <div id="q1-infringement-feedback"></div>
     </div>
 
     <!-- Q2 - Fill in the Blank -->
@@ -751,9 +806,14 @@
         </label>
         <p style="line-height: 2; font-size: 0.95em; margin-left: 10px;">
             Copyright infringement penalties can include both 
-            <input type="text" class="question-answer" style="width: 120px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;"> remedies (such as damages and injunctions) and 
-            <input type="text" class="question-answer" style="width: 120px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;"> penalties for serious cases.
+            <input type="text" id="q2-infringement-blank1" class="question-answer" style="width: 120px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;"> remedies (such as damages and injunctions) and 
+            <input type="text" id="q2-infringement-blank2" class="question-answer" style="width: 120px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;"> penalties for serious cases.
         </p>
+        <div style="margin-top: 15px; text-align: center;">
+            <button id="q2-infringement-submit" onclick="checkFillInBlank('q2-infringement', [['civil'], ['criminal']])" style="padding: 8px 20px; background: #007bff; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-right: 10px;">✓ Submit Answer</button>
+            <button id="q2-infringement-retry" onclick="retryQuestion('q2-infringement', 'text')" style="display: none; padding: 8px 20px; background: #ffc107; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">↻ Try Again</button>
+        </div>
+        <div id="q2-infringement-feedback"></div>
     </div>
 
     <!-- Q3 - Short Answer List -->
@@ -796,6 +856,11 @@
                 <strong>False</strong>
             </label>
         </div>
+        <div style="margin-top: 15px; text-align: center;">
+            <button id="q4-infringement-submit" onclick="checkTrueFalse('q4-infringement', 'false')" style="padding: 8px 20px; background: #dc3545; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-right: 10px;">✓ Submit Answer</button>
+            <button id="q4-infringement-retry" onclick="retryQuestion('q4-infringement', 'radio')" style="display: none; padding: 8px 20px; background: #ffc107; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">↻ Try Again</button>
+        </div>
+        <div id="q4-infringement-feedback"></div>
         <label style="display: block; margin-top: 12px; font-weight: bold; color: #333; font-size: 0.95em;">Explain your answer:</label>
         <textarea class="question-answer" rows="3" style="width: 100%; margin-top: 8px; padding: 10px; border: 2px solid #dc3545; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Explain whether commercial use is required for infringement..."></textarea>
     </div>
@@ -869,6 +934,11 @@
                 <strong>False</strong>
             </label>
         </div>
+        <div style="margin-top: 15px; text-align: center;">
+            <button id="q1-internet-submit" onclick="checkTrueFalse('q1-internet', 'false')" style="padding: 8px 20px; background: #dc3545; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-right: 10px;">✓ Submit Answer</button>
+            <button id="q1-internet-retry" onclick="retryQuestion('q1-internet', 'radio')" style="display: none; padding: 8px 20px; background: #ffc107; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">↻ Try Again</button>
+        </div>
+        <div id="q1-internet-feedback"></div>
         <label style="display: block; margin-top: 12px; font-weight: bold; color: #333; font-size: 0.95em;">Explain your answer:</label>
         <textarea class="question-answer" rows="3" style="width: 100%; margin-top: 8px; padding: 10px; border: 2px solid #dc3545; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Explain the copyright status of online content..."></textarea>
     </div>
@@ -898,6 +968,11 @@
                 D) Only use images from social media posts
             </label>
         </div>
+        <div style="margin-top: 15px; text-align: center;">
+            <button id="q2-internet-submit" onclick="checkMultipleChoice('q2-internet', 'b')" style="padding: 8px 20px; background: #28a745; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-right: 10px;">✓ Submit Answer</button>
+            <button id="q2-internet-retry" onclick="retryQuestion('q2-internet', 'radio')" style="display: none; padding: 8px 20px; background: #ffc107; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">↻ Try Again</button>
+        </div>
+        <div id="q2-internet-feedback"></div>
     </div>
 
     <!-- Q3 - Short Answer List -->
@@ -932,9 +1007,14 @@
         </label>
         <p style="line-height: 2; font-size: 0.95em; margin-left: 10px;">
             When downloading music or videos from file-sharing sites, both the 
-            <input type="text" class="question-answer" style="width: 120px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;"> and the 
-            <input type="text" class="question-answer" style="width: 120px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;"> of copyrighted files can face legal consequences.
+            <input type="text" id="q4-internet-blank1" class="question-answer" style="width: 120px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;"> and the 
+            <input type="text" id="q4-internet-blank2" class="question-answer" style="width: 120px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;"> of copyrighted files can face legal consequences.
         </p>
+        <div style="margin-top: 15px; text-align: center;">
+            <button id="q4-internet-submit" onclick="checkFillInBlank('q4-internet', [['uploader', 'sharer', 'distributor'], ['downloader', 'receiver', 'user']])" style="padding: 8px 20px; background: #007bff; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-right: 10px;">✓ Submit Answer</button>
+            <button id="q4-internet-retry" onclick="retryQuestion('q4-internet', 'text')" style="display: none; padding: 8px 20px; background: #ffc107; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">↻ Try Again</button>
+        </div>
+        <div id="q4-internet-feedback"></div>
     </div>
 
     <!-- Q5 - Scenario -->
@@ -1010,6 +1090,11 @@
                 D) Hide your name so people can't copy it
             </label>
         </div>
+        <div style="margin-top: 15px; text-align: center;">
+            <button id="q1-protect-submit" onclick="checkMultipleChoice('q1-protect', 'b')" style="padding: 8px 20px; background: #28a745; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-right: 10px;">✓ Submit Answer</button>
+            <button id="q1-protect-retry" onclick="retryQuestion('q1-protect', 'radio')" style="display: none; padding: 8px 20px; background: #ffc107; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">↻ Try Again</button>
+        </div>
+        <div id="q1-protect-feedback"></div>
     </div>
 
     <!-- Q2 - Matching -->
@@ -1030,15 +1115,15 @@
                 <p style="font-weight: bold; margin-bottom: 10px; color: #6f42c1;">Your Matches:</p>
                 <div style="margin-bottom: 8px;">
                     <label style="font-size: 0.9em; display: block; margin-bottom: 3px;">A = </label>
-                    <input type="text" class="question-answer" style="width: 100%; padding: 5px; border: 2px solid #6f42c1; border-radius: 4px;" placeholder="Enter number (1-3)">
+                    <input type="text" id="q2-protect-blank1" class="question-answer" style="width: 100%; padding: 5px; border: 2px solid #6f42c1; border-radius: 4px;" placeholder="Enter number (1-3)">
                 </div>
                 <div style="margin-bottom: 8px;">
                     <label style="font-size: 0.9em; display: block; margin-bottom: 3px;">B = </label>
-                    <input type="text" class="question-answer" style="width: 100%; padding: 5px; border: 2px solid #6f42c1; border-radius: 4px;" placeholder="Enter number (1-3)">
+                    <input type="text" id="q2-protect-blank2" class="question-answer" style="width: 100%; padding: 5px; border: 2px solid #6f42c1; border-radius: 4px;" placeholder="Enter number (1-3)">
                 </div>
                 <div style="margin-bottom: 8px;">
                     <label style="font-size: 0.9em; display: block; margin-bottom: 3px;">C = </label>
-                    <input type="text" class="question-answer" style="width: 100%; padding: 5px; border: 2px solid #6f42c1; border-radius: 4px;" placeholder="Enter number (1-3)">
+                    <input type="text" id="q2-protect-blank3" class="question-answer" style="width: 100%; padding: 5px; border: 2px solid #6f42c1; border-radius: 4px;" placeholder="Enter number (1-3)">
                 </div>
             </div>
         </div>
@@ -1048,6 +1133,11 @@
             <p style="margin: 5px 0; font-size: 0.9em;"><strong>2)</strong> States ownership rights and warns against infringement</p>
             <p style="margin: 5px 0; font-size: 0.9em;"><strong>3)</strong> Allows controlled sharing with specific permissions</p>
         </div>
+        <div style="margin-top: 15px; text-align: center;">
+            <button id="q2-protect-submit" onclick="checkMatching('q2-protect', ['2', '1', '3'])" style="padding: 8px 20px; background: #6f42c1; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-right: 10px;">✓ Submit Answer</button>
+            <button id="q2-protect-retry" onclick="retryQuestion('q2-protect', 'text')" style="display: none; padding: 8px 20px; background: #ffc107; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">↻ Try Again</button>
+        </div>
+        <div id="q2-protect-feedback"></div>
     </div>
 
     <!-- Q3 - Fill in the Blank -->
@@ -1059,9 +1149,14 @@
         </label>
         <p style="line-height: 2; font-size: 0.95em; margin-left: 10px;">
             Even if you post your work online, copyright protection is 
-            <input type="text" class="question-answer" style="width: 150px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;"> - it exists from the moment the work is created in a 
-            <input type="text" class="question-answer" style="width: 150px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;"> form.
+            <input type="text" id="q3-protect-blank1" class="question-answer" style="width: 150px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;"> - it exists from the moment the work is created in a 
+            <input type="text" id="q3-protect-blank2" class="question-answer" style="width: 150px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;"> form.
         </p>
+        <div style="margin-top: 15px; text-align: center;">
+            <button id="q3-protect-submit" onclick="checkFillInBlank('q3-protect', [['automatic'], ['material', 'tangible', 'fixed']])" style="padding: 8px 20px; background: #007bff; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-right: 10px;">✓ Submit Answer</button>
+            <button id="q3-protect-retry" onclick="retryQuestion('q3-protect', 'text')" style="display: none; padding: 8px 20px; background: #ffc107; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">↻ Try Again</button>
+        </div>
+        <div id="q3-protect-feedback"></div>
     </div>
 
     <!-- Q4 - Short Answer -->
@@ -1131,9 +1226,14 @@
         </label>
         <p style="line-height: 2; font-size: 0.95em; margin-left: 10px;">
             A song typically has TWO separate copyrights: the copyright in the 
-            <input type="text" class="question-answer" style="width: 150px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;"> (composition) and the copyright in the 
-            <input type="text" class="question-answer" style="width: 150px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;"> (the recorded version).
+            <input type="text" id="q1-music-blank1" class="question-answer" style="width: 150px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;"> (composition) and the copyright in the 
+            <input type="text" id="q1-music-blank2" class="question-answer" style="width: 150px; padding: 5px; border: 2px solid #007bff; border-radius: 4px; margin: 0 5px;"> (the recorded version).
         </p>
+        <div style="margin-top: 15px; text-align: center;">
+            <button id="q1-music-submit" onclick="checkFillInBlank('q1-music', [['musical work', 'composition', 'song'], ['sound recording', 'recording']])" style="padding: 8px 20px; background: #007bff; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-right: 10px;">✓ Submit Answer</button>
+            <button id="q1-music-retry" onclick="retryQuestion('q1-music', 'text')" style="display: none; padding: 8px 20px; background: #ffc107; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">↻ Try Again</button>
+        </div>
+        <div id="q1-music-feedback"></div>
     </div>
 
     <!-- Q2 - Multiple Choice -->
@@ -1161,6 +1261,11 @@
                 D) Anyone who listens to it
             </label>
         </div>
+        <div style="margin-top: 15px; text-align: center;">
+            <button id="q2-music-submit" onclick="checkMultipleChoice('q2-music', 'b')" style="padding: 8px 20px; background: #28a745; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-right: 10px;">✓ Submit Answer</button>
+            <button id="q2-music-retry" onclick="retryQuestion('q2-music', 'radio')" style="display: none; padding: 8px 20px; background: #ffc107; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">↻ Try Again</button>
+        </div>
+        <div id="q2-music-feedback"></div>
     </div>
 
     <!-- Q3 - True/False -->
@@ -1180,6 +1285,11 @@
                 <strong>False</strong>
             </label>
         </div>
+        <div style="margin-top: 15px; text-align: center;">
+            <button id="q3-music-submit" onclick="checkTrueFalse('q3-music', 'false')" style="padding: 8px 20px; background: #dc3545; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-right: 10px;">✓ Submit Answer</button>
+            <button id="q3-music-retry" onclick="retryQuestion('q3-music', 'radio')" style="display: none; padding: 8px 20px; background: #ffc107; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">↻ Try Again</button>
+        </div>
+        <div id="q3-music-feedback"></div>
         <label style="display: block; margin-top: 12px; font-weight: bold; color: #333; font-size: 0.95em;">Explain your answer:</label>
         <textarea class="question-answer" rows="3" style="width: 100%; margin-top: 8px; padding: 10px; border: 2px solid #dc3545; border-radius: 6px; font-size: 0.95em; resize: vertical;" placeholder="Explain why crediting alone isn't enough for legal use..."></textarea>
     </div>
