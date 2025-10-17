@@ -1938,15 +1938,26 @@ function downloadReadingAnswers(readingTitle, summaryBoxId) {
         return false;
     }
     
-    // Function to wrap text
-    function addWrappedText(text, x, y, maxWidth, lineHeight) {
+    // Function to wrap text and handle page breaks for each line
+    function addWrappedText(text, x, startY, maxWidth, lineHeight) {
         const lines = doc.splitTextToSize(text, maxWidth);
-        lines.forEach((line, index) => {
-            checkPageBreak(lineHeight);
-            doc.text(line, x, y + (index * lineHeight));
-            yPosition = y + ((index + 1) * lineHeight);
+        let currentY = startY;
+        
+        lines.forEach((line) => {
+            // Check if we need a new page before adding this line
+            if (currentY + lineHeight > pageHeight - margin) {
+                doc.addPage();
+                currentY = margin;
+            }
+            
+            // Add the line at the current position
+            doc.text(line, x, currentY);
+            currentY += lineHeight;
         });
-        return yPosition;
+        
+        // Update the global yPosition
+        yPosition = currentY;
+        return currentY;
     }
     
     // Collect all questions and answers
