@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Protect Your Work on the Internet</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background: #f5f7fa; }
+    .reading-container { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    .reading-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 12px; margin-bottom: 30px; }
+    .reading-header h1 { margin: 0; font-size: 2em; }
+    .reading-header p { margin: 10px 0 0 0; opacity: 0.9; }
+    .pdf-link { background: #fff3cd; border-left: 5px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 6px; }
+    .pdf-link a { color: #856404; font-weight: bold; text-decoration: none; }
+    .pdf-link a:hover { text-decoration: underline; }
+    .reading-content { margin-bottom: 30px; }
+    .reading-content h2 { color: #667eea; border-bottom: 3px solid #667eea; padding-bottom: 10px; margin-top: 30px; }
+    .reading-content h3 { color: #764ba2; margin-top: 25px; }
+    .reading-content p { line-height: 1.8; margin: 15px 0; }
+    .reading-content ul, .reading-content ol { line-height: 1.8; margin-left: 20px; }
+    .reading-content li { margin: 10px 0; }
+    .info-box { background: #d1ecf1; border-left: 5px solid #0c5460; padding: 20px; margin: 20px 0; border-radius: 6px; }
+    .tip-box { background: #d4edda; border-left: 5px solid #28a745; padding: 20px; margin: 20px 0; border-radius: 6px; }
+    .warning-box { background: #f8d7da; border-left: 5px solid #dc3545; padding: 20px; margin: 20px 0; border-radius: 6px; }
+    .strategy-card { background: white; border: 2px solid #667eea; border-radius: 8px; padding: 20px; margin: 15px 0; box-shadow: 0 2px 6px rgba(102, 126, 234, 0.1); }
+    .strategy-card h4 { color: #667eea; margin-top: 0; font-size: 1.2em; }
+    .embedded-question { margin: 30px 0; padding: 25px; background: #f8f9fa; border-radius: 12px; border-left: 5px solid #667eea; box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1); }
+    .question-header { display: flex; align-items: center; margin-bottom: 15px; gap: 10px; }
+    .question-badge { background: #667eea; color: white; padding: 5px 12px; border-radius: 6px; font-weight: bold; font-size: 0.9em; }
+    .question-type { background: #e8eaf6; color: #5c6bc0; padding: 5px 12px; border-radius: 6px; font-size: 0.85em; font-weight: 600; }
+    .question-text { font-weight: 600; color: #333; margin-bottom: 15px; font-size: 1.05em; }
+    .question-options { margin: 15px 0; }
+    .question-options label { display: block; margin: 10px 0; padding: 12px; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 2px solid #e0e0e0; }
+    .question-options label:hover { background: #f5f7fa; border-color: #667eea; }
+    .question-options input[type="radio"] { margin-right: 10px; }
+    .text-input { width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1em; font-family: inherit; margin: 8px 0; }
+    .text-input:focus { outline: none; border-color: #667eea; }
+    textarea.text-input { min-height: 100px; resize: vertical; }
+    .inline-blank { display: inline-block; min-width: 120px; padding: 8px; border: 0; border-bottom: 2px solid #667eea; font-size: 1em; margin: 0 5px; }
+    .inline-blank:focus { outline: none; background: #f5f7fa; }
+    .match-item { background: #f8f9fa; padding: 15px; margin-bottom: 12px; border-radius: 8px; border: 2px solid #e0e0e0; }
+    .match-item strong { color: #667eea; }
+    .match-item input { margin-top: 8px; }
+    .button-group { margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn { padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 0.95em; transition: all 0.3s; }
+    .btn-submit { background: #667eea; color: white; }
+    .btn-submit:hover { background: #5568d3; transform: translateY(-2px); }
+    .btn-retry { background: #ffc107; color: #000; display: none; }
+    .btn-retry:hover { background: #e0a800; }
+    .feedback { margin-top: 15px; padding: 15px; border-radius: 8px; font-weight: 600; }
+    .feedback.correct { background: #d4edda; color: #155724; border: 2px solid #c3e6cb; }
+    .feedback.incorrect { background: #f8d7da; color: #721c24; border: 2px solid #f5c6cb; }
+    .summary-section { margin-top: 40px; padding: 30px; background: linear-gradient(135deg, #e8f4f8 0%, #f0f8ff 100%); border-radius: 12px; border: 3px solid #667eea; }
+    .summary-section h3 { color: #667eea; margin-top: 0; }
+    .summary-textarea { width: 100%; min-height: 150px; padding: 15px; border: 2px solid #667eea; border-radius: 8px; font-size: 1em; font-family: inherit; resize: vertical; line-height: 1.6; }
+    .download-section { margin-top: 30px; text-align: center; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    .btn-download { background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; padding: 15px 30px; font-size: 1.1em; border: none; border-radius: 10px; cursor: pointer; font-weight: bold; transition: all 0.3s; box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3); }
+    .btn-download:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4); }
+    .back-button { display: inline-block; margin-bottom: 20px; padding: 10px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; }
+    .back-button:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3); }
+</style>
+</head>
+<body>
+
+<a href="2-dot-1-1-ip-ethics-and-privacy copy.html" class="back-button">← Back to Main Lesson</a>
+
+<div class="reading-container">
+    <div class="reading-header">
+        <h1>🛡️ How to Protect Your Work on the Internet</h1>
+        <p>An interactive reading experience with embedded questions</p>
+    </div>
+
+    <div class="pdf-link">
+        🔗 <strong>Reference:</strong> <a href="https://www.artslaw.com.au/legal/raw-law/how-do-you-protect-your-work-on-the-internet/" target="_blank">Read the original article from Arts Law Centre of Australia</a> for complete details
+    </div>
+
+    <div class="reading-content">
+        <h2>The Digital Dilemma</h2>
+        <p>Publishing your work online is a double-edged sword:</p>
+        
+        <div class="info-box">
+            <p><strong>✅ The Good:</strong> You can reach global audiences, share your creativity, build a portfolio, and connect with other creators.</p>
+            <p><strong>⚠️ The Challenge:</strong> Once something is online, it can be copied, shared, and potentially misused in seconds. Digital files are perfect copies that don't degrade.</p>
+        </div>
+
+        <p><strong>Good news:</strong> Your work is automatically protected by copyright the moment you create it. You don't need to register it or add a copyright symbol (though these can help).</p>
+        
+        <p><strong>The reality:</strong> Automatic copyright protection doesn't prevent copying—it gives you legal rights <em>after</em> infringement occurs. Prevention and enforcement are your responsibility.</p>
+
+        <h2>Strategic Protection Methods</h2>
+        
+        <div class="strategy-card">
+            <h4>1. 🔒 Watermarking and Attribution</h4>
+            <p><strong>What it is:</strong> Adding visible marks, signatures, or text overlays to your work.</p>
+            <p><strong>Pros:</strong></p>
+            <ul>
+                <li>Deters casual copying and makes unauthorized use obvious</li>
+                <li>Promotes your brand/website even if content is shared</li>
+                <li>Makes it clear who created the work</li>
+            </ul>
+            <p><strong>Cons:</strong></p>
+            <ul>
+                <li>Can be cropped out or edited out</li>
+                <li>May detract from aesthetic appeal of the work</li>
+                <li>Doesn't prevent determined infringers</li>
+            </ul>
+            <p><strong>Best for:</strong> Photography, artwork, graphic design</p>
+        </div>
+
+        <div class="strategy-card">
+            <h4>2. 📝 Copyright Notices</h4>
+            <p><strong>What it is:</strong> Displaying © [Year] [Your Name]. All Rights Reserved.</p>
+            <p><strong>Why use it:</strong></p>
+            <ul>
+                <li>Reminds people the work is protected</li>
+                <li>Establishes the date of creation</li>
+                <li>Makes "I didn't know it was copyrighted" defense harder</li>
+                <li>Professional presentation</li>
+            </ul>
+            <p><strong>Where to place:</strong> Website footers, image captions, video descriptions, document headers</p>
+        </div>
+
+        <div class="strategy-card">
+            <h4>3. 🔐 Technical Protection Measures</h4>
+            <p><strong>Options include:</strong></p>
+            <ul>
+                <li><strong>Disable right-clicking</strong> - Basic deterrent (easily bypassed)</li>
+                <li><strong>Low-resolution previews</strong> - Show smaller versions online, sell high-res</li>
+                <li><strong>Digital Rights Management (DRM)</strong> - Encryption and access controls</li>
+                <li><strong>Password protection</strong> - For client previews or private sharing</li>
+                <li><strong>Content Delivery Networks (CDNs)</strong> - Make source URLs harder to find</li>
+            </ul>
+            <p><strong>Reality check:</strong> Determined infringers can bypass most technical measures. These slow down casual copying but aren't foolproof.</p>
+        </div>
+    </div>
+
+    <!-- EMBEDDED QUESTION 1 -->
+    <div class="embedded-question" id="q1-container">
+        <div class="question-header">
+            <span class="question-badge">Question 1</span>
+            <span class="question-type">Multiple Choice</span>
+        </div>
+        <div class="question-text">
+            What is the MOST EFFECTIVE reason to use watermarks on your online images?
+        </div>
+        <div class="question-options">
+            <label><input type="radio" name="q1" value="a"> A) They completely prevent anyone from copying your work</label>
+            <label><input type="radio" name="q1" value="b"> B) They are required by law to prove copyright ownership</label>
+            <label><input type="radio" name="q1" value="c"> C) They deter casual copying and make unauthorized use obvious</label>
+            <label><input type="radio" name="q1" value="d"> D) They automatically prosecute anyone who infringes your copyright</label>
+        </div>
+        <div class="button-group">
+            <button class="btn btn-submit" onclick="checkMultipleChoice('q1', 'c')">✓ Submit Answer</button>
+            <button class="btn btn-retry" id="q1-retry" onclick="retryQuestion('q1', 'radio')">↻ Try Again</button>
+        </div>
+        <div id="q1-feedback"></div>
+    </div>
+
+    <div class="reading-content">
+        <div class="strategy-card">
+            <h4>4. 📄 Terms of Use and Licensing</h4>
+            <p><strong>Define how others can use your work:</strong></p>
+            <ul>
+                <li><strong>All Rights Reserved</strong> - No one can use without explicit permission</li>
+                <li><strong>Creative Commons Licenses</strong> - Pre-defined permissions (e.g., use with attribution, non-commercial only)</li>
+                <li><strong>Custom licenses</strong> - Specific terms for your situation</li>
+            </ul>
+            <p><strong>Include on:</strong> Your website's legal/terms page, image descriptions, portfolio pages, social media bios</p>
+        </div>
+
+        <div class="strategy-card">
+            <h4>5. 📊 Metadata Embedding</h4>
+            <p><strong>What it is:</strong> Information embedded in the file itself (EXIF data for photos, ID3 tags for music, XMP data for documents).</p>
+            <p><strong>Can include:</strong></p>
+            <ul>
+                <li>Your name and contact information</li>
+                <li>Copyright notice</li>
+                <li>Creation date</li>
+                <li>Usage terms</li>
+                <li>Website URL</li>
+            </ul>
+            <p><strong>Advantage:</strong> Stays with the file even if it's downloaded and shared</p>
+            <p><strong>Limitation:</strong> Can be removed or stripped out, many social media platforms remove metadata</p>
+        </div>
+
+        <div class="strategy-card">
+            <h4>6. 🔍 Monitoring and Enforcement</h4>
+            <p><strong>Proactive monitoring:</strong></p>
+            <ul>
+                <li><strong>Google Reverse Image Search</strong> - Upload your image to find copies online</li>
+                <li><strong>TinEye</strong> - Specialized reverse image search</li>
+                <li><strong>Google Alerts</strong> - Get notified when specific text appears online</li>
+                <li><strong>Social media monitoring</strong> - Search for your watermark or distinctive elements</li>
+                <li><strong>Automated services</strong> - Pixsy, ImageRights, Copytrack (paid services)</li>
+            </ul>
+            <p><strong>When you find infringement:</strong></p>
+            <ol>
+                <li>Document the infringement (screenshots, URLs, dates)</li>
+                <li>Send a polite takedown request to the infringer</li>
+                <li>If ignored, send DMCA takedown notice to hosting provider</li>
+                <li>Consider legal action for serious commercial infringement</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- EMBEDDED QUESTION 2 -->
+    <div class="embedded-question" id="q2-container">
+        <div class="question-header">
+            <span class="question-badge">Question 2</span>
+            <span class="question-type">Matching</span>
+        </div>
+        <div class="question-text">
+            Match each protection strategy to its primary purpose:
+        </div>
+        <div class="match-item">
+            <strong>1. Copyright notice (© symbol with your name)</strong>
+            <input type="text" id="q2-match1" class="text-input" placeholder="What does this primarily do?">
+        </div>
+        <div class="match-item">
+            <strong>2. Metadata embedding (EXIF data)</strong>
+            <input type="text" id="q2-match2" class="text-input" placeholder="What does this primarily do?">
+        </div>
+        <div class="match-item">
+            <strong>3. Google Reverse Image Search</strong>
+            <input type="text" id="q2-match3" class="text-input" placeholder="What does this primarily do?">
+        </div>
+        <p style="margin-top: 15px; font-size: 0.95em; color: #666;">
+            <strong>Options to consider:</strong> Reminds/warns users | Stays with file when shared | Finds unauthorized copies online
+        </p>
+        <div class="button-group">
+            <button class="btn btn-submit" onclick="checkMatching('q2', {'q2-match1': 'remind', 'q2-match2': 'file', 'q2-match3': 'find'})">✓ Submit Answer</button>
+            <button class="btn btn-retry" id="q2-retry" onclick="retryQuestion('q2', 'text')">↻ Try Again</button>
+        </div>
+        <div id="q2-feedback"></div>
+    </div>
+
+    <div class="reading-content">
+        <h2>Smart Publishing Practices</h2>
+        
+        <div class="tip-box">
+            <p><strong>💡 Before You Post Online:</strong></p>
+            <ol>
+                <li><strong>Consider if you need to post it</strong> - Is exposure worth the risk?</li>
+                <li><strong>Choose the right platform</strong> - Understand each platform's terms of service</li>
+                <li><strong>Use appropriate resolution</strong> - Don't upload print-quality files if web-quality suffices</li>
+                <li><strong>Apply protection measures</strong> - Watermark, copyright notice, metadata</li>
+                <li><strong>Keep your originals</strong> - Maintain high-res, unwatermarked versions offline</li>
+                <li><strong>Document your creation</strong> - Keep drafts, timestamps, source files to prove ownership</li>
+            </ol>
+        </div>
+
+        <h3>Platform-Specific Considerations</h3>
+        <ul>
+            <li><strong>Instagram/Facebook:</strong> Strips metadata; consider visible watermarks</li>
+            <li><strong>YouTube:</strong> Content ID system protects video/audio; register your channel</li>
+            <li><strong>Pinterest:</strong> High risk for image copying; use clear watermarks</li>
+            <li><strong>Your own website:</strong> Most control; implement all protection measures</li>
+            <li><strong>Portfolio sites (Behance, DeviantArt):</strong> Balance protection with showcasing quality</li>
+        </ul>
+
+        <h2>The Balance: Protection vs. Exposure</h2>
+        <p>There's a trade-off between protecting your work and sharing it effectively:</p>
+        
+        <div class="info-box">
+            <p><strong>Heavy Protection:</strong> Watermarks everywhere, low-resolution only, disabled right-click, registration walls</p>
+            <p><strong>Result:</strong> Less infringement but also less engagement, harder to share, worse user experience</p>
+            <p style="margin-top: 15px;"><strong>Light Protection:</strong> Clear copyright notices, metadata, monitoring, high-quality display</p>
+            <p><strong>Result:</strong> More exposure and engagement but higher infringement risk</p>
+            <p style="margin-top: 15px;"><strong>Recommendation:</strong> Find your balance based on your goals. Emerging artists may prioritize exposure; established professionals may prioritize protection.</p>
+        </div>
+    </div>
+
+    <!-- EMBEDDED QUESTION 3 -->
+    <div class="embedded-question" id="q3-container">
+        <div class="question-header">
+            <span class="question-badge">Question 3</span>
+            <span class="question-type">Fill in the Blanks</span>
+        </div>
+        <div class="question-text">Complete the sentence about copyright protection:</div>
+        <p style="line-height: 2.5; font-size: 1.05em; margin: 15px 0;">
+            While copyright protection is 
+            <input type="text" id="q3-blank1" class="inline-blank" placeholder="when?">
+            when you create a work, you should still add visible 
+            <input type="text" id="q3-blank2" class="inline-blank" placeholder="what?">
+            notices and regularly 
+            <input type="text" id="q3-blank3" class="inline-blank" placeholder="action">
+            your work online to find unauthorized uses.
+        </p>
+        <div class="button-group">
+            <button class="btn btn-submit" onclick="checkFillInBlank('q3', [['automatic', 'automatically created', 'automatic/immediate'], ['copyright', '©', 'copyright/©'], ['monitor', 'search', 'check']])">✓ Submit Answer</button>
+            <button class="btn btn-retry" id="q3-retry" onclick="retryQuestion('q3', 'text')">↻ Try Again</button>
+        </div>
+        <div id="q3-feedback"></div>
+    </div>
+
+    <!-- EMBEDDED QUESTION 4 -->
+    <div class="embedded-question" id="q4-container">
+        <div class="question-header">
+            <span class="question-badge">Question 4</span>
+            <span class="question-type">Scenario</span>
+        </div>
+        <div class="question-text">Real-World Application</div>
+        <div style="background: #e8f4f8; padding: 20px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #667eea;">
+            <p style="margin: 0; font-style: italic;">
+                You're a photography student building an online portfolio to showcase your work to potential clients and universities. You want to display high-quality images that show your skills, but you're worried about people stealing your photos. Some of your best work took hours to capture and edit.
+            </p>
+        </div>
+        <label style="font-weight: 600; color: #333; margin: 10px 0; display: block;">
+            Develop a protection strategy: What combination of methods would you use? Explain your reasoning and how you would balance protection with the need to showcase your work professionally.
+        </label>
+        <textarea class="text-input" placeholder="Consider: watermarks, copyright notices, resolution, metadata, monitoring, terms of use, and how visible/intrusive each measure should be for a portfolio..."></textarea>
+    </div>
+
+    <div class="reading-content">
+        <h2>Key Takeaways</h2>
+        <ol>
+            <li><strong>Copyright is automatic</strong> but additional measures help prevent and prove infringement</li>
+            <li><strong>No single method is perfect</strong> - use a combination of strategies</li>
+            <li><strong>Balance protection and exposure</strong> based on your goals</li>
+            <li><strong>Visible measures</strong> (watermarks, notices) deter casual infringers</li>
+            <li><strong>Technical measures</strong> slow down but don't stop determined infringers</li>
+            <li><strong>Monitoring is essential</strong> - protection is ongoing, not one-time</li>
+            <li><strong>Document everything</strong> - keep originals and evidence of creation</li>
+            <li><strong>Understand platform terms</strong> - each has different rules and risks</li>
+        </ol>
+
+        <div class="warning-box">
+            <p><strong>⚠️ Final Reality Check:</strong></p>
+            <p>Once something is online, you can never have 100% control over it. Protection measures reduce risk but don't eliminate it. Consider carefully what you share, and accept that sharing online always involves some risk of unauthorized use.</p>
+        </div>
+    </div>
+
+    <div class="summary-section">
+        <h3>✍️ Write Your Summary</h3>
+        <p style="color: #666; margin-bottom: 15px;">
+            Now that you've completed the reading and answered the questions, write a comprehensive summary paragraph about protecting your work online. Include the main protection strategies (watermarking, copyright notices, technical measures, metadata, monitoring) and discuss the balance between protection and exposure.
+        </p>
+        <textarea class="summary-textarea" id="summary-text" placeholder="Write your summary here..."></textarea>
+        <p style="margin-top: 15px; color: #666; font-size: 0.95em; font-style: italic;">
+            💡 Tip: Explain that no protection is perfect, and creators must balance security with accessibility based on their goals.
+        </p>
+    </div>
+
+    <div class="download-section">
+        <h3 style="color: #667eea; margin-top: 0;">📥 Download Your Work</h3>
+        <p style="color: #666; margin-bottom: 20px;">Save all your answers and summary as a PDF before leaving this page.</p>
+        <button class="btn-download" onclick="downloadEmbeddedReading()">📥 Download My Answers (PDF)</button>
+    </div>
+</div>
+
+<script src="embedded-reading-functions.js"></script>
+
+</body>
+</html>
