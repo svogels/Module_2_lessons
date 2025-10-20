@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introduction to Copyright in Australia - Embedded Interactive Reading</title>
+<link rel="stylesheet" href="style.css">
+<!-- jsPDF library for PDF generation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        background: #f5f7fa;
+    }
+    .reading-container {
+        background: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .reading-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 30px;
+        border-radius: 12px;
+        margin-bottom: 30px;
+    }
+    .reading-header h1 {
+        margin: 0;
+        font-size: 2em;
+    }
+    .reading-header p {
+        margin: 10px 0 0 0;
+        opacity: 0.9;
+    }
+    .reading-content {
+        margin-bottom: 30px;
+    }
+    .reading-content h2 {
+        color: #667eea;
+        border-bottom: 3px solid #667eea;
+        padding-bottom: 10px;
+        margin-top: 30px;
+    }
+    .reading-content p {
+        line-height: 1.8;
+        margin: 15px 0;
+    }
+    .reading-content ul {
+        line-height: 1.8;
+        margin-left: 20px;
+    }
+    .reading-content li {
+        margin: 10px 0;
+    }
+    .info-box {
+        background: #fff3cd;
+        border-left: 5px solid #ffc107;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 6px;
+    }
+    .info-box strong {
+        color: #856404;
+    }
+    
+    /* Question Styling */
+    .embedded-question {
+        margin: 30px 0;
+        padding: 25px;
+        background: #f8f9fa;
+        border-radius: 12px;
+        border-left: 5px solid #667eea;
+        box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+    }
+    .question-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        gap: 10px;
+    }
+    .question-badge {
+        background: #667eea;
+        color: white;
+        padding: 5px 12px;
+        border-radius: 6px;
+        font-weight: bold;
+        font-size: 0.9em;
+    }
+    .question-type {
+        background: #e8eaf6;
+        color: #5c6bc0;
+        padding: 5px 12px;
+        border-radius: 6px;
+        font-size: 0.85em;
+        font-weight: 600;
+    }
+    .question-text {
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 15px;
+        font-size: 1.05em;
+    }
+    .question-options {
+        margin: 15px 0;
+    }
+    .question-options label {
+        display: block;
+        margin: 10px 0;
+        padding: 12px;
+        background: white;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s;
+        border: 2px solid #e0e0e0;
+    }
+    .question-options label:hover {
+        background: #f5f7fa;
+        border-color: #667eea;
+    }
+    .question-options input[type="radio"] {
+        margin-right: 10px;
+    }
+    .text-input {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 1em;
+        font-family: inherit;
+        margin: 8px 0;
+    }
+    .text-input:focus {
+        outline: none;
+        border-color: #667eea;
+    }
+    textarea.text-input {
+        min-height: 100px;
+        resize: vertical;
+    }
+    .inline-blank {
+        display: inline-block;
+        min-width: 150px;
+        padding: 8px;
+        border: 0;
+        border-bottom: 2px solid #667eea;
+        font-size: 1em;
+        font-family: inherit;
+        margin: 0 5px;
+    }
+    .inline-blank:focus {
+        outline: none;
+        background: #f5f7fa;
+    }
+    
+    /* Button Styling */
+    .button-group {
+        margin-top: 15px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    .btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 0.95em;
+        transition: all 0.3s;
+    }
+    .btn-submit {
+        background: #667eea;
+        color: white;
+    }
+    .btn-submit:hover {
+        background: #5568d3;
+        transform: translateY(-2px);
+    }
+    .btn-retry {
+        background: #ffc107;
+        color: #000;
+        display: none;
+    }
+    .btn-retry:hover {
+        background: #e0a800;
+    }
+    
+    /* Feedback Styling */
+    .feedback {
+        margin-top: 15px;
+        padding: 15px;
+        border-radius: 8px;
+        font-weight: 600;
+    }
+    .feedback.correct {
+        background: #d4edda;
+        color: #155724;
+        border: 2px solid #c3e6cb;
+    }
+    .feedback.incorrect {
+        background: #f8d7da;
+        color: #721c24;
+        border: 2px solid #f5c6cb;
+    }
+    
+    /* Summary Section */
+    .summary-section {
+        margin-top: 40px;
+        padding: 30px;
+        background: linear-gradient(135deg, #e8f4f8 0%, #f0f8ff 100%);
+        border-radius: 12px;
+        border: 3px solid #667eea;
+    }
+    .summary-section h3 {
+        color: #667eea;
+        margin-top: 0;
+    }
+    .summary-textarea {
+        width: 100%;
+        min-height: 150px;
+        padding: 15px;
+        border: 2px solid #667eea;
+        border-radius: 8px;
+        font-size: 1em;
+        font-family: inherit;
+        resize: vertical;
+        line-height: 1.6;
+    }
+    .summary-textarea:focus {
+        outline: none;
+        border-color: #5568d3;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+    
+    /* Download Section */
+    .download-section {
+        margin-top: 30px;
+        text-align: center;
+        padding: 30px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .btn-download {
+        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        color: white;
+        padding: 15px 30px;
+        font-size: 1.1em;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s;
+        box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+    }
+    .btn-download:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+    }
+    
+    .back-button {
+        display: inline-block;
+        margin-bottom: 20px;
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+    .back-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    }
+</style>
+</head>
+<body>
+
+<a href="2-dot-1-1-ip-ethics-and-privacy copy.html" class="back-button">← Back to Main Lesson</a>
+
+<div class="reading-container">
+    <div class="reading-header">
+        <h1>📚 Introduction to Copyright in Australia</h1>
+        <p>An interactive reading experience with embedded questions</p>
+    </div>
+
+    <div class="pdf-link">
+        📄 <strong>Reference:</strong> <a href="Introduction to Copyright.pdf" target="_blank">View the original PDF article</a> for the complete text
+    </div>
+
+    <!-- INTRODUCTION SECTION -->
+    <div class="reading-content">
+        <h2>What is Copyright?</h2>
+        <p>Copyright is a form of legal protection given to creators of original works. In Australia, copyright is governed by the <strong>Copyright Act 1968 (Cth)</strong>, which provides exclusive rights to creators of literary, dramatic, musical, and artistic works.</p>
+        
+        <p>Copyright protection is <strong>automatic</strong> in Australia—you don't need to register your work or use the © symbol (although it's a good idea to include it). As soon as you create an original work and fix it in a material form (write it down, record it, paint it, etc.), copyright protection begins.</p>
+
+        <ul>
+            <li><strong>Original literary works:</strong> Books, articles, websites, computer programs, lyrics</li>
+            <li><strong>Dramatic works:</strong> Plays, screenplays, choreography</li>
+            <li><strong>Musical works:</strong> Musical compositions (notes and rhythms)</li>
+            <li><strong>Artistic works:</strong> Paintings, drawings, photographs, sculptures, buildings</li>
+        </ul>
+    </div>
+
+    <!-- EMBEDDED QUESTION 1 -->
+    <div class="embedded-question" id="q1-container">
+        <div class="question-header">
+            <span class="question-badge">Question 1</span>
+            <span class="question-type">True/False</span>
+        </div>
+        <div class="question-text">
+            In Australia, you must register your work with a government agency to receive copyright protection.
+        </div>
+        <div class="question-options">
+            <label>
+                <input type="radio" name="q1" value="true">
+                True
+            </label>
+            <label>
+                <input type="radio" name="q1" value="false">
+                False
+            </label>
+        </div>
+        <div class="button-group">
+            <button class="btn btn-submit" onclick="checkTrueFalse('q1', 'false')">✓ Submit Answer</button>
+            <button class="btn btn-retry" id="q1-retry" onclick="retryQuestion('q1', 'radio')">↻ Try Again</button>
+        </div>
+        <div id="q1-feedback"></div>
+        
+        <div style="margin-top: 15px;">
+            <label style="font-weight: 600; color: #555; margin-bottom: 8px; display: block;">Explain your answer:</label>
+            <textarea class="text-input" placeholder="Why did you choose true or false? What does the reading say about copyright registration?"></textarea>
+        </div>
+    </div>
+
+    <!-- CONTINUE READING -->
+    <div class="reading-content">
+        <h2>How Long Does Copyright Last?</h2>
+        <p>The duration of copyright protection varies depending on the type of work and when it was created:</p>
+        
+        <ul>
+            <li><strong>Literary, dramatic, musical, and artistic works:</strong> Generally lasts for the life of the creator plus 70 years</li>
+            <li><strong>Sound recordings and films:</strong> 70 years from the year of first publication</li>
+            <li><strong>Published editions:</strong> 25 years from the year of first publication</li>
+        </ul>
+
+        <p>After copyright expires, the work enters the <strong>public domain</strong>, meaning anyone can use it without permission or payment.</p>
+    </div>
+
+    <!-- EMBEDDED QUESTION 2 -->
+    <div class="embedded-question" id="q2-container">
+        <div class="question-header">
+            <span class="question-badge">Question 2</span>
+            <span class="question-type">Multiple Choice</span>
+        </div>
+        <div class="question-text">
+            If a novelist writes a book in 2025 and passes away in 2050, when will the copyright on that book expire?
+        </div>
+        <div class="question-options">
+            <label>
+                <input type="radio" name="q2" value="a">
+                A) 2050 (when the author dies)
+            </label>
+            <label>
+                <input type="radio" name="q2" value="b">
+                B) 2095 (70 years from publication)
+            </label>
+            <label>
+                <input type="radio" name="q2" value="c">
+                C) 2120 (70 years after the author's death)
+            </label>
+            <label>
+                <input type="radio" name="q2" value="d">
+                D) 2075 (25 years from publication)
+            </label>
+        </div>
+        <div class="button-group">
+            <button class="btn btn-submit" onclick="checkMultipleChoice('q2', 'c')">✓ Submit Answer</button>
+            <button class="btn btn-retry" id="q2-retry" onclick="retryQuestion('q2', 'radio')">↻ Try Again</button>
+        </div>
+        <div id="q2-feedback"></div>
+    </div>
+
+    <!-- CONTINUE READING -->
+    <div class="reading-content">
+        <h2>What Rights Does Copyright Give You?</h2>
+        <p>Copyright gives the creator exclusive rights to control how their work is used. These rights include:</p>
+        
+        <ul>
+            <li><strong>Reproduction:</strong> The right to copy or reproduce the work</li>
+            <li><strong>Publication:</strong> The right to publish the work for the first time</li>
+            <li><strong>Performance:</strong> The right to perform the work in public</li>
+            <li><strong>Communication:</strong> The right to communicate the work to the public (e.g., broadcasting, making it available online)</li>
+            <li><strong>Adaptation:</strong> The right to make adaptations or derivative works (e.g., translating a book, making a film from a novel)</li>
+        </ul>
+
+        <p>These are <strong>economic rights</strong> that can be licensed, assigned, or sold. Additionally, creators have <strong>moral rights</strong>:</p>
+        
+        <ul>
+            <li><strong>Right of attribution:</strong> The right to be identified as the creator</li>
+            <li><strong>Right against false attribution:</strong> The right not to be falsely credited as the creator of someone else's work</li>
+            <li><strong>Right of integrity:</strong> The right to object to derogatory treatment of the work</li>
+        </ul>
+    </div>
+
+    <!-- EMBEDDED QUESTION 3 -->
+    <div class="embedded-question" id="q3-container">
+        <div class="question-header">
+            <span class="question-badge">Question 3</span>
+            <span class="question-type">Fill in the Blanks</span>
+        </div>
+        <div class="question-text">
+            Complete the sentence about the two types of copyright rights:
+        </div>
+        <p style="line-height: 2.5; font-size: 1.05em; margin: 15px 0;">
+            Copyright gives creators both 
+            <input type="text" id="q3-blank1" class="inline-blank" placeholder="type of rights">
+            rights, which can be licensed or sold, and 
+            <input type="text" id="q3-blank2" class="inline-blank" placeholder="type of rights">
+            rights, which include the right of 
+            <input type="text" id="q3-blank3" class="inline-blank" placeholder="right name">
+            and the right of integrity.
+        </p>
+        <div class="button-group">
+            <button class="btn btn-submit" onclick="checkFillInBlank('q3', [['economic'], ['moral'], ['attribution']])">✓ Submit Answer</button>
+            <button class="btn btn-retry" id="q3-retry" onclick="retryQuestion('q3', 'text')">↻ Try Again</button>
+        </div>
+        <div id="q3-feedback"></div>
+    </div>
+
+    <!-- CONTINUE READING -->
+    <div class="reading-content">
+        <h2>The Australian Copyright Council</h2>
+        <p>The <strong>Australian Copyright Council (ACC)</strong> is an independent, not-for-profit organization established in 1968. The ACC provides information and education about copyright law to creators and the wider community.</p>
+
+        <div class="info-box">
+            <p><strong>⚠️ Important thing to note:</strong></p>
+            <p>Australian copyright law only applies within Australian borders. Outside Australia, your work is subject to that country's copyright laws. However, international protection exists through treaties like the <strong>Berne Convention</strong> and <strong>Universal Copyright Convention</strong>, which establish minimum legal requirements globally.</p>
+        </div>
+
+        <p>The government department responsible for copyright policy is the <strong>Department of Infrastructure, Transport, Regional Development and Communications</strong>.</p>
+    </div>
+
+    <!-- EMBEDDED QUESTION 4 -->
+    <div class="embedded-question" id="q4-container">
+        <div class="question-header">
+            <span class="question-badge">Question 4</span>
+            <span class="question-type">Scenario</span>
+        </div>
+        <div class="question-text">
+            Real-World Application
+        </div>
+        <div style="background: #e8f4f8; padding: 20px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #667eea;">
+            <p style="margin: 0; font-style: italic;">
+                You're a photographer who takes photos in Australia and posts them on your website. A company in Japan uses one of your photos in their advertising without permission.
+            </p>
+        </div>
+        <label style="font-weight: 600; color: #333; margin: 10px 0; display: block;">
+            What copyright protections apply? Can you take action against the Japanese company? Explain using what you learned about international copyright.
+        </label>
+        <textarea class="text-input" placeholder="Think about: Australian vs Japanese copyright law, international treaties, your rights as the creator..."></textarea>
+    </div>
+
+    <!-- EMBEDDED QUESTION 5 -->
+    <div class="embedded-question" id="q5-container">
+        <div class="question-header">
+            <span class="question-badge">Question 5</span>
+            <span class="question-type">Multiple Choice</span>
+        </div>
+        <div class="question-text">
+            Which organization is responsible for promoting understanding of copyright law in Australia?
+        </div>
+        <div class="question-options">
+            <label>
+                <input type="radio" name="q5" value="a">
+                A) Australian Broadcasting Corporation (ABC)
+            </label>
+            <label>
+                <input type="radio" name="q5" value="b">
+                B) Australian Copyright Council (ACC)
+            </label>
+            <label>
+                <input type="radio" name="q5" value="c">
+                C) Department of Infrastructure, Transport, Regional Development and Communications
+            </label>
+            <label>
+                <input type="radio" name="q5" value="d">
+                D) Australian Securities and Investments Commission (ASIC)
+            </label>
+        </div>
+        <div class="button-group">
+            <button class="btn btn-submit" onclick="checkMultipleChoice('q5', 'b')">✓ Submit Answer</button>
+            <button class="btn btn-retry" id="q5-retry" onclick="retryQuestion('q5', 'radio')">↻ Try Again</button>
+        </div>
+        <div id="q5-feedback"></div>
+    </div>
+
+    <!-- SUMMARY SECTION -->
+    <div class="summary-section">
+        <h3>✍️ Write Your Summary</h3>
+        <p style="color: #666; margin-bottom: 15px;">
+            Now that you've completed the reading and answered the questions, write a comprehensive summary paragraph about copyright in Australia. Include information about what copyright is, how long it lasts, the rights it gives creators, and how it applies internationally.
+        </p>
+        <textarea class="summary-textarea" id="summary-text" placeholder="Write your summary here... Try to connect the key ideas you've learned in complete sentences."></textarea>
+        <p style="margin-top: 15px; color: #666; font-size: 0.95em; font-style: italic;">
+            💡 Tip: Use your answers to the embedded questions to help structure your summary. Include the Copyright Act 1968, duration of protection, economic and moral rights, and international protections.
+        </p>
+    </div>
+
+    <!-- DOWNLOAD SECTION -->
+    <div class="download-section">
+        <h3 style="color: #667eea; margin-top: 0;">📥 Download Your Work</h3>
+        <p style="color: #666; margin-bottom: 20px;">
+            Save all your answers and summary as a PDF before leaving this page.
+        </p>
+        <button class="btn-download" onclick="downloadEmbeddedReading()">
+            📥 Download My Answers (PDF)
+        </button>
+    </div>
+</div>
+
+<script src="embedded-reading-functions.js"></script>
+
+</body>
+</html>
