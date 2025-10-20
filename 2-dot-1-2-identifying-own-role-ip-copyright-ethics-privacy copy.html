@@ -27,6 +27,10 @@
 <div class="section">
 <h2 style="text-align: center;">What role do you have as a YouTuber?</h2>
 
+<div class="video-container" style="margin: 30px 0;">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/m8jHLFAmPO0?si=19ALL93wVigl8eT6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+</div>
+
 <p>As a member of the YouTube community you have the right to consume and/or create content. Members of the YouTube Community must adhere to set guidelines stipulated in the Community Guidelines policy including but not limited to:</p>
 
 <ul>
@@ -39,14 +43,116 @@
 
 <div class="feedback info" style="margin-top: 30px;">
 <p><strong>📖 Learn More:</strong></p>
-<p>Review the full <a href="https://www.youtube.com/howyoutubeworks/policies/community-guidelines/" target="_blank">YouTube Community Guidelines</a> to understand your responsibilities as a content creator or consumer.</p>
+<p>Review the full <a href="https://support.google.com/youtube/answer/9288567?en-GB&sjid=6696618074483827073-NA" target="_blank">YouTube Community Guidelines</a> to understand your responsibilities as a content creator or consumer.</p>
 </div>
 </div>
 
+<div style="margin: 40px 0; padding: 25px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #667eea;">
+<h3 style="color: #667eea; margin-top: 0;">📝 Your Response</h3>
+<p style="margin-bottom: 15px; font-weight: bold;">In your own words, in the textarea below, state what are the responsibilities of a person consuming (using) and creating content on YouTube.</p>
+<textarea id="youtube-response" class="summary-textarea" placeholder="Write your response here..." style="width: 100%; min-height: 200px; padding: 15px; border: 2px solid #667eea; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6; resize: vertical;"></textarea>
+</div>
+
 <div style="text-align: center; margin: 30px 0;">
+<button onclick="downloadYouTubeResponse()" style="display: inline-block; margin-bottom: 20px; padding: 12px 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; font-size: 1em; font-weight: bold; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+📥 Download My Response as PDF
+</button>
+<br>
 <a href="index.html" class="back-button" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 8px; font-size: 1.1em; transition: all 0.3s ease;">← Back to Index</a>
 </div>
 
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+// Auto-resize textarea as user types
+function autoResizeTextarea(textarea) {
+    textarea.style.height = 'auto';
+    textarea.style.height = textarea.scrollHeight + 'px';
+}
+
+// Apply auto-resize to textarea on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const textarea = document.getElementById('youtube-response');
+    
+    if (textarea) {
+        // Set initial height based on content
+        autoResizeTextarea(textarea);
+        
+        // Add event listeners for typing
+        textarea.addEventListener('input', function() {
+            autoResizeTextarea(this);
+        });
+        
+        // Also resize on paste
+        textarea.addEventListener('paste', function() {
+            setTimeout(() => autoResizeTextarea(this), 0);
+        });
+    }
+});
+
+// Download YouTube Response as PDF
+function downloadYouTubeResponse() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    
+    const pageWidth = doc.internal.pageSize.width;
+    const pageHeight = doc.internal.pageSize.height;
+    const margin = 20;
+    const maxWidth = pageWidth - (margin * 2);
+    let yPosition = margin;
+    
+    // Title
+    doc.setFontSize(18);
+    doc.setTextColor(102, 126, 234);
+    doc.text('YouTube Responsibilities', margin, yPosition);
+    yPosition += 10;
+    
+    // Date
+    doc.setFontSize(10);
+    doc.setTextColor(100, 100, 100);
+    doc.text(`Date: ${new Date().toLocaleDateString()}`, margin, yPosition);
+    yPosition += 15;
+    
+    // Question
+    doc.setFontSize(12);
+    doc.setTextColor(102, 126, 234);
+    doc.setFont(undefined, 'bold');
+    const questionText = 'What are the responsibilities of a person consuming (using) and creating content on YouTube?';
+    const questionLines = doc.splitTextToSize(questionText, maxWidth);
+    doc.text(questionLines, margin, yPosition);
+    yPosition += questionLines.length * 7 + 5;
+    
+    // Response
+    const response = document.getElementById('youtube-response').value.trim() || '[No response provided]';
+    doc.setFontSize(11);
+    doc.setTextColor(0, 0, 0);
+    doc.setFont(undefined, 'normal');
+    
+    const responseLines = doc.splitTextToSize(response, maxWidth);
+    
+    responseLines.forEach(line => {
+        if (yPosition > pageHeight - 20) {
+            doc.addPage();
+            yPosition = margin;
+        }
+        doc.text(line, margin, yPosition);
+        yPosition += 6;
+    });
+    
+    // Page numbers
+    const pageCount = doc.internal.getNumberOfPages();
+    for (let i = 1; i <= pageCount; i++) {
+        doc.setPage(i);
+        doc.setFontSize(9);
+        doc.setTextColor(150, 150, 150);
+        doc.text(`Page ${i} of ${pageCount}`, pageWidth / 2, pageHeight - 10, { align: 'center' });
+    }
+    
+    // Save
+    const fileName = 'YouTube_Responsibilities_' + new Date().toISOString().split('T')[0] + '.pdf';
+    doc.save(fileName);
+}
+</script>
 </body>
 </html>

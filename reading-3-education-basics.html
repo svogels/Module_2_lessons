@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fair Dealing - What Can I Use Without Permission?</title>
+<title>Education - Copyright Basics</title>
 <link rel="stylesheet" href="style.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <style>
@@ -20,7 +20,8 @@
     .reading-content p { line-height: 1.8; margin: 15px 0; }
     .reading-content ul { line-height: 1.8; margin-left: 20px; }
     .reading-content li { margin: 10px 0; }
-    .info-box { background: #fff3cd; border-left: 5px solid #ffc107; padding: 20px; margin: 20px 0; border-radius: 6px; }
+    .info-box { background: #d1ecf1; border-left: 5px solid #0c5460; padding: 20px; margin: 20px 0; border-radius: 6px; }
+    .info-box strong { color: #0c5460; }
     .embedded-question { margin: 30px 0; padding: 25px; background: #f8f9fa; border-radius: 12px; border-left: 5px solid #667eea; box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1); }
     .question-header { display: flex; align-items: center; margin-bottom: 15px; gap: 10px; }
     .question-badge { background: #667eea; color: white; padding: 5px 12px; border-radius: 6px; font-weight: bold; font-size: 0.9em; }
@@ -33,7 +34,7 @@
     .text-input { width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1em; font-family: inherit; margin: 8px 0; }
     .text-input:focus { outline: none; border-color: #667eea; }
     textarea.text-input { min-height: 100px; resize: vertical; }
-    .inline-blank { display: inline-block; min-width: 150px; padding: 8px; border: 0; border-bottom: 2px solid #667eea; font-size: 1em; margin: 0 5px; }
+    .inline-blank { display: inline-block; min-width: 120px; padding: 8px; border: 0; border-bottom: 2px solid #667eea; font-size: 1em; margin: 0 5px; }
     .inline-blank:focus { outline: none; background: #f5f7fa; }
     .button-group { margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap; }
     .btn { padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 0.95em; transition: all 0.3s; }
@@ -60,136 +61,142 @@
 
 <div class="reading-container">
     <div class="reading-header">
-        <h1>📚 Fair Dealing - What Can I Use Without Permission?</h1>
+        <h1>📚 Education - Copyright Basics</h1>
         <p>An interactive reading experience with embedded questions</p>
     </div>
 
     <div class="pdf-link">
-        📄 <strong>Reference:</strong> <a href="Fair Dealing - What can I use without permission_.pdf" target="_blank">View the original PDF article</a> for the complete text
+        📄 <strong>Reference:</strong> <a href="Education - Copyright Basics.pdf" target="_blank">View the original PDF article</a> for the complete text
     </div>
 
     <div class="reading-content">
-        <h2>What is Fair Dealing?</h2>
-        <p><strong>Fair dealing</strong> is an important exception in Australian copyright law that allows you to use copyrighted material without permission or payment in certain circumstances. Unlike the broader "fair use" concept in US law, Australian fair dealing is more narrowly defined and applies only to specific purposes.</p>
+        <h2>Copyright in Educational Settings</h2>
+        <p>Educational institutions have special provisions under Australian copyright law that allow limited copying and use of copyrighted materials for teaching and learning. However, these provisions come with specific rules and limitations that must be followed.</p>
         
-        <p>Fair dealing recognizes that there are legitimate reasons to use portions of copyrighted works for purposes that benefit society, such as education, research, criticism, and news reporting.</p>
+        <p>Understanding copyright in education is essential because teachers and students regularly interact with copyrighted materials - textbooks, articles, videos, images, and online resources.</p>
 
-        <h2>When Does Fair Dealing Apply?</h2>
-        <p>Under Australian copyright law, fair dealing applies to the following specific purposes:</p>
+        <h2>Statutory Licensing Schemes</h2>
+        <p>Australian educational institutions can benefit from <strong>statutory licensing schemes</strong> that allow them to copy and communicate copyrighted materials under certain conditions. These schemes are managed by copyright collecting societies like Copyright Agency.</p>
+
         <ul>
-            <li><strong>Research or study</strong> - For educational or academic purposes</li>
-            <li><strong>Criticism or review</strong> - For analyzing or commenting on creative works</li>
-            <li><strong>Parody or satire</strong> - For humorous or ironic commentary</li>
-            <li><strong>News reporting</strong> - For journalism and current affairs</li>
-            <li><strong>Legal advice</strong> - For professional legal purposes</li>
-            <li><strong>Judicial proceedings</strong> - For court cases and tribunals</li>
+            <li><strong>Copyright Agency</strong> - Manages licenses for text and images</li>
+            <li><strong>Screenrights</strong> - Manages licenses for TV and radio broadcasts</li>
+            <li>Schools pay licensing fees that are distributed to copyright owners</li>
+            <li>These schemes simplify the process of obtaining permission for educational copying</li>
         </ul>
 
-        <p>It's important to note that just because your use falls into one of these categories doesn't automatically make it fair dealing. You still need to consider the fairness factors.</p>
+        <p>Under these schemes, educational institutions can make copies of works without seeking individual permission from each copyright owner, as long as they follow the rules and pay the required fees.</p>
     </div>
 
     <!-- EMBEDDED QUESTION 1 -->
     <div class="embedded-question" id="q1-container">
         <div class="question-header">
             <span class="question-badge">Question 1</span>
-            <span class="question-type">Fill in the Blanks</span>
+            <span class="question-type">True/False</span>
         </div>
-        <div class="question-text">Complete the sentence about fair dealing purposes:</div>
-        <p style="line-height: 2.5; font-size: 1.05em; margin: 15px 0;">
-            Fair dealing is an exception in copyright law that allows you to use copyrighted material without permission for specific purposes including 
-            <input type="text" id="q1-blank1" class="inline-blank" placeholder="purpose 1">,
-            <input type="text" id="q1-blank2" class="inline-blank" placeholder="purpose 2">, and 
-            <input type="text" id="q1-blank3" class="inline-blank" placeholder="purpose 3">.
-        </p>
+        <div class="question-text">
+            Educational institutions can copy unlimited amounts of copyrighted material as long as they pay statutory licensing fees.
+        </div>
+        <div class="question-options">
+            <label><input type="radio" name="q1" value="true"> True</label>
+            <label><input type="radio" name="q1" value="false"> False</label>
+        </div>
         <div class="button-group">
-            <button class="btn btn-submit" onclick="checkFillInBlank('q1', [['research', 'study'], ['criticism', 'review'], ['news', 'reporting', 'parody', 'satire']])">✓ Submit Answer</button>
-            <button class="btn btn-retry" id="q1-retry" onclick="retryQuestion('q1', 'text')">↻ Try Again</button>
+            <button class="btn btn-submit" onclick="checkTrueFalse('q1', 'false')">✓ Submit Answer</button>
+            <button class="btn btn-retry" id="q1-retry" onclick="retryQuestion('q1', 'radio')">↻ Try Again</button>
         </div>
         <div id="q1-feedback"></div>
+        <div style="margin-top: 15px;">
+            <label style="font-weight: 600; color: #555; margin-bottom: 8px; display: block;">Explain your answer:</label>
+            <textarea class="text-input" placeholder="What are the limitations and conditions for educational use?"></textarea>
+        </div>
     </div>
 
     <div class="reading-content">
-        <h2>The Four Fairness Factors</h2>
-        <p>When determining whether a use qualifies as fair dealing, courts consider four key factors:</p>
+        <h2>The 10% Rule</h2>
+        <p>One of the most important limitations in educational copying is the <strong>10% rule</strong> (also known as the "one chapter or one article" rule):</p>
         
-        <ol>
-            <li><strong>The purpose and character of the use</strong> - Is it for one of the permitted purposes? Is it transformative (adding new meaning or message)?</li>
-            <li><strong>The nature of the copyrighted work</strong> - Published works are more likely to be fair dealing than unpublished works</li>
-            <li><strong>The amount and substantiality used</strong> - How much of the work did you use? Was it the "heart" of the work?</li>
-            <li><strong>The effect on the potential market</strong> - Does your use compete with or harm the market for the original work?</li>
-        </ol>
-
-        <p>All four factors must be considered together. No single factor is decisive on its own.</p>
-
         <div class="info-box">
-            <p><strong>⚠️ Important Limitation:</strong></p>
-            <p>Fair dealing does NOT mean you can use any amount of material you want. The amount used must be reasonable and appropriate for the specific purpose. For research or study, generally no more than 10% of a work (or one chapter) is considered reasonable.</p>
+            <p><strong>The 10% Rule for Educational Copying:</strong></p>
+            <ul style="margin: 10px 0;">
+                <li>You can copy <strong>10% of the pages</strong> in a book (if it has 10 or more pages)</li>
+                <li>OR <strong>one chapter</strong> from a book</li>
+                <li>OR <strong>one article</strong> from a periodical (magazine, journal, newspaper)</li>
+                <li>Whichever results in the <strong>greater number of pages</strong></li>
+            </ul>
         </div>
+
+        <p><strong>Example:</strong> If a textbook has 200 pages and you want to copy for educational purposes, you can copy up to 20 pages (10%). But if one chapter is 30 pages, you can copy the entire 30-page chapter.</p>
+
+        <h2>Fair Dealing for Research and Study</h2>
+        <p>Students and researchers can rely on the <strong>fair dealing</strong> exception for research or study. This allows copying of a "reasonable portion" of a work without permission.</p>
+
+        <ul>
+            <li>For research or study, a "reasonable portion" follows the 10% or one chapter rule</li>
+            <li>Must be for genuine research or study purposes (not commercial)</li>
+            <li>Must include sufficient acknowledgment of the source</li>
+            <li>Cannot be used to avoid purchasing the original work</li>
+        </ul>
     </div>
 
     <!-- EMBEDDED QUESTION 2 -->
     <div class="embedded-question" id="q2-container">
         <div class="question-header">
             <span class="question-badge">Question 2</span>
-            <span class="question-type">True/False</span>
+            <span class="question-type">Multiple Choice</span>
         </div>
         <div class="question-text">
-            Fair dealing means you can use any amount of copyrighted material as long as it's for research purposes.
+            A textbook has 150 pages. Under the 10% rule for educational copying, you can copy:
         </div>
         <div class="question-options">
-            <label><input type="radio" name="q2" value="true"> True</label>
-            <label><input type="radio" name="q2" value="false"> False</label>
+            <label><input type="radio" name="q2" value="a"> A) 10 pages maximum</label>
+            <label><input type="radio" name="q2" value="b"> B) 15 pages maximum</label>
+            <label><input type="radio" name="q2" value="c"> C) 15 pages, or one whole chapter if it's longer than 15 pages</label>
+            <label><input type="radio" name="q2" value="d"> D) Any amount as long as it's for education</label>
         </div>
         <div class="button-group">
-            <button class="btn btn-submit" onclick="checkTrueFalse('q2', 'false')">✓ Submit Answer</button>
+            <button class="btn btn-submit" onclick="checkMultipleChoice('q2', 'c')">✓ Submit Answer</button>
             <button class="btn btn-retry" id="q2-retry" onclick="retryQuestion('q2', 'radio')">↻ Try Again</button>
         </div>
         <div id="q2-feedback"></div>
-        <div style="margin-top: 15px;">
-            <label style="font-weight: 600; color: #555; margin-bottom: 8px; display: block;">Explain your answer:</label>
-            <textarea class="text-input" placeholder="Why did you choose true or false? What are the limits of fair dealing?"></textarea>
-        </div>
     </div>
 
     <div class="reading-content">
-        <h2>Fair Dealing in Practice</h2>
-        <p>Here are some common scenarios where fair dealing may apply:</p>
+        <h2>Digital Materials and Online Learning</h2>
+        <p>With the increase in online and digital learning, copyright considerations extend to:</p>
         
         <ul>
-            <li><strong>Academic research:</strong> Quoting passages from books or articles in your research paper with proper attribution</li>
-            <li><strong>Film reviews:</strong> Using short clips from a movie in a video review to illustrate your critical points</li>
-            <li><strong>News reporting:</strong> Reproducing photographs or video footage to report on current events</li>
-            <li><strong>Educational purposes:</strong> Copying pages from a textbook for classroom study (within the 10% guideline)</li>
-            <li><strong>Parody videos:</strong> Creating a satirical version of a song or video for comedic commentary</li>
+            <li><strong>Learning Management Systems (LMS)</strong> - Materials uploaded to platforms like Canvas or Moodle</li>
+            <li><strong>Digital copies</strong> - Scanning physical materials to create digital versions</li>
+            <li><strong>Online streaming</strong> - Showing videos or playing audio in virtual classrooms</li>
+            <li><strong>Screen sharing</strong> - Displaying copyrighted content during online lessons</li>
         </ul>
 
-        <h2>Attribution Requirements</h2>
-        <p>Even when using material under fair dealing, you must provide <strong>sufficient acknowledgment</strong> of the source. This typically includes:</p>
-        <ul>
-            <li>The title of the work</li>
-            <li>The author or creator's name</li>
-            <li>Where it was published (if applicable)</li>
-        </ul>
+        <p>The same rules apply to digital copies as physical copies - you must still respect the 10% rule and statutory licensing conditions. Just because something is done digitally doesn't mean copyright doesn't apply.</p>
+
+        <div class="info-box">
+            <p><strong>⚠️ Important Reminder:</strong></p>
+            <p>Always check if your educational institution has specific copyright guidelines or policies. Many schools and universities have detailed procedures for using copyrighted materials that may be more restrictive than the minimum legal requirements.</p>
+        </div>
     </div>
 
     <!-- EMBEDDED QUESTION 3 -->
     <div class="embedded-question" id="q3-container">
         <div class="question-header">
             <span class="question-badge">Question 3</span>
-            <span class="question-type">Multiple Choice</span>
+            <span class="question-type">Fill in the Blanks</span>
         </div>
-        <div class="question-text">
-            Which factor is NOT considered when determining if a use is fair dealing?
-        </div>
-        <div class="question-options">
-            <label><input type="radio" name="q3" value="a"> A) The purpose and character of the use</label>
-            <label><input type="radio" name="q3" value="b"> B) The amount and substantiality of the portion used</label>
-            <label><input type="radio" name="q3" value="c"> C) The popularity of the copyrighted work</label>
-            <label><input type="radio" name="q3" value="d"> D) The effect on the potential market for the work</label>
-        </div>
+        <div class="question-text">Complete the sentence about fair dealing in education:</div>
+        <p style="line-height: 2.5; font-size: 1.05em; margin: 15px 0;">
+            For research or study purposes, you can copy a 
+            <input type="text" id="q3-blank1" class="inline-blank" placeholder="what portion">
+            portion of a work, which generally means 
+            <input type="text" id="q3-blank2" class="inline-blank" placeholder="% or amount">
+            of the work or one chapter, whichever is greater.
+        </p>
         <div class="button-group">
-            <button class="btn btn-submit" onclick="checkMultipleChoice('q3', 'c')">✓ Submit Answer</button>
-            <button class="btn btn-retry" id="q3-retry" onclick="retryQuestion('q3', 'radio')">↻ Try Again</button>
+            <button class="btn btn-submit" onclick="checkFillInBlank('q3', [['reasonable'], ['10%', '10 percent', 'ten percent']])">✓ Submit Answer</button>
+            <button class="btn btn-retry" id="q3-retry" onclick="retryQuestion('q3', 'text')">↻ Try Again</button>
         </div>
         <div id="q3-feedback"></div>
     </div>
@@ -203,23 +210,23 @@
         <div class="question-text">Real-World Application</div>
         <div style="background: #e8f4f8; padding: 20px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #667eea;">
             <p style="margin: 0; font-style: italic;">
-                You're creating a review video for YouTube about a new movie. You want to include clips from the film to support your commentary and criticism.
+                You're a teacher preparing an online lesson. You want to upload 3 chapters from a 20-chapter textbook to your school's Canvas/LMS for students to read.
             </p>
         </div>
         <label style="font-weight: 600; color: #333; margin: 10px 0; display: block;">
-            Could this be considered fair dealing? What factors would you need to consider?
+            Is this allowed under copyright law? What should you consider? What are your alternatives?
         </label>
-        <textarea class="text-input" placeholder="Think about: purpose (criticism/review), amount used, effect on market, proper attribution..."></textarea>
+        <textarea class="text-input" placeholder="Consider the 10% rule, statutory licensing, seeking permission, purchasing digital copies, or using library resources..."></textarea>
     </div>
 
     <div class="summary-section">
         <h3>✍️ Write Your Summary</h3>
         <p style="color: #666; margin-bottom: 15px;">
-            Now that you've completed the reading and answered the questions, write a comprehensive summary paragraph about fair dealing. Include the purposes it covers, the four fairness factors, and the limitations.
+            Now that you've completed the reading and answered the questions, write a comprehensive summary paragraph about copyright in educational settings. Include information about statutory licensing, the 10% rule, fair dealing for research and study, and digital materials.
         </p>
         <textarea class="summary-textarea" id="summary-text" placeholder="Write your summary here..."></textarea>
         <p style="margin-top: 15px; color: #666; font-size: 0.95em; font-style: italic;">
-            💡 Tip: Include specific purposes (research, criticism, etc.), the four fairness factors, and the 10% guideline.
+            💡 Tip: Explain who manages educational licenses, what the 10% rule means, and how copyright applies to online learning.
         </p>
     </div>
 

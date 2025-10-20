@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infringement Offences and Penalties</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background: #f5f7fa; }
+    .reading-container { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    .reading-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 12px; margin-bottom: 30px; }
+    .reading-header h1 { margin: 0; font-size: 2em; }
+    .reading-header p { margin: 10px 0 0 0; opacity: 0.9; }
+    .pdf-link { background: #fff3cd; border-left: 5px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 6px; }
+    .pdf-link a { color: #856404; font-weight: bold; text-decoration: none; }
+    .pdf-link a:hover { text-decoration: underline; }
+    .reading-content { margin-bottom: 30px; }
+    .reading-content h2 { color: #667eea; border-bottom: 3px solid #667eea; padding-bottom: 10px; margin-top: 30px; }
+    .reading-content p { line-height: 1.8; margin: 15px 0; }
+    .reading-content ul, .reading-content ol { line-height: 1.8; margin-left: 20px; }
+    .reading-content li { margin: 10px 0; }
+    .warning-box { background: #f8d7da; border-left: 5px solid #dc3545; padding: 20px; margin: 20px 0; border-radius: 6px; }
+    .warning-box strong { color: #721c24; }
+    .info-box { background: #d1ecf1; border-left: 5px solid #0c5460; padding: 20px; margin: 20px 0; border-radius: 6px; }
+    .embedded-question { margin: 30px 0; padding: 25px; background: #f8f9fa; border-radius: 12px; border-left: 5px solid #667eea; box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1); }
+    .question-header { display: flex; align-items: center; margin-bottom: 15px; gap: 10px; }
+    .question-badge { background: #667eea; color: white; padding: 5px 12px; border-radius: 6px; font-weight: bold; font-size: 0.9em; }
+    .question-type { background: #e8eaf6; color: #5c6bc0; padding: 5px 12px; border-radius: 6px; font-size: 0.85em; font-weight: 600; }
+    .question-text { font-weight: 600; color: #333; margin-bottom: 15px; font-size: 1.05em; }
+    .question-options { margin: 15px 0; }
+    .question-options label { display: block; margin: 10px 0; padding: 12px; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 2px solid #e0e0e0; }
+    .question-options label:hover { background: #f5f7fa; border-color: #667eea; }
+    .question-options input[type="radio"] { margin-right: 10px; }
+    .text-input { width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1em; font-family: inherit; margin: 8px 0; }
+    .text-input:focus { outline: none; border-color: #667eea; }
+    textarea.text-input { min-height: 100px; resize: vertical; }
+    .inline-blank { display: inline-block; min-width: 120px; padding: 8px; border: 0; border-bottom: 2px solid #667eea; font-size: 1em; margin: 0 5px; }
+    .inline-blank:focus { outline: none; background: #f5f7fa; }
+    .button-group { margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn { padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 0.95em; transition: all 0.3s; }
+    .btn-submit { background: #667eea; color: white; }
+    .btn-submit:hover { background: #5568d3; transform: translateY(-2px); }
+    .btn-retry { background: #ffc107; color: #000; display: none; }
+    .btn-retry:hover { background: #e0a800; }
+    .feedback { margin-top: 15px; padding: 15px; border-radius: 8px; font-weight: 600; }
+    .feedback.correct { background: #d4edda; color: #155724; border: 2px solid #c3e6cb; }
+    .feedback.incorrect { background: #f8d7da; color: #721c24; border: 2px solid #f5c6cb; }
+    .summary-section { margin-top: 40px; padding: 30px; background: linear-gradient(135deg, #e8f4f8 0%, #f0f8ff 100%); border-radius: 12px; border: 3px solid #667eea; }
+    .summary-section h3 { color: #667eea; margin-top: 0; }
+    .summary-textarea { width: 100%; min-height: 150px; padding: 15px; border: 2px solid #667eea; border-radius: 8px; font-size: 1em; font-family: inherit; resize: vertical; line-height: 1.6; }
+    .download-section { margin-top: 30px; text-align: center; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    .btn-download { background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; padding: 15px 30px; font-size: 1.1em; border: none; border-radius: 10px; cursor: pointer; font-weight: bold; transition: all 0.3s; box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3); }
+    .btn-download:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4); }
+    .back-button { display: inline-block; margin-bottom: 20px; padding: 10px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; }
+    .back-button:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3); }
+</style>
+</head>
+<body>
+
+<a href="2-dot-1-1-ip-ethics-and-privacy copy.html" class="back-button">← Back to Main Lesson</a>
+
+<div class="reading-container">
+    <div class="reading-header">
+        <h1>📚 Infringement Offences and Penalties</h1>
+        <p>An interactive reading experience with embedded questions</p>
+    </div>
+
+    <div class="pdf-link">
+        📄 <strong>Reference:</strong> <a href="Infringement offences and penalties.pdf" target="_blank">View the original PDF article</a> for the complete text
+    </div>
+
+    <div class="reading-content">
+        <h2>What is Copyright Infringement?</h2>
+        <p><strong>Copyright infringement</strong> occurs when someone exercises one of the exclusive rights of the copyright owner without permission. This includes:</p>
+        
+        <ul>
+            <li><strong>Reproducing (copying)</strong> the work</li>
+            <li><strong>Publishing</strong> the work</li>
+            <li><strong>Performing</strong> the work in public</li>
+            <li><strong>Communicating</strong> the work to the public (including online)</li>
+            <li><strong>Adapting</strong> the work (creating derivative works)</li>
+        </ul>
+
+        <p>Infringement can be <strong>direct</strong> (you personally do the infringing act) or <strong>indirect</strong> (you authorize someone else to infringe, or you provide the means for infringement).</p>
+
+        <div class="warning-box">
+            <p><strong>⚠️ Important Myth to Bust:</strong></p>
+            <p>Copyright infringement does NOT require commercial use or profit-making. You can infringe copyright even if you're not making any money from your use of the copyrighted work. Non-commercial infringement is still infringement!</p>
+        </div>
+    </div>
+
+    <!-- EMBEDDED QUESTION 1 -->
+    <div class="embedded-question" id="q1-container">
+        <div class="question-header">
+            <span class="question-badge">Question 1</span>
+            <span class="question-type">Multiple Choice</span>
+        </div>
+        <div class="question-text">
+            You download a movie from a file-sharing site for personal viewing at home (not for sale or profit). Is this copyright infringement?
+        </div>
+        <div class="question-options">
+            <label><input type="radio" name="q1" value="a"> A) No, because you're not making money from it</label>
+            <label><input type="radio" name="q1" value="b"> B) No, because it's for personal use only</label>
+            <label><input type="radio" name="q1" value="c"> C) Yes, reproducing copyrighted material without permission is infringement</label>
+            <label><input type="radio" name="q1" value="d"> D) Only if you share the movie with others</label>
+        </div>
+        <div class="button-group">
+            <button class="btn btn-submit" onclick="checkMultipleChoice('q1', 'c')">✓ Submit Answer</button>
+            <button class="btn btn-retry" id="q1-retry" onclick="retryQuestion('q1', 'radio')">↻ Try Again</button>
+        </div>
+        <div id="q1-feedback"></div>
+    </div>
+
+    <div class="reading-content">
+        <h2>Types of Infringement</h2>
+        
+        <h3>Primary (Direct) Infringement</h3>
+        <p>This occurs when someone personally performs one of the restricted acts without permission:</p>
+        <ul>
+            <li>Making unauthorized copies</li>
+            <li>Uploading copyrighted material to the internet</li>
+            <li>Playing copyrighted music publicly without a license</li>
+            <li>Screening a film without authorization</li>
+        </ul>
+
+        <h3>Secondary (Indirect) Infringement</h3>
+        <p>This includes:</p>
+        <ul>
+            <li><strong>Authorizing infringement</strong> - Giving permission or enabling others to infringe</li>
+            <li><strong>Importing infringing copies</strong> - Bringing pirated goods into Australia</li>
+            <li><strong>Selling or distributing</strong> infringing copies</li>
+            <li><strong>Commercial dealings</strong> with infringing copies</li>
+        </ul>
+
+        <h3>Online Infringement</h3>
+        <p>Common forms of online copyright infringement include:</p>
+        <ul>
+            <li><strong>Illegal downloading</strong> - Using torrent sites, file-sharing platforms</li>
+            <li><strong>Illegal streaming</strong> - Watching content on unauthorized streaming sites</li>
+            <li><strong>Sharing</strong> - Distributing copyrighted files via email, cloud storage, or social media</li>
+            <li><strong>Posting</strong> copyrighted material to websites without permission</li>
+            <li><strong>Screen recording</strong> - Recording streaming content</li>
+        </ul>
+    </div>
+
+    <!-- EMBEDDED QUESTION 2 -->
+    <div class="embedded-question" id="q2-container">
+        <div class="question-header">
+            <span class="question-badge">Question 2</span>
+            <span class="question-type">Fill in the Blanks</span>
+        </div>
+        <div class="question-text">Complete the sentence about types of infringement:</div>
+        <p style="line-height: 2.5; font-size: 1.05em; margin: 15px 0;">
+            <input type="text" id="q2-blank1" class="inline-blank" placeholder="type">
+            infringement occurs when you personally copy or distribute copyrighted material, while 
+            <input type="text" id="q2-blank2" class="inline-blank" placeholder="type">
+            infringement includes authorizing others to infringe or dealing commercially with infringing copies.
+        </p>
+        <div class="button-group">
+            <button class="btn btn-submit" onclick="checkFillInBlank('q2', [['primary', 'direct'], ['secondary', 'indirect']])">✓ Submit Answer</button>
+            <button class="btn btn-retry" id="q2-retry" onclick="retryQuestion('q2', 'text')">↻ Try Again</button>
+        </div>
+        <div id="q2-feedback"></div>
+    </div>
+
+    <div class="reading-content">
+        <h2>Penalties for Copyright Infringement</h2>
+        <p>Copyright infringement can result in both <strong>civil</strong> and <strong>criminal</strong> penalties, depending on the nature and scale of the infringement.</p>
+
+        <h3>Civil Remedies</h3>
+        <p>Copyright owners can take civil action and seek:</p>
+        <ul>
+            <li><strong>Injunctions</strong> - Court orders to stop the infringing activity</li>
+            <li><strong>Damages</strong> - Financial compensation for losses suffered
+                <ul>
+                    <li>Can include lost sales, lost licensing fees</li>
+                    <li>May include additional damages for flagrant infringement</li>
+                </ul>
+            </li>
+            <li><strong>Account of profits</strong> - The infringer must hand over profits made from the infringement</li>
+            <li><strong>Delivery or destruction</strong> - Infringing copies must be delivered up or destroyed</li>
+        </ul>
+
+        <h3>Criminal Penalties</h3>
+        <p>Serious copyright infringement can result in criminal prosecution, particularly for:</p>
+        <ul>
+            <li>Commercial-scale infringement</li>
+            <li>Making or selling pirated copies</li>
+            <li>Operating piracy websites or services</li>
+        </ul>
+
+        <div class="warning-box">
+            <p><strong>⚠️ Criminal Penalties Can Include:</strong></p>
+            <ul style="margin: 10px 0;">
+                <li><strong>Fines</strong> up to $117,000 for individuals</li>
+                <li><strong>Fines</strong> up to $585,000 for corporations</li>
+                <li><strong>Imprisonment</strong> up to 5 years</li>
+            </ul>
+        </div>
+
+        <h2>Who Can Be Held Liable?</h2>
+        <ul>
+            <li><strong>Individuals</strong> who download, share, or use copyrighted material without permission</li>
+            <li><strong>Businesses</strong> that use copyrighted materials in their operations</li>
+            <li><strong>Website operators</strong> who host or facilitate access to infringing content</li>
+            <li><strong>Internet Service Providers (ISPs)</strong> in some circumstances (though they have safe harbor provisions)</li>
+            <li><strong>Educational institutions</strong> if they exceed statutory licensing limits</li>
+        </ul>
+
+        <div class="info-box">
+            <p><strong>📌 Real-World Example:</strong></p>
+            <p>In 2024, an Australian man was fined over $5,000 for operating a website that provided links to illegally stream movies and TV shows. Even though he wasn't hosting the content directly, facilitating access to pirated content was considered infringement.</p>
+        </div>
+    </div>
+
+    <!-- EMBEDDED QUESTION 3 -->
+    <div class="embedded-question" id="q3-container">
+        <div class="question-header">
+            <span class="question-badge">Question 3</span>
+            <span class="question-type">True/False</span>
+        </div>
+        <div class="question-text">
+            You can only be prosecuted for copyright infringement if you make money from the copyrighted material.
+        </div>
+        <div class="question-options">
+            <label><input type="radio" name="q3" value="true"> True</label>
+            <label><input type="radio" name="q3" value="false"> False</label>
+        </div>
+        <div class="button-group">
+            <button class="btn btn-submit" onclick="checkTrueFalse('q3', 'false')">✓ Submit Answer</button>
+            <button class="btn btn-retry" id="q3-retry" onclick="retryQuestion('q3', 'radio')">↻ Try Again</button>
+        </div>
+        <div id="q3-feedback"></div>
+        <div style="margin-top: 15px;">
+            <label style="font-weight: 600; color: #555; margin-bottom: 8px; display: block;">Explain your answer:</label>
+            <textarea class="text-input" placeholder="Explain whether commercial use is required for infringement..."></textarea>
+        </div>
+    </div>
+
+    <!-- EMBEDDED QUESTION 4 -->
+    <div class="embedded-question" id="q4-container">
+        <div class="question-header">
+            <span class="question-badge">Question 4</span>
+            <span class="question-type">Scenario</span>
+        </div>
+        <div class="question-text">Real-World Application</div>
+        <div style="background: #e8f4f8; padding: 20px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #667eea;">
+            <p style="margin: 0; font-style: italic;">
+                Your friend shares a link to a website where you can watch newly released movies for free (movies still in cinemas). You watch several movies using this site and share the link with classmates.
+            </p>
+        </div>
+        <label style="font-weight: 600; color: #333; margin: 10px 0; display: block;">
+            Analyze this situation: Who could be liable for copyright infringement? What types of infringement are occurring? What could the potential consequences be?
+        </label>
+        <textarea class="text-input" placeholder="Consider: downloading, distributing, receiving, watching. Who's liable? What are the penalties?"></textarea>
+    </div>
+
+    <div class="summary-section">
+        <h3>✍️ Write Your Summary</h3>
+        <p style="color: #666; margin-bottom: 15px;">
+            Now that you've completed the reading and answered the questions, write a comprehensive summary paragraph about copyright infringement. Include what constitutes infringement, types of infringement (direct and indirect), and potential penalties (civil and criminal).
+        </p>
+        <textarea class="summary-textarea" id="summary-text" placeholder="Write your summary here..."></textarea>
+        <p style="margin-top: 15px; color: #666; font-size: 0.95em; font-style: italic;">
+            💡 Tip: Explain that commercial use is NOT required for infringement, and describe both civil remedies and criminal penalties.
+        </p>
+    </div>
+
+    <div class="download-section">
+        <h3 style="color: #667eea; margin-top: 0;">📥 Download Your Work</h3>
+        <p style="color: #666; margin-bottom: 20px;">Save all your answers and summary as a PDF before leaving this page.</p>
+        <button class="btn-download" onclick="downloadEmbeddedReading()">📥 Download My Answers (PDF)</button>
+    </div>
+</div>
+
+<a href="2-dot-1-1-ip-ethics-and-privacy copy.html" class="back-button" style="display: inline-block; margin: 30px 0 20px 0; padding: 10px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 8px; transition: all 0.3s ease;">← Back to Main Lesson</a>
+
+<script src="embedded-reading-functions.js"></script>
+
+</body>
+</html>

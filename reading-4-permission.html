@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Permission - Do I Need It?</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background: #f5f7fa; }
+    .reading-container { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    .reading-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 12px; margin-bottom: 30px; }
+    .reading-header h1 { margin: 0; font-size: 2em; }
+    .reading-header p { margin: 10px 0 0 0; opacity: 0.9; }
+    .pdf-link { background: #fff3cd; border-left: 5px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 6px; }
+    .pdf-link a { color: #856404; font-weight: bold; text-decoration: none; }
+    .pdf-link a:hover { text-decoration: underline; }
+    .reading-content { margin-bottom: 30px; }
+    .reading-content h2 { color: #667eea; border-bottom: 3px solid #667eea; padding-bottom: 10px; margin-top: 30px; }
+    .reading-content p { line-height: 1.8; margin: 15px 0; }
+    .reading-content ul, .reading-content ol { line-height: 1.8; margin-left: 20px; }
+    .reading-content li { margin: 10px 0; }
+    .info-box { background: #fff3cd; border-left: 5px solid #ffc107; padding: 20px; margin: 20px 0; border-radius: 6px; }
+    .tip-box { background: #d4edda; border-left: 5px solid #28a745; padding: 20px; margin: 20px 0; border-radius: 6px; }
+    .embedded-question { margin: 30px 0; padding: 25px; background: #f8f9fa; border-radius: 12px; border-left: 5px solid #667eea; box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1); }
+    .question-header { display: flex; align-items: center; margin-bottom: 15px; gap: 10px; }
+    .question-badge { background: #667eea; color: white; padding: 5px 12px; border-radius: 6px; font-weight: bold; font-size: 0.9em; }
+    .question-type { background: #e8eaf6; color: #5c6bc0; padding: 5px 12px; border-radius: 6px; font-size: 0.85em; font-weight: 600; }
+    .question-text { font-weight: 600; color: #333; margin-bottom: 15px; font-size: 1.05em; }
+    .question-options { margin: 15px 0; }
+    .question-options label { display: block; margin: 10px 0; padding: 12px; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 2px solid #e0e0e0; }
+    .question-options label:hover { background: #f5f7fa; border-color: #667eea; }
+    .question-options input[type="radio"] { margin-right: 10px; }
+    .text-input { width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1em; font-family: inherit; margin: 8px 0; }
+    .text-input:focus { outline: none; border-color: #667eea; }
+    textarea.text-input { min-height: 100px; resize: vertical; }
+    .match-item { background: #f8f9fa; padding: 15px; margin-bottom: 12px; border-radius: 8px; border: 2px solid #e0e0e0; }
+    .match-item strong { color: #667eea; display: block; margin-bottom: 8px; }
+    .button-group { margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn { padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 0.95em; transition: all 0.3s; }
+    .btn-submit { background: #667eea; color: white; }
+    .btn-submit:hover { background: #5568d3; transform: translateY(-2px); }
+    .btn-retry { background: #ffc107; color: #000; display: none; }
+    .btn-retry:hover { background: #e0a800; }
+    .feedback { margin-top: 15px; padding: 15px; border-radius: 8px; font-weight: 600; }
+    .feedback.correct { background: #d4edda; color: #155724; border: 2px solid #c3e6cb; }
+    .feedback.incorrect { background: #f8d7da; color: #721c24; border: 2px solid #f5c6cb; }
+    .summary-section { margin-top: 40px; padding: 30px; background: linear-gradient(135deg, #e8f4f8 0%, #f0f8ff 100%); border-radius: 12px; border: 3px solid #667eea; }
+    .summary-section h3 { color: #667eea; margin-top: 0; }
+    .summary-textarea { width: 100%; min-height: 150px; padding: 15px; border: 2px solid #667eea; border-radius: 8px; font-size: 1em; font-family: inherit; resize: vertical; line-height: 1.6; }
+    .download-section { margin-top: 30px; text-align: center; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    .btn-download { background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; padding: 15px 30px; font-size: 1.1em; border: none; border-radius: 10px; cursor: pointer; font-weight: bold; transition: all 0.3s; box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3); }
+    .btn-download:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4); }
+    .back-button { display: inline-block; margin-bottom: 20px; padding: 10px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; }
+    .back-button:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3); }
+</style>
+</head>
+<body>
+
+<a href="2-dot-1-1-ip-ethics-and-privacy copy.html" class="back-button">← Back to Main Lesson</a>
+
+<div class="reading-container">
+    <div class="reading-header">
+        <h1>📚 Permission - Do I Need It?</h1>
+        <p>An interactive reading experience with embedded questions</p>
+    </div>
+
+    <div class="pdf-link">
+        📄 <strong>Reference:</strong> <a href="Permission - Do I Need It_.pdf" target="_blank">View the original PDF article</a> for the complete text
+    </div>
+
+    <div class="reading-content">
+        <h2>When Do You Need Permission?</h2>
+        <p>The basic rule of copyright is simple: <strong>if you want to use someone else's copyrighted work, you need permission from the copyright owner.</strong> However, there are exceptions to this rule, such as fair dealing and statutory licensing schemes.</p>
+        
+        <p>Here's a decision framework to help you determine if you need permission:</p>
+
+        <ol>
+            <li><strong>Is the work protected by copyright?</strong>
+                <ul>
+                    <li>If it's in the public domain (copyright has expired), you don't need permission</li>
+                    <li>If it's clearly marked as openly licensed (e.g., Creative Commons), check the license terms</li>
+                    <li>Otherwise, assume it IS protected by copyright</li>
+                </ul>
+            </li>
+            <li><strong>Does your use fall under an exception?</strong>
+                <ul>
+                    <li>Fair dealing for specific purposes (research, criticism, news, etc.)</li>
+                    <li>Educational statutory licenses (if your school has them)</li>
+                    <li>If yes, you may not need permission (but check the conditions)</li>
+                </ul>
+            </li>
+            <li><strong>If not covered by an exception, you MUST seek permission</strong></li>
+        </ol>
+
+        <div class="info-box">
+            <p><strong>⚠️ Important Principle:</strong></p>
+            <p><strong>When in doubt, assume copyright exists.</strong> It's better to ask for permission unnecessarily than to infringe copyright by not asking when you should have.</p>
+        </div>
+    </div>
+
+    <!-- EMBEDDED QUESTION 1 -->
+    <div class="embedded-question" id="q1-container">
+        <div class="question-header">
+            <span class="question-badge">Question 1</span>
+            <span class="question-type">Multiple Choice</span>
+        </div>
+        <div class="question-text">
+            You want to use an image you found online for your school project. What should you do?
+        </div>
+        <div class="question-options">
+            <label><input type="radio" name="q1" value="a"> A) Assume it's free to use because it's on the internet</label>
+            <label><input type="radio" name="q1" value="b"> B) Assume it's protected by copyright and seek permission or find alternatives</label>
+            <label><input type="radio" name="q1" value="c"> C) Use it without permission since you're giving credit</label>
+            <label><input type="radio" name="q1" value="d"> D) Only worry about permission if you're making money from your project</label>
+        </div>
+        <div class="button-group">
+            <button class="btn btn-submit" onclick="checkMultipleChoice('q1', 'b')">✓ Submit Answer</button>
+            <button class="btn btn-retry" id="q1-retry" onclick="retryQuestion('q1', 'radio')">↻ Try Again</button>
+        </div>
+        <div id="q1-feedback"></div>
+        <div style="margin-top: 15px;">
+            <label style="font-weight: 600; color: #555; margin-bottom: 8px; display: block;">Explain your reasoning:</label>
+            <textarea class="text-input" placeholder="Think about copyright owners, publishers, licensing organizations..."></textarea>
+        </div>
+    </div>
+
+    <div class="reading-content">
+        <h2>Who Do You Ask for Permission?</h2>
+        <p>Finding the copyright owner can sometimes be challenging. Here are the people or organizations you might need to contact:</p>
+
+        <ul>
+            <li><strong>The creator/author</strong> - Often the copyright owner unless they've transferred their rights</li>
+            <li><strong>Publisher</strong> - For books, journals, magazines, music recordings</li>
+            <li><strong>Production company</strong> - For films, TV shows, videos</li>
+            <li><strong>Record label</strong> - For music recordings</li>
+            <li><strong>Photographer or artist</strong> - For images and artworks</li>
+            <li><strong>Website owner</strong> - For online content (check their Terms of Use)</li>
+            <li><strong>Copyright collecting societies</strong> - Organizations that manage rights for multiple copyright owners</li>
+        </ul>
+
+        <h2>How to Request Permission</h2>
+        <p>When requesting permission to use copyrighted material, you should provide:</p>
+
+        <ol>
+            <li><strong>Identify yourself</strong> - Who you are and what organization you represent (if applicable)</li>
+            <li><strong>Describe the work</strong> - Title, author, date, ISBN/DOI if applicable</li>
+            <li><strong>Specify what you want to use</strong> - Which parts (pages, chapters, images, duration)</li>
+            <li><strong>Explain your intended use</strong> - Purpose, audience, format (print, digital, online)</li>
+            <li><strong>Indicate distribution</strong> - How many copies, how it will be distributed</li>
+            <li><strong>Acknowledge willingness to pay</strong> - If applicable, or ask about licensing fees</li>
+        </ol>
+
+        <div class="tip-box">
+            <p><strong>💡 Pro Tip:</strong> Request permission in writing (email is fine) and keep a copy of the permission granted. This documentation proves you acted lawfully if there's ever a dispute.</p>
+        </div>
+    </div>
+
+    <!-- EMBEDDED QUESTION 2 -->
+    <div class="embedded-question" id="q2-container">
+        <div class="question-header">
+            <span class="question-badge">Question 2</span>
+            <span class="question-type">Matching</span>
+        </div>
+        <div class="question-text">
+            Match each type of copyrighted work with who you would typically ask for permission:
+        </div>
+        <div style="margin-top: 15px;">
+            <div class="match-item">
+                <strong>1. A photograph from a magazine</strong>
+                <input type="text" id="q2-match1" class="text-input" placeholder="Who would you contact?">
+            </div>
+            <div class="match-item">
+                <strong>2. A chapter from a published book</strong>
+                <input type="text" id="q2-match2" class="text-input" placeholder="Who would you contact?">
+            </div>
+            <div class="match-item">
+                <strong>3. A music recording for a video project</strong>
+                <input type="text" id="q2-match3" class="text-input" placeholder="Who would you contact?">
+            </div>
+        </div>
+        <p style="font-size: 0.9em; color: #666; margin-top: 15px; padding: 12px; background: #e7f3ff; border-radius: 6px;">
+            💡 <strong>Options:</strong> Publisher | Photographer or magazine | Record label or music rights organization
+        </p>
+        <div class="button-group">
+            <button class="btn btn-submit" onclick="checkMatching('q2', [['photographer', 'magazine'], ['publisher'], ['record', 'music', 'label']])">✓ Submit Answer</button>
+            <button class="btn btn-retry" id="q2-retry" onclick="retryQuestion('q2', 'text')">↻ Try Again</button>
+        </div>
+        <div id="q2-feedback"></div>
+    </div>
+
+    <div class="reading-content">
+        <h2>Alternatives to Seeking Permission</h2>
+        <p>If you can't get permission, or want to avoid the hassle and potential cost, consider these alternatives:</p>
+
+        <ul>
+            <li><strong>Use works in the public domain</strong> - Works where copyright has expired (generally 70+ years old)</li>
+            <li><strong>Use Creative Commons licensed works</strong> - Many creators offer their works with pre-approved permissions
+                <ul>
+                    <li>Search sites like Flickr, Wikimedia Commons, Unsplash, Pixabay</li>
+                    <li>Always check the specific CC license requirements (attribution, commercial use, etc.)</li>
+                </ul>
+            </li>
+            <li><strong>Use royalty-free stock resources</strong> - Websites offering images, music, and videos for free or for a fee</li>
+            <li><strong>Create your own content</strong> - Take your own photos, write your own text, create your own graphics</li>
+            <li><strong>Use government and educational resources</strong> - Many are freely available</li>
+            <li><strong>Rely on fair dealing</strong> - If your use qualifies (remember the limitations)</li>
+        </ul>
+
+        <div class="info-box">
+            <p><strong>🔍 Remember:</strong></p>
+            <p>Even when using Creative Commons or royalty-free materials, you must still comply with the specific license terms. Always read the license! Attribution (giving credit) is often required even for "free" resources.</p>
+        </div>
+    </div>
+
+    <!-- EMBEDDED QUESTION 3 -->
+    <div class="embedded-question" id="q3-container">
+        <div class="question-header">
+            <span class="question-badge">Question 3</span>
+            <span class="question-type">Scenario</span>
+        </div>
+        <div class="question-text">Real-World Application</div>
+        <div style="background: #e8f4f8; padding: 20px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #667eea;">
+            <p style="margin: 0; font-style: italic;">
+                You're creating a presentation for class and want to include background music. You've found a perfect song on Spotify, but when you contact the record label for permission, they want to charge you $500 for a license.
+            </p>
+        </div>
+        <label style="font-weight: 600; color: #333; margin: 10px 0; display: block;">
+            What alternatives do you have? Describe at least three options you could explore instead of paying for the license.
+        </label>
+        <textarea class="text-input" placeholder="Consider: seeking permission, finding alternatives, Creative Commons music, royalty-free libraries, creating your own music, using no music, etc."></textarea>
+    </div>
+
+    <div class="summary-section">
+        <h3>✍️ Write Your Summary</h3>
+        <p style="color: #666; margin-bottom: 15px;">
+            Now that you've completed the reading and answered the questions, write a comprehensive summary paragraph about when permission is needed for using copyrighted material. Include the decision framework, who to ask, how to request permission, and what alternatives exist.
+        </p>
+        <textarea class="summary-textarea" id="summary-text" placeholder="Write your summary here..."></textarea>
+        <p style="margin-top: 15px; color: #666; font-size: 0.95em; font-style: italic;">
+            💡 Tip: Explain the "when in doubt" principle, the permission process, and alternative resources like Creative Commons.
+        </p>
+    </div>
+
+    <div class="download-section">
+        <h3 style="color: #667eea; margin-top: 0;">📥 Download Your Work</h3>
+        <p style="color: #666; margin-bottom: 20px;">Save all your answers and summary as a PDF before leaving this page.</p>
+        <button class="btn-download" onclick="downloadEmbeddedReading()">📥 Download My Answers (PDF)</button>
+    </div>
+</div>
+
+<a href="2-dot-1-1-ip-ethics-and-privacy copy.html" class="back-button" style="display: inline-block; margin: 30px 0 20px 0; padding: 10px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 8px; transition: all 0.3s ease;">← Back to Main Lesson</a>
+
+<script src="embedded-reading-functions.js"></script>
+
+</body>
+</html>
